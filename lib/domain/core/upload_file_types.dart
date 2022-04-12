@@ -1,0 +1,4 @@
+enum UploadFileTypes {
+  profile,
+  progress,
+}

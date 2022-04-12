@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1035155350869",
+    "project_id": "fitness-uncensored",
+    "storage_bucket": "fitness-uncensored.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1035155350869:android:6c919c0ec63ad5bf58bbdc",
+        "android_client_info": {
+          "package_name": "com.therealstart.fitness_uncensored"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1035155350869-3lpgcupf5lustlnkh7k0p99puic8dpqi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsGfRczgsW07mMBtzWzSyRRkeokHctb4o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1035155350869-3lpgcupf5lustlnkh7k0p99puic8dpqi.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1035155350869-p014mohhu4lsb36imioclsq0q6gnejk3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.therealstart.fitnessUncensored"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
