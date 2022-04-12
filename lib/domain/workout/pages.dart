@@ -1,1 +1,6 @@
-enum WorkoutPages { main, workoutSplits, workoutSplitsWeek, workoutDayDetail }
+enum WorkoutPages {
+  main,
+  workoutMainDetail,
+  workoutSplitsWeek,
+  workoutDayDetail
+}

@@ -18,33 +18,26 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: Future.wait([
-        getIt.get<UserApi>().getUserInfoFromHive(),
-      ]),
-      builder: (context, snapshot) {
-        if (snapshot.hasData) {
-          if (UserRepositoryModel.authStatus) {
-            return const MainPage();
+        future: Future.wait([
+          getIt.get<UserApi>().getUserInfoFromHive(),
+        ]),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            if (UserRepositoryModel.authStatus) {
+              return const MainPage();
+            } else {
+              return const SignInPage();
+            }
+          } else if (snapshot.hasError) {
+            return Material(
+                color: AppColors.white,
+                child: ErrorComponent(errorMessage: snapshot.error.toString()));
+          } else {
+            return const Material(
+              color: AppColors.white,
+              child: AppLoadingComponent(),
+            );
           }
-          else {
-            return const SignInPage();
-          }
-        }
-        else if (snapshot.hasError) {
-          return Material(
-            color: AppColors.white,
-            child: ErrorComponent(
-              errorMessage: snapshot.error.toString()
-            )
-          );
-        }
-        else {
-          return const Material(
-            color: AppColors.white,
-            child: AppLoadingComponent(),
-          );
-        }
-      }
-    );
+        });
   }
 }

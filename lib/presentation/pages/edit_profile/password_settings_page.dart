@@ -1,4 +1,3 @@
-
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:fitness_uncensored/presentation/routes/app_routes.dart';
 import 'package:flutter/material.dart';
@@ -31,8 +30,20 @@ class _PasswordSettingsPageState extends State<PasswordSettingsPage> {
       child: Scaffold(
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(56.h),
-          child: AppBarComponent(
-            text: "password".tr(),
+          child: AppBar(
+            foregroundColor: AppColors.primaryColor,
+            title: Text(
+              "password".tr(),
+              style: AdaptiveTheme.of(context)
+                  .theme
+                  .textTheme
+                  .headline4!
+                  .copyWith(fontWeight: FontWeight.w700),
+            ),
+            centerTitle: true,
+            backgroundColor: AppColors.white,
+            elevation: 4,
+            shadowColor: AppColors.white.withOpacity(0.4),
           ),
         ),
         body: BlocConsumer<ChangePasswordBloc, ChangePasswordState>(
@@ -44,8 +55,7 @@ class _PasswordSettingsPageState extends State<PasswordSettingsPage> {
                 ),
               );
               Navigator.pop(context);
-            }
-            else if (state.hasError) {
+            } else if (state.hasError) {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBarComponent.errorSnackBar(
                   message: state.error,
@@ -56,74 +66,68 @@ class _PasswordSettingsPageState extends State<PasswordSettingsPage> {
           builder: (context, state) {
             if (state.isLoading) {
               return const AppLoadingComponent();
-            }
-            else {
+            } else {
               return Padding(
-                padding: EdgeInsets.only(left: 30.w, right: 30.w, top: 22.h),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-
-                    RichText(
-                      text: TextSpan(
-                        text: 'change'.tr(),
-                        style: AdaptiveTheme.of(context).theme.textTheme.headline1,
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: 'password_'.tr(),
-                            style: AdaptiveTheme.of(context).theme.textTheme.headline2,
-                          ),
-                        ],
-                      ),
-                    ),
-
-                    SizedBox(height: 24.h),
-
-                    TextFieldComponent(
-                      hint: "current_password".tr(),
-                      showSuffixIcon: true,
-                      isObscure: true,
-                      onChanged: (value) => _currentPassword = value,
-                    ),
-
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: TextButton(
-                        onPressed: () => Navigator.push(
-                          context,
-                          AppRoutes.forgotPassword()
-                        ),
-                        child: Text(
-                          'forgot_password'.tr(),
-                          style: TextStyle(
-                            color: AppColors.linksColor,
-                            fontWeight: FontWeight.w400,
-                            fontSize: 14.sp,
-                          ),
+                  padding: EdgeInsets.only(left: 30.w, right: 30.w, top: 22.h),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      RichText(
+                        text: TextSpan(
+                          text: 'change'.tr(),
+                          style: AdaptiveTheme.of(context)
+                              .theme
+                              .textTheme
+                              .headline1,
+                          children: <TextSpan>[
+                            TextSpan(
+                              text: 'password_'.tr(),
+                              style: AdaptiveTheme.of(context)
+                                  .theme
+                                  .textTheme
+                                  .headline2,
+                            ),
+                          ],
                         ),
                       ),
-                    ),
-
-                    SizedBox(height: 32.h),
-
-                    TextFieldComponent(
-                      hint: "new_password".tr(),
-                      showSuffixIcon: true,
-                      isObscure: true,
-                      onChanged: (value) => _newPassword = value,
-                    ),
-
-                    SizedBox(height: 16.h),
-
-                    TextFieldComponent(
-                      hint: "confirm_new_password".tr(),
-                      showSuffixIcon: true,
-                      isObscure: true,
-                      onChanged: (value) => _confirmPassword = value,
-                    ),
-                  ],
-                )
-              );
+                      SizedBox(height: 24.h),
+                      TextFieldComponent(
+                        hint: "current_password".tr(),
+                        showSuffixIcon: true,
+                        isObscure: true,
+                        onChanged: (value) => _currentPassword = value,
+                      ),
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: TextButton(
+                          onPressed: () => Navigator.push(
+                              context, AppRoutes.forgotPassword()),
+                          child: Text(
+                            'forgot_password'.tr(),
+                            style: TextStyle(
+                              color: AppColors.linksColor,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 14.sp,
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 32.h),
+                      TextFieldComponent(
+                        hint: "new_password".tr(),
+                        showSuffixIcon: true,
+                        isObscure: true,
+                        onChanged: (value) => _newPassword = value,
+                      ),
+                      SizedBox(height: 16.h),
+                      TextFieldComponent(
+                        hint: "confirm_new_password".tr(),
+                        showSuffixIcon: true,
+                        isObscure: true,
+                        onChanged: (value) => _confirmPassword = value,
+                      ),
+                    ],
+                  ));
             }
           },
         ),
@@ -132,12 +136,11 @@ class _PasswordSettingsPageState extends State<PasswordSettingsPage> {
           text: 'save'.tr(),
           onPressed: () {
             context.read<ChangePasswordBloc>().add(
-              ChangePasswordEvent.changePassword(
-                currentPassword: _currentPassword,
-                newPassword: _newPassword,
-                confirmPassword: _confirmPassword
-              ),
-            );
+                  ChangePasswordEvent.changePassword(
+                      currentPassword: _currentPassword,
+                      newPassword: _newPassword,
+                      confirmPassword: _confirmPassword),
+                );
           },
         ),
       ),

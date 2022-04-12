@@ -13,10 +13,12 @@ import 'package:fitness_uncensored/infrastructure/repository/models/user_reposit
 import 'package:fitness_uncensored/utils/get_it.dart';
 
 class GetJournalListRequest {
-  Future<Either<String, GetJournalListModel>> getData() async {
+  Future<Either<String, GetJournalListModel>> getData({
+    required int page,
+  }) async {
     try {
       final Response response = await getIt.get<Dio>().get(
-            APIList.getJournalListProgress,
+            "${APIList.getJournalListProgress}?page=$page",
             options: Options(
                 headers: {
                   HttpHeaders.authorizationHeader:
@@ -32,7 +34,7 @@ class GetJournalListRequest {
         final bool result = await getIt.get<RefreshTokenRequest>().refresh();
 
         if (result) {
-          return await getData();
+          return await getData(page: page);
         } else {
           return left('');
         }
@@ -41,7 +43,7 @@ class GetJournalListRequest {
             error: response.data, statusCode: response.statusCode));
       }
     } catch (e) {
-      throw left(e.toString());
+      return left(e.toString());
     }
   }
 }

@@ -1,7 +1,9 @@
-
 import 'package:dio/dio.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:fitness_uncensored/application/progress/bloc/progress_bloc.dart';
+import 'package:fitness_uncensored/application/progress/journalBloc/journal_bloc.dart';
+import 'package:fitness_uncensored/application/progress/photoBloc/photo_bloc_bloc.dart';
 import 'package:fitness_uncensored/utils/get_it.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -24,16 +26,22 @@ import 'utils/app_init.dart';
 
 void main() async {
   await initializeApp();
-
-  runApp(
-    EasyLocalization(
-      startLocale: const Locale('en', 'US'),
-      supportedLocales: const [Locale('en', 'US')],
-      path: 'assets/translations',
-      fallbackLocale: const Locale('en', 'US'),
-      child: const MyApp(),
-    ),
-  );
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitDown,
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.landscapeLeft,
+    DeviceOrientation.landscapeRight,
+  ]).then((_) {
+    runApp(
+      EasyLocalization(
+        startLocale: const Locale('en', 'US'),
+        supportedLocales: const [Locale('en', 'US')],
+        path: 'assets/translations',
+        fallbackLocale: const Locale('en', 'US'),
+        child: const MyApp(),
+      ),
+    );
+  });
 }
 
 class MyApp extends StatefulWidget {
@@ -44,17 +52,13 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  
   @override
   void initState() {
     getIt.get<Dio>().interceptors.add(LogInterceptor(
-      responseHeader: false,
-      requestBody: true,
-      responseBody: true
-    ));
+        responseHeader: false, requestBody: true, responseBody: true));
     super.initState();
   }
-  
+
   @override
   void dispose() {
     Hive.close();
@@ -63,7 +67,10 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
 
     return MultiBlocProvider(
       providers: [
@@ -89,6 +96,15 @@ class _MyAppState extends State<MyApp> {
         ),
         BlocProvider<WorkoutBloc>(
           create: (_) => WorkoutBloc(),
+        ),
+        BlocProvider<PhotoBlocBloc>(
+          create: (_) => PhotoBlocBloc(),
+        ),
+        BlocProvider<JournalBloc>(
+          create: (_) => JournalBloc(),
+        ),
+        BlocProvider<ProgressBloc>(
+          create: (_) => ProgressBloc(),
         ),
       ],
       child: ScreenUtilInit(

@@ -11,12 +11,12 @@ class CoachInfoComponent extends StatelessWidget {
   final String coachImage;
   final bool isSelected;
 
-  const CoachInfoComponent({
-    Key? key,
-    required this.coachName,
-    required this.coachImage,
-    required this.isSelected
-  }) : super(key: key);
+  const CoachInfoComponent(
+      {Key? key,
+      required this.coachName,
+      required this.coachImage,
+      required this.isSelected})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,17 +26,14 @@ class CoachInfoComponent extends StatelessWidget {
       duration: const Duration(milliseconds: 350),
       padding: EdgeInsets.all(1.h),
       decoration: BoxDecoration(
-        gradient: isSelected ? AppColors.linear : null,
-        borderRadius: BorderRadius.circular(20.r)
-      ),
+          gradient: isSelected ? AppColors.linear : null,
+          borderRadius: BorderRadius.circular(20.r)),
       child: DecoratedBox(
         decoration: BoxDecoration(
-          color: isSelected ? AppColors.white : AppColors.grey,
-          borderRadius: BorderRadius.circular(20.r)
-        ),
+            color: isSelected ? AppColors.secondaryColor : AppColors.grey,
+            borderRadius: BorderRadius.circular(20.r)),
         child: Row(
           children: [
-
             SizedBox(width: 12.w),
 
             ClipRRect(
@@ -58,9 +55,15 @@ class CoachInfoComponent extends StatelessWidget {
 
             Text(
               coachName,
-              style: AdaptiveTheme.of(context).theme.textTheme.bodyText2,
+              style: AdaptiveTheme.of(context)
+                  .theme
+                  .textTheme
+                  .bodyText2!
+                  .copyWith(
+                      color: isSelected
+                          ? AppColors.white
+                          : AppColors.primaryColor),
             )
-
           ],
         ),
       ),

@@ -1,4 +1,3 @@
-
 // Created by Muhammed Tolkinov on 07-December-2021
 
 import 'dart:io';
@@ -18,26 +17,23 @@ class AppLoadingComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (Platform.isAndroid) {
-      return SizedBox(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        child: const Center(
+      return const SizedBox(
+        // width: MediaQuery.of(context).size.width,
+        // height: MediaQuery.of(context).size.height,
+        child: Center(
           child: CircularProgressIndicator(
             valueColor: AlwaysStoppedAnimation<Color>(AppColors.primaryColor),
           ),
         ),
       );
-    }
-    else {
+    } else {
       return SizedBox(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
+        // width: MediaQuery.of(context).size.width,
+        // height: MediaQuery.of(context).size.height,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-
             const CupertinoActivityIndicator(),
-
             Visibility(
               visible: showLoadingTextForIOS,
               child: const Padding(

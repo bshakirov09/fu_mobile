@@ -1,4 +1,4 @@
-
+import 'package:fitness_uncensored/presentation/styles/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -23,7 +23,6 @@ class BirthdaySettingsPage extends StatefulWidget {
 }
 
 class _BirthdaySettingsPageState extends State<BirthdaySettingsPage> {
-
   final TextEditingController _birthDayEditController = TextEditingController();
 
   @override
@@ -39,18 +38,28 @@ class _BirthdaySettingsPageState extends State<BirthdaySettingsPage> {
       child: Scaffold(
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(56.h),
-          child: AppBarComponent(
-            text: "birthday".tr(),
+          child: AppBar(
+            foregroundColor: AppColors.primaryColor,
+            title: Text(
+              "birthday".tr(),
+              style: AdaptiveTheme.of(context)
+                  .theme
+                  .textTheme
+                  .headline4!
+                  .copyWith(fontWeight: FontWeight.w700),
+            ),
+            centerTitle: true,
+            backgroundColor: AppColors.white,
+            elevation: 4,
+            shadowColor: AppColors.white.withOpacity(0.4),
           ),
         ),
         body: BlocConsumer<ProfileBloc, ProfileState>(
           listener: (context, state) {
             if (state.isUpdatedUserInfo) {
               ScaffoldMessenger.of(context).showSnackBar(
-                SnackBarComponent.successSnackBar(
-                  message: "your_info_updated".tr()
-                )
-              );
+                  SnackBarComponent.successSnackBar(
+                      message: "your_info_updated".tr()));
 
               context.read<ProfileBloc>().add(const ProfileEvent.getProfile());
               Navigator.pop(context);
@@ -59,36 +68,35 @@ class _BirthdaySettingsPageState extends State<BirthdaySettingsPage> {
           builder: (context, state) {
             if (state.isLoading) {
               return const AppLoadingComponent();
-            }
-            else if (state.hasError) {
+            } else if (state.hasError) {
               return Center(
                 child: ErrorComponent(
                   errorMessage: state.error,
                 ),
               );
-            }
-            else {
+            } else {
               return Padding(
                 padding: EdgeInsets.only(left: 30.w, right: 30.w, top: 22.h),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-
                     RichText(
                       text: TextSpan(
                         text: 'enter_your'.tr(),
-                        style: AdaptiveTheme.of(context).theme.textTheme.headline1,
+                        style:
+                            AdaptiveTheme.of(context).theme.textTheme.headline1,
                         children: <TextSpan>[
                           TextSpan(
                             text: 'date_of_birth_'.tr(),
-                            style: AdaptiveTheme.of(context).theme.textTheme.headline2,
+                            style: AdaptiveTheme.of(context)
+                                .theme
+                                .textTheme
+                                .headline2,
                           ),
                         ],
                       ),
                     ),
-
                     SizedBox(height: 24.h),
-
                     TextFieldComponent(
                       hint: "date_of_birth".tr(),
                       showSuffixIcon: true,
@@ -99,8 +107,7 @@ class _BirthdaySettingsPageState extends State<BirthdaySettingsPage> {
                           context: context,
                           onSaveButtonPressed: (date) {
                             _birthDayEditController.text = date;
-                          }
-                      ),
+                          }),
                     ),
                   ],
                 ),
@@ -112,13 +119,12 @@ class _BirthdaySettingsPageState extends State<BirthdaySettingsPage> {
           text: 'save'.tr(),
           margin: EdgeInsets.only(left: 30.w, right: 30.w, bottom: 16.h),
           onPressed: () {
-            context.read<ProfileBloc>().add(ProfileEvent.updateUserInfo(
-              userInfo:  {
-                "date_of_birth": DateFormat('yyyy-MM-dd').format(DateTime.parse(
-                  _birthDayEditController.text
-                )),
-              }
-            ));
+            context
+                .read<ProfileBloc>()
+                .add(ProfileEvent.updateUserInfo(userInfo: {
+                  "date_of_birth": DateFormat('yyyy-MM-dd')
+                      .format(DateTime.parse(_birthDayEditController.text)),
+                }));
           },
         ),
       ),

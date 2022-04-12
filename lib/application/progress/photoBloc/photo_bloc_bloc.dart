@@ -4,6 +4,9 @@ import 'package:fitness_uncensored/domain/core/upload_file_types.dart';
 import 'package:fitness_uncensored/domain/progress/pages.dart';
 import 'package:fitness_uncensored/infrastructure/common/get_or_upload_media_api.dart';
 import 'package:fitness_uncensored/infrastructure/progress/photo/photo_api.dart';
+import 'package:fitness_uncensored/infrastructure/repository/models/detail_view_photo_right_model%20copy.dart';
+import 'package:fitness_uncensored/infrastructure/repository/models/detail_view_photo_right_model.dart';
+import 'package:fitness_uncensored/infrastructure/repository/models/progress_get_photo_fromDate_model.dart';
 import 'package:fitness_uncensored/infrastructure/repository/models/progress_photos_lis_model.dart';
 import 'package:fitness_uncensored/utils/get_it.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -23,6 +26,9 @@ class PhotoBlocBloc extends Bloc<PhotoBlocEvent, PhotoBlocState> {
       getPhotoList: _getPhotoList,
       getNextPhotoListPage: _getNextPhotoListPage,
       addPhoto: _addphoto,
+      detailViewPhotoRight: _detailViewPhotoRight,
+      detailViewPhotoLeft: _detailViewPhotoLeft,
+      getPhotoFromDate: _getPhotoFromDate,
     );
   }
 
@@ -70,12 +76,14 @@ class PhotoBlocBloc extends Bloc<PhotoBlocEvent, PhotoBlocState> {
         error: Left(l).value,
       );
     }, (photos) async* {
-      if (photos.results.isEmpty) {
-        _page -= 1;
-      }
+      // if (photos.next == null) {
+      //   _page -= 1;
+      // }
 
       final GetListPhotoModel data = GetListPhotoModel(
-          count: 0, results: state.getListPhotoModel!.results + photos.results);
+        count: photos.count,
+        results: state.getListPhotoModel!.results + photos.results,
+      );
 
       yield state.copyWith(
         isLoading: false,
@@ -99,7 +107,7 @@ class PhotoBlocBloc extends Bloc<PhotoBlocEvent, PhotoBlocState> {
       images: [event.front, event.side, event.back],
     );
 
-    final Either<String, Unit> result =
+    final Either<String, Map<dynamic, dynamic>> result =
         await getIt.get<PhotoApi>().createPhoto(
               front: images[0],
               side: images[1],
@@ -117,6 +125,87 @@ class PhotoBlocBloc extends Bloc<PhotoBlocEvent, PhotoBlocState> {
         isLoading: false,
         hasError: false,
         update: true,
+      );
+    });
+  }
+
+  Stream<PhotoBlocState> _detailViewPhotoRight(
+      _DetailViewPhotoRight event) async* {
+    yield state.copyWith(
+      isUpdateDetailPhotoRight: false,
+      currentPage: ProgressPages.detailSortPhoto,
+    );
+
+    final Either<String, DetailViewPhotoRightModel> result =
+        await getIt.get<PhotoApi>().detailViewPhotoRightModel(
+              direction: event.direction,
+              currentDate: event.currentDate,
+            );
+
+    yield* result.fold((error) async* {
+      yield state.copyWith(
+        isLoading: false,
+        hasError: true,
+        isUpdateDetailPhotoRight: false,
+        error: error,
+      );
+    }, (r) async* {
+      yield state.copyWith(
+          isLoading: false,
+          hasError: false,
+          isUpdateDetailPhotoRight: true,
+          detailViewPhotoRightModel: r);
+    });
+  }
+
+  Stream<PhotoBlocState> _detailViewPhotoLeft(
+      _DetailViewPhotoLeft event) async* {
+    yield state.copyWith(
+      isUpdateDetailPhotoLeft: false,
+      currentPage: ProgressPages.detailSortPhoto,
+    );
+
+    final Either<String, DetailViewPhotoLeftModel> result =
+        await getIt.get<PhotoApi>().detailViewPhotoLeftModel(
+              direction: event.direction,
+              currentDate: event.currentDate,
+            );
+
+    yield* result.fold((error) async* {
+      yield state.copyWith(
+        isLoading: false,
+        hasError: true,
+        isUpdateDetailPhotoLeft: false,
+        error: error,
+      );
+    }, (r) async* {
+      yield state.copyWith(
+          isLoading: false,
+          hasError: false,
+          isUpdateDetailPhotoLeft: true,
+          detailViewPhotoLeftModel: r);
+    });
+  }
+
+  Stream<PhotoBlocState> _getPhotoFromDate(_GetPhotoFromDate event) async* {
+    yield state.copyWith(
+      isLoading: true,
+    );
+
+    final Either<String, GetPhotoFromDateModel> result =
+        await getIt.get<PhotoApi>().getPhotoFromDate(date: event.date);
+
+    yield* result.fold((l) async* {
+      yield state.copyWith(
+        isLoading: false,
+        hasError: true,
+        error: l,
+      );
+    }, (r) async* {
+      yield state.copyWith(
+        isLoading: false,
+        hasError: false,
+        getPhotoFromDateModel: r,
       );
     });
   }

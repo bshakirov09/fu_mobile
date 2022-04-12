@@ -1,4 +1,3 @@
-
 import 'package:fitness_uncensored/application/progress/journalBloc/journal_bloc.dart';
 import 'package:fitness_uncensored/domain/progress/journal_pages.dart';
 import 'package:fitness_uncensored/presentation/components/app_loading_component.dart';
@@ -51,9 +50,9 @@ class _AddJournalPageState extends State<AddJournalPage> {
             ScaffoldMessenger.of(context).showSnackBar(
                 SnackBarComponent.successSnackBar(message: "added_note".tr()));
 
-            // context
-            //     .read<ProgressBloc>()
-            //     .add(const ProgressEvent.getJournalList());
+            context
+                .read<JournalBloc>()
+                .add(const JournalEvent.getJournalList());
 
             Navigator.pushAndRemoveUntil(
               context,

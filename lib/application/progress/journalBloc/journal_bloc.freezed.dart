@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'journal_bloc.dart';
@@ -19,6 +20,16 @@ class _$JournalEventTearOff {
 
   _GetJournalList getJournalList() {
     return const _GetJournalList();
+  }
+
+  _GetJournalFromDate getJournalFromDate({required String date}) {
+    return _GetJournalFromDate(
+      date: date,
+    );
+  }
+
+  _GetNextJournalList getNextJournalList() {
+    return const _GetNextJournalList();
   }
 
   _AddJorunal addJorunal(
@@ -58,6 +69,8 @@ mixin _$JournalEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getJournalList,
+    required TResult Function(String date) getJournalFromDate,
+    required TResult Function() getNextJournalList,
     required TResult Function(
             ProgressJournalDetailModel? progressJournalDetailModel)
         addJorunal,
@@ -72,6 +85,8 @@ mixin _$JournalEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getJournalList,
+    TResult Function(String date)? getJournalFromDate,
+    TResult Function()? getNextJournalList,
     TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
         addJorunal,
     TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
@@ -84,6 +99,8 @@ mixin _$JournalEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getJournalList,
+    TResult Function(String date)? getJournalFromDate,
+    TResult Function()? getNextJournalList,
     TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
         addJorunal,
     TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
@@ -97,6 +114,8 @@ mixin _$JournalEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetJournalList value) getJournalList,
+    required TResult Function(_GetJournalFromDate value) getJournalFromDate,
+    required TResult Function(_GetNextJournalList value) getNextJournalList,
     required TResult Function(_AddJorunal value) addJorunal,
     required TResult Function(_GetNextPage value) getNextPage,
     required TResult Function(_RefreshState value) refreshState,
@@ -107,6 +126,8 @@ mixin _$JournalEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetJournalList value)? getJournalList,
+    TResult Function(_GetJournalFromDate value)? getJournalFromDate,
+    TResult Function(_GetNextJournalList value)? getNextJournalList,
     TResult Function(_AddJorunal value)? addJorunal,
     TResult Function(_GetNextPage value)? getNextPage,
     TResult Function(_RefreshState value)? refreshState,
@@ -117,6 +138,8 @@ mixin _$JournalEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetJournalList value)? getJournalList,
+    TResult Function(_GetJournalFromDate value)? getJournalFromDate,
+    TResult Function(_GetNextJournalList value)? getNextJournalList,
     TResult Function(_AddJorunal value)? addJorunal,
     TResult Function(_GetNextPage value)? getNextPage,
     TResult Function(_RefreshState value)? refreshState,
@@ -185,6 +208,8 @@ class _$_GetJournalList extends _GetJournalList {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getJournalList,
+    required TResult Function(String date) getJournalFromDate,
+    required TResult Function() getNextJournalList,
     required TResult Function(
             ProgressJournalDetailModel? progressJournalDetailModel)
         addJorunal,
@@ -202,6 +227,8 @@ class _$_GetJournalList extends _GetJournalList {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getJournalList,
+    TResult Function(String date)? getJournalFromDate,
+    TResult Function()? getNextJournalList,
     TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
         addJorunal,
     TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
@@ -217,6 +244,8 @@ class _$_GetJournalList extends _GetJournalList {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getJournalList,
+    TResult Function(String date)? getJournalFromDate,
+    TResult Function()? getNextJournalList,
     TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
         addJorunal,
     TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
@@ -236,6 +265,8 @@ class _$_GetJournalList extends _GetJournalList {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetJournalList value) getJournalList,
+    required TResult Function(_GetJournalFromDate value) getJournalFromDate,
+    required TResult Function(_GetNextJournalList value) getNextJournalList,
     required TResult Function(_AddJorunal value) addJorunal,
     required TResult Function(_GetNextPage value) getNextPage,
     required TResult Function(_RefreshState value) refreshState,
@@ -249,6 +280,8 @@ class _$_GetJournalList extends _GetJournalList {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetJournalList value)? getJournalList,
+    TResult Function(_GetJournalFromDate value)? getJournalFromDate,
+    TResult Function(_GetNextJournalList value)? getNextJournalList,
     TResult Function(_AddJorunal value)? addJorunal,
     TResult Function(_GetNextPage value)? getNextPage,
     TResult Function(_RefreshState value)? refreshState,
@@ -262,6 +295,8 @@ class _$_GetJournalList extends _GetJournalList {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetJournalList value)? getJournalList,
+    TResult Function(_GetJournalFromDate value)? getJournalFromDate,
+    TResult Function(_GetNextJournalList value)? getNextJournalList,
     TResult Function(_AddJorunal value)? addJorunal,
     TResult Function(_GetNextPage value)? getNextPage,
     TResult Function(_RefreshState value)? refreshState,
@@ -279,6 +314,336 @@ class _$_GetJournalList extends _GetJournalList {
 abstract class _GetJournalList extends JournalEvent {
   const factory _GetJournalList() = _$_GetJournalList;
   const _GetJournalList._() : super._();
+}
+
+/// @nodoc
+abstract class _$GetJournalFromDateCopyWith<$Res> {
+  factory _$GetJournalFromDateCopyWith(
+          _GetJournalFromDate value, $Res Function(_GetJournalFromDate) then) =
+      __$GetJournalFromDateCopyWithImpl<$Res>;
+  $Res call({String date});
+}
+
+/// @nodoc
+class __$GetJournalFromDateCopyWithImpl<$Res>
+    extends _$JournalEventCopyWithImpl<$Res>
+    implements _$GetJournalFromDateCopyWith<$Res> {
+  __$GetJournalFromDateCopyWithImpl(
+      _GetJournalFromDate _value, $Res Function(_GetJournalFromDate) _then)
+      : super(_value, (v) => _then(v as _GetJournalFromDate));
+
+  @override
+  _GetJournalFromDate get _value => super._value as _GetJournalFromDate;
+
+  @override
+  $Res call({
+    Object? date = freezed,
+  }) {
+    return _then(_GetJournalFromDate(
+      date: date == freezed
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_GetJournalFromDate extends _GetJournalFromDate {
+  const _$_GetJournalFromDate({required this.date}) : super._();
+
+  @override
+  final String date;
+
+  @override
+  String toString() {
+    return 'JournalEvent.getJournalFromDate(date: $date)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _GetJournalFromDate &&
+            const DeepCollectionEquality().equals(other.date, date));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(date));
+
+  @JsonKey(ignore: true)
+  @override
+  _$GetJournalFromDateCopyWith<_GetJournalFromDate> get copyWith =>
+      __$GetJournalFromDateCopyWithImpl<_GetJournalFromDate>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getJournalList,
+    required TResult Function(String date) getJournalFromDate,
+    required TResult Function() getNextJournalList,
+    required TResult Function(
+            ProgressJournalDetailModel? progressJournalDetailModel)
+        addJorunal,
+    required TResult Function(
+            ProgressJournalDetailModel? progressJournalDetailModel)
+        getNextPage,
+    required TResult Function() refreshState,
+    required TResult Function() getPreviousPage,
+    required TResult Function(int id) getDetailJournal,
+  }) {
+    return getJournalFromDate(date);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? getJournalList,
+    TResult Function(String date)? getJournalFromDate,
+    TResult Function()? getNextJournalList,
+    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
+        addJorunal,
+    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
+        getNextPage,
+    TResult Function()? refreshState,
+    TResult Function()? getPreviousPage,
+    TResult Function(int id)? getDetailJournal,
+  }) {
+    return getJournalFromDate?.call(date);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getJournalList,
+    TResult Function(String date)? getJournalFromDate,
+    TResult Function()? getNextJournalList,
+    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
+        addJorunal,
+    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
+        getNextPage,
+    TResult Function()? refreshState,
+    TResult Function()? getPreviousPage,
+    TResult Function(int id)? getDetailJournal,
+    required TResult orElse(),
+  }) {
+    if (getJournalFromDate != null) {
+      return getJournalFromDate(date);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetJournalList value) getJournalList,
+    required TResult Function(_GetJournalFromDate value) getJournalFromDate,
+    required TResult Function(_GetNextJournalList value) getNextJournalList,
+    required TResult Function(_AddJorunal value) addJorunal,
+    required TResult Function(_GetNextPage value) getNextPage,
+    required TResult Function(_RefreshState value) refreshState,
+    required TResult Function(_GetPreviousPage value) getPreviousPage,
+    required TResult Function(_GetDetailJournal value) getDetailJournal,
+  }) {
+    return getJournalFromDate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_GetJournalList value)? getJournalList,
+    TResult Function(_GetJournalFromDate value)? getJournalFromDate,
+    TResult Function(_GetNextJournalList value)? getNextJournalList,
+    TResult Function(_AddJorunal value)? addJorunal,
+    TResult Function(_GetNextPage value)? getNextPage,
+    TResult Function(_RefreshState value)? refreshState,
+    TResult Function(_GetPreviousPage value)? getPreviousPage,
+    TResult Function(_GetDetailJournal value)? getDetailJournal,
+  }) {
+    return getJournalFromDate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetJournalList value)? getJournalList,
+    TResult Function(_GetJournalFromDate value)? getJournalFromDate,
+    TResult Function(_GetNextJournalList value)? getNextJournalList,
+    TResult Function(_AddJorunal value)? addJorunal,
+    TResult Function(_GetNextPage value)? getNextPage,
+    TResult Function(_RefreshState value)? refreshState,
+    TResult Function(_GetPreviousPage value)? getPreviousPage,
+    TResult Function(_GetDetailJournal value)? getDetailJournal,
+    required TResult orElse(),
+  }) {
+    if (getJournalFromDate != null) {
+      return getJournalFromDate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetJournalFromDate extends JournalEvent {
+  const factory _GetJournalFromDate({required String date}) =
+      _$_GetJournalFromDate;
+  const _GetJournalFromDate._() : super._();
+
+  String get date;
+  @JsonKey(ignore: true)
+  _$GetJournalFromDateCopyWith<_GetJournalFromDate> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$GetNextJournalListCopyWith<$Res> {
+  factory _$GetNextJournalListCopyWith(
+          _GetNextJournalList value, $Res Function(_GetNextJournalList) then) =
+      __$GetNextJournalListCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$GetNextJournalListCopyWithImpl<$Res>
+    extends _$JournalEventCopyWithImpl<$Res>
+    implements _$GetNextJournalListCopyWith<$Res> {
+  __$GetNextJournalListCopyWithImpl(
+      _GetNextJournalList _value, $Res Function(_GetNextJournalList) _then)
+      : super(_value, (v) => _then(v as _GetNextJournalList));
+
+  @override
+  _GetNextJournalList get _value => super._value as _GetNextJournalList;
+}
+
+/// @nodoc
+
+class _$_GetNextJournalList extends _GetNextJournalList {
+  const _$_GetNextJournalList() : super._();
+
+  @override
+  String toString() {
+    return 'JournalEvent.getNextJournalList()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _GetNextJournalList);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getJournalList,
+    required TResult Function(String date) getJournalFromDate,
+    required TResult Function() getNextJournalList,
+    required TResult Function(
+            ProgressJournalDetailModel? progressJournalDetailModel)
+        addJorunal,
+    required TResult Function(
+            ProgressJournalDetailModel? progressJournalDetailModel)
+        getNextPage,
+    required TResult Function() refreshState,
+    required TResult Function() getPreviousPage,
+    required TResult Function(int id) getDetailJournal,
+  }) {
+    return getNextJournalList();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? getJournalList,
+    TResult Function(String date)? getJournalFromDate,
+    TResult Function()? getNextJournalList,
+    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
+        addJorunal,
+    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
+        getNextPage,
+    TResult Function()? refreshState,
+    TResult Function()? getPreviousPage,
+    TResult Function(int id)? getDetailJournal,
+  }) {
+    return getNextJournalList?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getJournalList,
+    TResult Function(String date)? getJournalFromDate,
+    TResult Function()? getNextJournalList,
+    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
+        addJorunal,
+    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
+        getNextPage,
+    TResult Function()? refreshState,
+    TResult Function()? getPreviousPage,
+    TResult Function(int id)? getDetailJournal,
+    required TResult orElse(),
+  }) {
+    if (getNextJournalList != null) {
+      return getNextJournalList();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetJournalList value) getJournalList,
+    required TResult Function(_GetJournalFromDate value) getJournalFromDate,
+    required TResult Function(_GetNextJournalList value) getNextJournalList,
+    required TResult Function(_AddJorunal value) addJorunal,
+    required TResult Function(_GetNextPage value) getNextPage,
+    required TResult Function(_RefreshState value) refreshState,
+    required TResult Function(_GetPreviousPage value) getPreviousPage,
+    required TResult Function(_GetDetailJournal value) getDetailJournal,
+  }) {
+    return getNextJournalList(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_GetJournalList value)? getJournalList,
+    TResult Function(_GetJournalFromDate value)? getJournalFromDate,
+    TResult Function(_GetNextJournalList value)? getNextJournalList,
+    TResult Function(_AddJorunal value)? addJorunal,
+    TResult Function(_GetNextPage value)? getNextPage,
+    TResult Function(_RefreshState value)? refreshState,
+    TResult Function(_GetPreviousPage value)? getPreviousPage,
+    TResult Function(_GetDetailJournal value)? getDetailJournal,
+  }) {
+    return getNextJournalList?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetJournalList value)? getJournalList,
+    TResult Function(_GetJournalFromDate value)? getJournalFromDate,
+    TResult Function(_GetNextJournalList value)? getNextJournalList,
+    TResult Function(_AddJorunal value)? addJorunal,
+    TResult Function(_GetNextPage value)? getNextPage,
+    TResult Function(_RefreshState value)? refreshState,
+    TResult Function(_GetPreviousPage value)? getPreviousPage,
+    TResult Function(_GetDetailJournal value)? getDetailJournal,
+    required TResult orElse(),
+  }) {
+    if (getNextJournalList != null) {
+      return getNextJournalList(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetNextJournalList extends JournalEvent {
+  const factory _GetNextJournalList() = _$_GetNextJournalList;
+  const _GetNextJournalList._() : super._();
 }
 
 /// @nodoc
@@ -347,6 +712,8 @@ class _$_AddJorunal extends _AddJorunal {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getJournalList,
+    required TResult Function(String date) getJournalFromDate,
+    required TResult Function() getNextJournalList,
     required TResult Function(
             ProgressJournalDetailModel? progressJournalDetailModel)
         addJorunal,
@@ -364,6 +731,8 @@ class _$_AddJorunal extends _AddJorunal {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getJournalList,
+    TResult Function(String date)? getJournalFromDate,
+    TResult Function()? getNextJournalList,
     TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
         addJorunal,
     TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
@@ -379,6 +748,8 @@ class _$_AddJorunal extends _AddJorunal {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getJournalList,
+    TResult Function(String date)? getJournalFromDate,
+    TResult Function()? getNextJournalList,
     TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
         addJorunal,
     TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
@@ -398,6 +769,8 @@ class _$_AddJorunal extends _AddJorunal {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetJournalList value) getJournalList,
+    required TResult Function(_GetJournalFromDate value) getJournalFromDate,
+    required TResult Function(_GetNextJournalList value) getNextJournalList,
     required TResult Function(_AddJorunal value) addJorunal,
     required TResult Function(_GetNextPage value) getNextPage,
     required TResult Function(_RefreshState value) refreshState,
@@ -411,6 +784,8 @@ class _$_AddJorunal extends _AddJorunal {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetJournalList value)? getJournalList,
+    TResult Function(_GetJournalFromDate value)? getJournalFromDate,
+    TResult Function(_GetNextJournalList value)? getNextJournalList,
     TResult Function(_AddJorunal value)? addJorunal,
     TResult Function(_GetNextPage value)? getNextPage,
     TResult Function(_RefreshState value)? refreshState,
@@ -424,6 +799,8 @@ class _$_AddJorunal extends _AddJorunal {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetJournalList value)? getJournalList,
+    TResult Function(_GetJournalFromDate value)? getJournalFromDate,
+    TResult Function(_GetNextJournalList value)? getNextJournalList,
     TResult Function(_AddJorunal value)? addJorunal,
     TResult Function(_GetNextPage value)? getNextPage,
     TResult Function(_RefreshState value)? refreshState,
@@ -515,6 +892,8 @@ class _$_GetNextPage extends _GetNextPage {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getJournalList,
+    required TResult Function(String date) getJournalFromDate,
+    required TResult Function() getNextJournalList,
     required TResult Function(
             ProgressJournalDetailModel? progressJournalDetailModel)
         addJorunal,
@@ -532,6 +911,8 @@ class _$_GetNextPage extends _GetNextPage {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getJournalList,
+    TResult Function(String date)? getJournalFromDate,
+    TResult Function()? getNextJournalList,
     TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
         addJorunal,
     TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
@@ -547,6 +928,8 @@ class _$_GetNextPage extends _GetNextPage {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getJournalList,
+    TResult Function(String date)? getJournalFromDate,
+    TResult Function()? getNextJournalList,
     TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
         addJorunal,
     TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
@@ -566,6 +949,8 @@ class _$_GetNextPage extends _GetNextPage {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetJournalList value) getJournalList,
+    required TResult Function(_GetJournalFromDate value) getJournalFromDate,
+    required TResult Function(_GetNextJournalList value) getNextJournalList,
     required TResult Function(_AddJorunal value) addJorunal,
     required TResult Function(_GetNextPage value) getNextPage,
     required TResult Function(_RefreshState value) refreshState,
@@ -579,6 +964,8 @@ class _$_GetNextPage extends _GetNextPage {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetJournalList value)? getJournalList,
+    TResult Function(_GetJournalFromDate value)? getJournalFromDate,
+    TResult Function(_GetNextJournalList value)? getNextJournalList,
     TResult Function(_AddJorunal value)? addJorunal,
     TResult Function(_GetNextPage value)? getNextPage,
     TResult Function(_RefreshState value)? refreshState,
@@ -592,6 +979,8 @@ class _$_GetNextPage extends _GetNextPage {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetJournalList value)? getJournalList,
+    TResult Function(_GetJournalFromDate value)? getJournalFromDate,
+    TResult Function(_GetNextJournalList value)? getNextJournalList,
     TResult Function(_AddJorunal value)? addJorunal,
     TResult Function(_GetNextPage value)? getNextPage,
     TResult Function(_RefreshState value)? refreshState,
@@ -659,6 +1048,8 @@ class _$_RefreshState extends _RefreshState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getJournalList,
+    required TResult Function(String date) getJournalFromDate,
+    required TResult Function() getNextJournalList,
     required TResult Function(
             ProgressJournalDetailModel? progressJournalDetailModel)
         addJorunal,
@@ -676,6 +1067,8 @@ class _$_RefreshState extends _RefreshState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getJournalList,
+    TResult Function(String date)? getJournalFromDate,
+    TResult Function()? getNextJournalList,
     TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
         addJorunal,
     TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
@@ -691,6 +1084,8 @@ class _$_RefreshState extends _RefreshState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getJournalList,
+    TResult Function(String date)? getJournalFromDate,
+    TResult Function()? getNextJournalList,
     TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
         addJorunal,
     TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
@@ -710,6 +1105,8 @@ class _$_RefreshState extends _RefreshState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetJournalList value) getJournalList,
+    required TResult Function(_GetJournalFromDate value) getJournalFromDate,
+    required TResult Function(_GetNextJournalList value) getNextJournalList,
     required TResult Function(_AddJorunal value) addJorunal,
     required TResult Function(_GetNextPage value) getNextPage,
     required TResult Function(_RefreshState value) refreshState,
@@ -723,6 +1120,8 @@ class _$_RefreshState extends _RefreshState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetJournalList value)? getJournalList,
+    TResult Function(_GetJournalFromDate value)? getJournalFromDate,
+    TResult Function(_GetNextJournalList value)? getNextJournalList,
     TResult Function(_AddJorunal value)? addJorunal,
     TResult Function(_GetNextPage value)? getNextPage,
     TResult Function(_RefreshState value)? refreshState,
@@ -736,6 +1135,8 @@ class _$_RefreshState extends _RefreshState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetJournalList value)? getJournalList,
+    TResult Function(_GetJournalFromDate value)? getJournalFromDate,
+    TResult Function(_GetNextJournalList value)? getNextJournalList,
     TResult Function(_AddJorunal value)? addJorunal,
     TResult Function(_GetNextPage value)? getNextPage,
     TResult Function(_RefreshState value)? refreshState,
@@ -797,6 +1198,8 @@ class _$_GetPreviousPage extends _GetPreviousPage {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getJournalList,
+    required TResult Function(String date) getJournalFromDate,
+    required TResult Function() getNextJournalList,
     required TResult Function(
             ProgressJournalDetailModel? progressJournalDetailModel)
         addJorunal,
@@ -814,6 +1217,8 @@ class _$_GetPreviousPage extends _GetPreviousPage {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getJournalList,
+    TResult Function(String date)? getJournalFromDate,
+    TResult Function()? getNextJournalList,
     TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
         addJorunal,
     TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
@@ -829,6 +1234,8 @@ class _$_GetPreviousPage extends _GetPreviousPage {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getJournalList,
+    TResult Function(String date)? getJournalFromDate,
+    TResult Function()? getNextJournalList,
     TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
         addJorunal,
     TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
@@ -848,6 +1255,8 @@ class _$_GetPreviousPage extends _GetPreviousPage {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetJournalList value) getJournalList,
+    required TResult Function(_GetJournalFromDate value) getJournalFromDate,
+    required TResult Function(_GetNextJournalList value) getNextJournalList,
     required TResult Function(_AddJorunal value) addJorunal,
     required TResult Function(_GetNextPage value) getNextPage,
     required TResult Function(_RefreshState value) refreshState,
@@ -861,6 +1270,8 @@ class _$_GetPreviousPage extends _GetPreviousPage {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetJournalList value)? getJournalList,
+    TResult Function(_GetJournalFromDate value)? getJournalFromDate,
+    TResult Function(_GetNextJournalList value)? getNextJournalList,
     TResult Function(_AddJorunal value)? addJorunal,
     TResult Function(_GetNextPage value)? getNextPage,
     TResult Function(_RefreshState value)? refreshState,
@@ -874,6 +1285,8 @@ class _$_GetPreviousPage extends _GetPreviousPage {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetJournalList value)? getJournalList,
+    TResult Function(_GetJournalFromDate value)? getJournalFromDate,
+    TResult Function(_GetNextJournalList value)? getNextJournalList,
     TResult Function(_AddJorunal value)? addJorunal,
     TResult Function(_GetNextPage value)? getNextPage,
     TResult Function(_RefreshState value)? refreshState,
@@ -959,6 +1372,8 @@ class _$_GetDetailJournal extends _GetDetailJournal {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getJournalList,
+    required TResult Function(String date) getJournalFromDate,
+    required TResult Function() getNextJournalList,
     required TResult Function(
             ProgressJournalDetailModel? progressJournalDetailModel)
         addJorunal,
@@ -976,6 +1391,8 @@ class _$_GetDetailJournal extends _GetDetailJournal {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getJournalList,
+    TResult Function(String date)? getJournalFromDate,
+    TResult Function()? getNextJournalList,
     TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
         addJorunal,
     TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
@@ -991,6 +1408,8 @@ class _$_GetDetailJournal extends _GetDetailJournal {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getJournalList,
+    TResult Function(String date)? getJournalFromDate,
+    TResult Function()? getNextJournalList,
     TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
         addJorunal,
     TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
@@ -1010,6 +1429,8 @@ class _$_GetDetailJournal extends _GetDetailJournal {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetJournalList value) getJournalList,
+    required TResult Function(_GetJournalFromDate value) getJournalFromDate,
+    required TResult Function(_GetNextJournalList value) getNextJournalList,
     required TResult Function(_AddJorunal value) addJorunal,
     required TResult Function(_GetNextPage value) getNextPage,
     required TResult Function(_RefreshState value) refreshState,
@@ -1023,6 +1444,8 @@ class _$_GetDetailJournal extends _GetDetailJournal {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetJournalList value)? getJournalList,
+    TResult Function(_GetJournalFromDate value)? getJournalFromDate,
+    TResult Function(_GetNextJournalList value)? getNextJournalList,
     TResult Function(_AddJorunal value)? addJorunal,
     TResult Function(_GetNextPage value)? getNextPage,
     TResult Function(_RefreshState value)? refreshState,
@@ -1036,6 +1459,8 @@ class _$_GetDetailJournal extends _GetDetailJournal {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetJournalList value)? getJournalList,
+    TResult Function(_GetJournalFromDate value)? getJournalFromDate,
+    TResult Function(_GetNextJournalList value)? getNextJournalList,
     TResult Function(_AddJorunal value)? addJorunal,
     TResult Function(_GetNextPage value)? getNextPage,
     TResult Function(_RefreshState value)? refreshState,
@@ -1069,7 +1494,9 @@ class _$JournalStateTearOff {
       bool hasError = false,
       String error = '',
       bool update = false,
+      bool updateFromDate = false,
       GetJournalListModel? getJournalList = null,
+      GetJournalFromDateModel? getJournalFromDateModel = null,
       Widget currentPageJournal = const AddJournalOnePage(),
       JournalPages currentPageJournalEnum = JournalPages.addOneJournal,
       int progressIndicatorIndex = 0,
@@ -1080,7 +1507,9 @@ class _$JournalStateTearOff {
       hasError: hasError,
       error: error,
       update: update,
+      updateFromDate: updateFromDate,
       getJournalList: getJournalList,
+      getJournalFromDateModel: getJournalFromDateModel,
       currentPageJournal: currentPageJournal,
       currentPageJournalEnum: currentPageJournalEnum,
       progressIndicatorIndex: progressIndicatorIndex,
@@ -1099,7 +1528,10 @@ mixin _$JournalState {
   bool get hasError => throw _privateConstructorUsedError;
   String get error => throw _privateConstructorUsedError;
   bool get update => throw _privateConstructorUsedError;
+  bool get updateFromDate => throw _privateConstructorUsedError;
   GetJournalListModel? get getJournalList => throw _privateConstructorUsedError;
+  GetJournalFromDateModel? get getJournalFromDateModel =>
+      throw _privateConstructorUsedError;
   Widget get currentPageJournal => throw _privateConstructorUsedError;
   JournalPages get currentPageJournalEnum => throw _privateConstructorUsedError;
   int get progressIndicatorIndex => throw _privateConstructorUsedError;
@@ -1122,7 +1554,9 @@ abstract class $JournalStateCopyWith<$Res> {
       bool hasError,
       String error,
       bool update,
+      bool updateFromDate,
       GetJournalListModel? getJournalList,
+      GetJournalFromDateModel? getJournalFromDateModel,
       Widget currentPageJournal,
       JournalPages currentPageJournalEnum,
       int progressIndicatorIndex,
@@ -1144,7 +1578,9 @@ class _$JournalStateCopyWithImpl<$Res> implements $JournalStateCopyWith<$Res> {
     Object? hasError = freezed,
     Object? error = freezed,
     Object? update = freezed,
+    Object? updateFromDate = freezed,
     Object? getJournalList = freezed,
+    Object? getJournalFromDateModel = freezed,
     Object? currentPageJournal = freezed,
     Object? currentPageJournalEnum = freezed,
     Object? progressIndicatorIndex = freezed,
@@ -1168,10 +1604,18 @@ class _$JournalStateCopyWithImpl<$Res> implements $JournalStateCopyWith<$Res> {
           ? _value.update
           : update // ignore: cast_nullable_to_non_nullable
               as bool,
+      updateFromDate: updateFromDate == freezed
+          ? _value.updateFromDate
+          : updateFromDate // ignore: cast_nullable_to_non_nullable
+              as bool,
       getJournalList: getJournalList == freezed
           ? _value.getJournalList
           : getJournalList // ignore: cast_nullable_to_non_nullable
               as GetJournalListModel?,
+      getJournalFromDateModel: getJournalFromDateModel == freezed
+          ? _value.getJournalFromDateModel
+          : getJournalFromDateModel // ignore: cast_nullable_to_non_nullable
+              as GetJournalFromDateModel?,
       currentPageJournal: currentPageJournal == freezed
           ? _value.currentPageJournal
           : currentPageJournal // ignore: cast_nullable_to_non_nullable
@@ -1208,7 +1652,9 @@ abstract class _$JournalStateCopyWith<$Res>
       bool hasError,
       String error,
       bool update,
+      bool updateFromDate,
       GetJournalListModel? getJournalList,
+      GetJournalFromDateModel? getJournalFromDateModel,
       Widget currentPageJournal,
       JournalPages currentPageJournalEnum,
       int progressIndicatorIndex,
@@ -1232,7 +1678,9 @@ class __$JournalStateCopyWithImpl<$Res> extends _$JournalStateCopyWithImpl<$Res>
     Object? hasError = freezed,
     Object? error = freezed,
     Object? update = freezed,
+    Object? updateFromDate = freezed,
     Object? getJournalList = freezed,
+    Object? getJournalFromDateModel = freezed,
     Object? currentPageJournal = freezed,
     Object? currentPageJournalEnum = freezed,
     Object? progressIndicatorIndex = freezed,
@@ -1256,10 +1704,18 @@ class __$JournalStateCopyWithImpl<$Res> extends _$JournalStateCopyWithImpl<$Res>
           ? _value.update
           : update // ignore: cast_nullable_to_non_nullable
               as bool,
+      updateFromDate: updateFromDate == freezed
+          ? _value.updateFromDate
+          : updateFromDate // ignore: cast_nullable_to_non_nullable
+              as bool,
       getJournalList: getJournalList == freezed
           ? _value.getJournalList
           : getJournalList // ignore: cast_nullable_to_non_nullable
               as GetJournalListModel?,
+      getJournalFromDateModel: getJournalFromDateModel == freezed
+          ? _value.getJournalFromDateModel
+          : getJournalFromDateModel // ignore: cast_nullable_to_non_nullable
+              as GetJournalFromDateModel?,
       currentPageJournal: currentPageJournal == freezed
           ? _value.currentPageJournal
           : currentPageJournal // ignore: cast_nullable_to_non_nullable
@@ -1292,7 +1748,9 @@ class _$_JournalState extends _JournalState {
       this.hasError = false,
       this.error = '',
       this.update = false,
+      this.updateFromDate = false,
       this.getJournalList = null,
+      this.getJournalFromDateModel = null,
       this.currentPageJournal = const AddJournalOnePage(),
       this.currentPageJournalEnum = JournalPages.addOneJournal,
       this.progressIndicatorIndex = 0,
@@ -1314,7 +1772,13 @@ class _$_JournalState extends _JournalState {
   final bool update;
   @JsonKey()
   @override
+  final bool updateFromDate;
+  @JsonKey()
+  @override
   final GetJournalListModel? getJournalList;
+  @JsonKey()
+  @override
+  final GetJournalFromDateModel? getJournalFromDateModel;
   @JsonKey()
   @override
   final Widget currentPageJournal;
@@ -1333,7 +1797,7 @@ class _$_JournalState extends _JournalState {
 
   @override
   String toString() {
-    return 'JournalState(isLoading: $isLoading, hasError: $hasError, error: $error, update: $update, getJournalList: $getJournalList, currentPageJournal: $currentPageJournal, currentPageJournalEnum: $currentPageJournalEnum, progressIndicatorIndex: $progressIndicatorIndex, progressJournalDetailModel: $progressJournalDetailModel, currentPage: $currentPage)';
+    return 'JournalState(isLoading: $isLoading, hasError: $hasError, error: $error, update: $update, updateFromDate: $updateFromDate, getJournalList: $getJournalList, getJournalFromDateModel: $getJournalFromDateModel, currentPageJournal: $currentPageJournal, currentPageJournalEnum: $currentPageJournalEnum, progressIndicatorIndex: $progressIndicatorIndex, progressJournalDetailModel: $progressJournalDetailModel, currentPage: $currentPage)';
   }
 
   @override
@@ -1346,7 +1810,11 @@ class _$_JournalState extends _JournalState {
             const DeepCollectionEquality().equals(other.error, error) &&
             const DeepCollectionEquality().equals(other.update, update) &&
             const DeepCollectionEquality()
+                .equals(other.updateFromDate, updateFromDate) &&
+            const DeepCollectionEquality()
                 .equals(other.getJournalList, getJournalList) &&
+            const DeepCollectionEquality().equals(
+                other.getJournalFromDateModel, getJournalFromDateModel) &&
             const DeepCollectionEquality()
                 .equals(other.currentPageJournal, currentPageJournal) &&
             const DeepCollectionEquality()
@@ -1366,7 +1834,9 @@ class _$_JournalState extends _JournalState {
       const DeepCollectionEquality().hash(hasError),
       const DeepCollectionEquality().hash(error),
       const DeepCollectionEquality().hash(update),
+      const DeepCollectionEquality().hash(updateFromDate),
       const DeepCollectionEquality().hash(getJournalList),
+      const DeepCollectionEquality().hash(getJournalFromDateModel),
       const DeepCollectionEquality().hash(currentPageJournal),
       const DeepCollectionEquality().hash(currentPageJournalEnum),
       const DeepCollectionEquality().hash(progressIndicatorIndex),
@@ -1385,7 +1855,9 @@ abstract class _JournalState extends JournalState {
       bool hasError,
       String error,
       bool update,
+      bool updateFromDate,
       GetJournalListModel? getJournalList,
+      GetJournalFromDateModel? getJournalFromDateModel,
       Widget currentPageJournal,
       JournalPages currentPageJournalEnum,
       int progressIndicatorIndex,
@@ -1402,7 +1874,11 @@ abstract class _JournalState extends JournalState {
   @override
   bool get update;
   @override
+  bool get updateFromDate;
+  @override
   GetJournalListModel? get getJournalList;
+  @override
+  GetJournalFromDateModel? get getJournalFromDateModel;
   @override
   Widget get currentPageJournal;
   @override

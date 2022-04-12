@@ -1,5 +1,5 @@
-
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:fitness_uncensored/presentation/styles/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -30,18 +30,28 @@ class _HeightSettingsPageState extends State<HeightSettingsPage> {
       child: Scaffold(
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(56.h),
-          child: AppBarComponent(
-            text: "height".tr(),
+          child: AppBar(
+            foregroundColor: AppColors.primaryColor,
+            title: Text(
+              "height".tr(),
+              style: AdaptiveTheme.of(context)
+                  .theme
+                  .textTheme
+                  .headline4!
+                  .copyWith(fontWeight: FontWeight.w700),
+            ),
+            centerTitle: true,
+            backgroundColor: AppColors.white,
+            elevation: 4,
+            shadowColor: AppColors.white.withOpacity(0.4),
           ),
         ),
         body: BlocConsumer<ProfileBloc, ProfileState>(
           listener: (context, state) {
             if (state.isUpdatedUserInfo) {
               ScaffoldMessenger.of(context).showSnackBar(
-                SnackBarComponent.successSnackBar(
-                  message: "your_info_updated".tr()
-                )
-              );
+                  SnackBarComponent.successSnackBar(
+                      message: "your_info_updated".tr()));
 
               context.read<ProfileBloc>().add(const ProfileEvent.getProfile());
               Navigator.pop(context);
@@ -50,15 +60,13 @@ class _HeightSettingsPageState extends State<HeightSettingsPage> {
           builder: (context, state) {
             if (state.isLoading) {
               return const AppLoadingComponent();
-            }
-            else if (state.hasError) {
+            } else if (state.hasError) {
               return Center(
                 child: ErrorComponent(
                   errorMessage: state.error,
                 ),
               );
-            }
-            else {
+            } else {
               return Padding(
                 padding: EdgeInsets.only(left: 30.w, right: 30.w, top: 22.h),
                 child: Column(
@@ -72,14 +80,15 @@ class _HeightSettingsPageState extends State<HeightSettingsPage> {
                         children: <TextSpan>[
                           TextSpan(
                             text: 'height_'.tr(),
-                            style: AdaptiveTheme.of(context).theme.textTheme.headline2,
+                            style: AdaptiveTheme.of(context)
+                                .theme
+                                .textTheme
+                                .headline2,
                           ),
                         ],
                       ),
                     ),
-
                     SizedBox(height: 24.h),
-
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -90,9 +99,7 @@ class _HeightSettingsPageState extends State<HeightSettingsPage> {
                             onChanged: (value) => _heightFeet = value,
                           ),
                         ),
-
                         SizedBox(width: 11.w),
-
                         Expanded(
                           child: TextFieldComponent(
                             inputType: TextInputType.number,
@@ -112,11 +119,12 @@ class _HeightSettingsPageState extends State<HeightSettingsPage> {
           margin: EdgeInsets.only(bottom: 60.h, right: 30.w, left: 30.w),
           text: 'save'.tr(),
           onPressed: () {
-            context.read<ProfileBloc>().add(ProfileEvent.updateUserInfo(
-              userInfo:  {
-                "height": double.parse(_heightFeet) * 12 + double.parse(_heightInch),
-              }
-            ));
+            context
+                .read<ProfileBloc>()
+                .add(ProfileEvent.updateUserInfo(userInfo: {
+                  "height": double.parse(_heightFeet) * 12 +
+                      double.parse(_heightInch),
+                }));
           },
         ),
       ),

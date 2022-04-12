@@ -6,6 +6,10 @@ class PhotoBlocEvent with _$PhotoBlocEvent {
 
   const factory PhotoBlocEvent.getPhotoList() = _GetPhotoList;
 
+  const factory PhotoBlocEvent.getPhotoFromDate({
+    required String date,
+  }) = _GetPhotoFromDate;
+
   const factory PhotoBlocEvent.getNextPhotoListPage() = _GetNextPhotoListPage;
 
   const factory PhotoBlocEvent.addPhoto({
@@ -13,4 +17,14 @@ class PhotoBlocEvent with _$PhotoBlocEvent {
     required String side,
     required String back,
   }) = _AddPhoto;
+
+  const factory PhotoBlocEvent.detailViewPhotoRight({
+    required String direction,
+    required String currentDate,
+  }) = _DetailViewPhotoRight;
+
+  const factory PhotoBlocEvent.detailViewPhotoLeft({
+    required String direction,
+    required String currentDate,
+  }) = _DetailViewPhotoLeft;
 }

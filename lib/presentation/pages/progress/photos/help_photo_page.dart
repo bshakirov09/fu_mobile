@@ -1,9 +1,13 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
-import 'package:fitness_uncensored/presentation/components/app_bar_component.dart';
 import 'package:fitness_uncensored/presentation/components/three_type_text_component.dart';
 import 'package:fitness_uncensored/presentation/pages/progress/components/expansion_tile_component.dart';
+import 'package:fitness_uncensored/presentation/styles/app_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
+
+import '../../../routes/app_routes.dart';
+import '../../../styles/app_colors.dart';
 
 class HelpPhotoPage extends StatelessWidget {
   final List<String> _title = [
@@ -41,7 +45,12 @@ class HelpPhotoPage extends StatelessWidget {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(56.h),
-        child: const AppBarComponent(),
+        child: AppBar(
+          foregroundColor: AppColors.primaryColor,
+          backgroundColor: AppColors.white,
+          elevation: 4,
+          shadowColor: AppColors.white.withOpacity(0.4),
+        ),
       ),
       body: Padding(
         padding: EdgeInsets.only(left: 30.w, right: 30.w, top: 16.h),

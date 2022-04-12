@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../styles/app_colors.dart';
+
 class TermsAndConditionsPage extends StatelessWidget {
   const TermsAndConditionsPage({Key? key}) : super(key: key);
 
@@ -12,8 +14,20 @@ class TermsAndConditionsPage extends StatelessWidget {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(56.h),
-        child: AppBarComponent(
-          text: "terms_and_conditions".tr(),
+        child: AppBar(
+          foregroundColor: AppColors.primaryColor,
+          title: Text(
+            "terms_and_conditions".tr(),
+            style: AdaptiveTheme.of(context)
+                .theme
+                .textTheme
+                .headline4!
+                .copyWith(fontWeight: FontWeight.w700),
+          ),
+          centerTitle: true,
+          backgroundColor: AppColors.white,
+          elevation: 4,
+          shadowColor: AppColors.white.withOpacity(0.4),
         ),
       ),
       body: SingleChildScrollView(

@@ -26,7 +26,6 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
-
   String _email = '', _password = '';
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -41,15 +40,11 @@ class _SignInPageState extends State<SignInPage> {
           listener: (context, state) {
             if (state.isLoginSuccess) {
               Navigator.pushAndRemoveUntil(
-                context,
-                AppRoutes.main()
-                , (route) => false
-              );
-            }
-            else if (state.hasSocialAuthError) {
+                  context, AppRoutes.main(), (route) => false);
+            } else if (state.hasSocialAuthError) {
               ScaffoldMessenger.of(context).showSnackBar(
-                SnackBarComponent.errorSnackBar(message: state.socialAuthError)
-              );
+                  SnackBarComponent.errorSnackBar(
+                      message: state.socialAuthError));
             }
           },
           builder: (context, state) {
@@ -57,8 +52,7 @@ class _SignInPageState extends State<SignInPage> {
               return const Material(
                 child: AppLoadingComponent(),
               );
-            }
-            else {
+            } else {
               return Scaffold(
                 body: SingleChildScrollView(
                   padding: EdgeInsets.symmetric(horizontal: 30.w),
@@ -66,60 +60,59 @@ class _SignInPageState extends State<SignInPage> {
                     key: _formKey,
                     child: Column(
                       children: [
-
                         SizedBox(height: 90.h),
-
                         Image.asset(
                           AppIcons.appLogo,
                           width: 55.h,
                           height: 55.h,
                         ),
-
                         SizedBox(height: 28.h),
-
                         Text(
                           'welcome_to'.tr(),
-                          style: AdaptiveTheme.of(context).theme.textTheme.caption!.copyWith(
-                            color: AppColors.primaryColor
-                          ),
+                          style: AdaptiveTheme.of(context)
+                              .theme
+                              .textTheme
+                              .caption!
+                              .copyWith(color: AppColors.primaryColor),
                         ),
-
                         Text(
                           'fitness_uncensored'.tr(),
-                          style: AdaptiveTheme.of(context).theme.textTheme.headline3,
+                          style: AdaptiveTheme.of(context)
+                              .theme
+                              .textTheme
+                              .headline3,
                         ),
-
                         SizedBox(height: 30.h),
-
                         Text(
                           'social_login'.tr(),
-                          style: AdaptiveTheme.of(context).theme.textTheme.subtitle1!.copyWith(
-                            color: AppColors.primaryColor.withOpacity(0.7)
-                          ),
+                          style: AdaptiveTheme.of(context)
+                              .theme
+                              .textTheme
+                              .subtitle1!
+                              .copyWith(
+                                  color:
+                                      AppColors.primaryColor.withOpacity(0.7)),
                         ),
-
                         SizedBox(height: 20.h),
-
                         SocialAuthComponent(
                           onPressedItem: (authType) {
-                            context.read<SignInBloc>().add(SignInEvent.socialAuth(
-                              socialAuthType: authType
-                            ));
+                            context.read<SignInBloc>().add(
+                                SignInEvent.socialAuth(
+                                    socialAuthType: authType));
                           },
                         ),
-
                         SizedBox(height: 20.h),
-
                         Text(
                           'or'.tr(),
-                          style: AdaptiveTheme.of(context).theme.textTheme.subtitle1!.copyWith(
-                            color: AppColors.primaryColor.withOpacity(0.7)
-                          ),
+                          style: AdaptiveTheme.of(context)
+                              .theme
+                              .textTheme
+                              .subtitle1!
+                              .copyWith(
+                                  color:
+                                      AppColors.primaryColor.withOpacity(0.7)),
                         ),
-
                         SizedBox(height: 30.h),
-
-
                         TextFieldComponent(
                           hint: 'email'.tr(),
                           errorText: state.hasError ? state.error : null,
@@ -128,18 +121,16 @@ class _SignInPageState extends State<SignInPage> {
                           onChanged: (value) => _email = value,
                           validator: (value) {
                             return AuthFailure.validateEmail(value ?? '').fold(
-                              (l) => l.maybeMap(
-                                empty: (_) => 'this_field_can_not_be_empty'.tr(),
-                                invalidEmail: (_) => 'enter_correct_email'.tr(),
-                                orElse: () => null
-                              ),
-                              (r) => null
-                            );
+                                (l) => l.maybeMap(
+                                    empty: (_) =>
+                                        'this_field_can_not_be_empty'.tr(),
+                                    invalidEmail: (_) =>
+                                        'enter_correct_email'.tr(),
+                                    orElse: () => null),
+                                (r) => null);
                           },
                         ),
-
                         SizedBox(height: 8.h),
-
                         TextFieldComponent(
                           hint: 'password'.tr(),
                           initialValue: _password,
@@ -149,37 +140,39 @@ class _SignInPageState extends State<SignInPage> {
                           textInputAction: TextInputAction.send,
                           onChanged: (value) => _password = value,
                           validator: (value) {
-                            return AuthFailure.validatePassword(value ?? '').fold(
-                              (l) => l.maybeMap(
-                                empty: (_) => 'this_field_can_not_be_empty'.tr(),
-                                passwordMustBe: (_) => 'password_must_be'.tr(),
-                                orElse: () => null,
-                              ),
-                              (r) => null
-                            );
+                            return AuthFailure.validatePassword(value ?? '')
+                                .fold(
+                                    (l) => l.maybeMap(
+                                          empty: (_) =>
+                                              'this_field_can_not_be_empty'
+                                                  .tr(),
+                                          passwordMustBe: (_) =>
+                                              'password_must_be'.tr(),
+                                          orElse: () => null,
+                                        ),
+                                    (r) => null);
                           },
                           textInputActionOnTap: () {
                             if (_formKey.currentState!.validate()) {
                               context.read<SignInBloc>().add(SignInEvent.signIn(
-                                email: _email,
-                                password: _password
-                              ));
+                                  email: _email, password: _password));
                             }
                           },
                         ),
-
                         Align(
                           alignment: Alignment.topRight,
                           child: TextButton(
                             onPressed: () => Navigator.push(
-                              context,
-                              AppRoutes.forgotPassword()
-                            ),
+                                context, AppRoutes.forgotPassword()),
                             child: Text(
                               'forgot_password'.tr(),
-                              style: AdaptiveTheme.of(context).theme.textTheme.subtitle2!.copyWith(
-                                color: AppColors.linksColor.withOpacity(0.7)
-                              ),
+                              style: AdaptiveTheme.of(context)
+                                  .theme
+                                  .textTheme
+                                  .subtitle2!
+                                  .copyWith(
+                                      color: AppColors.linksColor
+                                          .withOpacity(0.7)),
                             ),
                           ),
                         )
@@ -190,50 +183,47 @@ class _SignInPageState extends State<SignInPage> {
                 bottomNavigationBar: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-
                     MainButtonComponent(
-                      text: 'login'.tr(),
-                      margin: EdgeInsets.symmetric(horizontal: 30.w, vertical: 4.h),
-                      onPressed: () {
-                        if (_formKey.currentState!.validate()) {
-                          context.read<SignInBloc>().add(SignInEvent.signIn(
-                            email: _email,
-                            password: _password
-                          ));
-                        }
-                      }
-                    ),
-
+                        text: 'login'.tr(),
+                        margin: EdgeInsets.symmetric(
+                            horizontal: 30.w, vertical: 4.h),
+                        onPressed: () {
+                          if (_formKey.currentState!.validate()) {
+                            context.read<SignInBloc>().add(SignInEvent.signIn(
+                                email: _email, password: _password));
+                          }
+                        }),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-
                         Text(
                           'dont_have_account'.tr(),
-                          style: AdaptiveTheme.of(context).theme.textTheme.bodyText2,
+                          style: AdaptiveTheme.of(context)
+                              .theme
+                              .textTheme
+                              .bodyText2,
                         ),
-
                         TextButton(
                           onPressed: () {
-                            context.read<SignUpBloc>().add(
-                              const SignUpEvent.refreshState()
-                            );
-                            
-                            Navigator.push(
-                              context,
-                              AppRoutes.signUp()
-                            );
+                            context
+                                .read<SignUpBloc>()
+                                .add(const SignUpEvent.refreshState());
+
+                            Navigator.push(context, AppRoutes.signUp());
                           },
                           child: Text(
                             'sign_up'.tr(),
-                            style: AdaptiveTheme.of(context).theme.textTheme.subtitle2!.copyWith(
-                              color: AppColors.linksColor.withOpacity(0.7)
-                            ),
+                            style: AdaptiveTheme.of(context)
+                                .theme
+                                .textTheme
+                                .subtitle2!
+                                .copyWith(
+                                    color:
+                                        AppColors.linksColor.withOpacity(0.7)),
                           ),
                         ),
                       ],
                     ),
-
                     SizedBox(height: 16.h)
                   ],
                 ),

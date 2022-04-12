@@ -16,6 +16,7 @@ class AppManagerCubit extends Cubit<AppManagerState> {
   static late BuildContext context;
 
   void logout() {
+    
     getIt.get<UserApi>().clearUserInfoFromLocalDB();
     UserRepositoryModel.authStatus = false;
 

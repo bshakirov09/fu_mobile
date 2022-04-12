@@ -13,8 +13,6 @@ import 'package:fitness_uncensored/utils/get_it.dart';
 class GetWorkoutDayDetailRequest {
   Future<Either<String, WorkoutDayDetailModel>> getData({
     required int id,
-    required int week,
-    required int day,
   }) async {
     try {
       final Response response = await getIt.get<Dio>().get(
@@ -33,7 +31,7 @@ class GetWorkoutDayDetailRequest {
         final bool result = await getIt.get<RefreshTokenRequest>().refresh();
 
         if (result) {
-          return await getData(id: id, week: week, day: day);
+          return await getData(id: id);
         } else {
           return left('');
         }

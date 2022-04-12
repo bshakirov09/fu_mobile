@@ -32,10 +32,10 @@ class _AddJournalFourPageState extends State<AddJournalFourPage> {
             JournalEvent.addJorunal(
                 progressJournalDetailModel: progressJournalDetailModel),
           );
+          
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
           SnackBarComponent.errorSnackBar(
-            
               message: "this_field_can_not_be_empty".tr()));
     }
 

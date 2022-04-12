@@ -12,7 +12,7 @@ import 'package:fitness_uncensored/infrastructure/repository/models/user_reposit
 import 'package:fitness_uncensored/utils/get_it.dart';
 
 class AddJournalRequest {
-  Future<Either<String, Unit>> addJournal({
+  Future<Either<String, Map<dynamic, dynamic>>> addJournal({
     required ProgressJournalDetailModel progressJournalDetailModel,
   }) async {
     try {
@@ -28,14 +28,14 @@ class AddJournalRequest {
                   status! <= HttpStatus.internalServerError,
             ),
           );
-      if (response.statusCode == HttpStatus.ok) {
+      if (response.statusCode == HttpStatus.created) {
         return right(response.data);
       } else {
         return left(ServerFailure.getFailureMessage(
             error: response.data, statusCode: response.statusCode));
       }
     } catch (e) {
-      throw left(e.toString());
+      return left(e.toString());
     }
   }
 }

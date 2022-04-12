@@ -2,6 +2,7 @@
 
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -25,6 +26,12 @@ class BottomBarItemComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitDown,
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.landscapeRight,
+    ]);
     return GestureDetector(
       onTap: onPressed,
       behavior: HitTestBehavior.opaque,
@@ -33,26 +40,25 @@ class BottomBarItemComponent extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-
             SvgPicture.asset(icon),
-
             SizedBox(height: 10.h),
-
-            if (isSelected) Container(
-              width: 6,
-              height: 6,
-              margin: const EdgeInsets.symmetric(vertical: 3),
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: AppColors.secondaryColor
-              ),
-            )
-            else Text(
-              itemText,
-              style: AdaptiveTheme.of(context).theme.textTheme.subtitle1!.copyWith(
-                color: AppColors.primaryColor.withOpacity(0.45)
-              ),
-            )
+            if (isSelected)
+              Container(
+                width: 6,
+                height: 6,
+                margin: const EdgeInsets.symmetric(vertical: 3),
+                decoration: const BoxDecoration(
+                    shape: BoxShape.circle, color: AppColors.secondaryColor),
+              )
+            else
+              Text(
+                itemText,
+                style: AdaptiveTheme.of(context)
+                    .theme
+                    .textTheme
+                    .subtitle1!
+                    .copyWith(color: AppColors.primaryColor.withOpacity(0.45)),
+              )
           ],
         ),
       ),

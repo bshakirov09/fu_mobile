@@ -21,7 +21,6 @@ import 'package:fitness_uncensored/presentation/styles/app_icons.dart';
 import 'local_components/user_info_row_component.dart';
 
 class ProfilePage extends StatefulWidget {
-
   const ProfilePage({Key? key}) : super(key: key);
 
   @override
@@ -29,13 +28,11 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-
   String formatFeet(String? feet) {
     if (feet != null) {
       final double result = double.parse(feet) / 12;
       return '${result.toStringAsFixed(2)} ${"feet".tr()}';
-    }
-    else {
+    } else {
       return '0 ${"feet".tr()}';
     }
   }
@@ -43,52 +40,55 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(56.h),
-        child: AppBarComponent(
-          text: 'profile'.tr(),
-        ),
-      ),
       body: BlocConsumer<ProfileBloc, ProfileState>(
         listener: (context, state) {
           if (!UserRepositoryModel.authStatus) {
             Navigator.pushAndRemoveUntil(
-              context,
-              AppRoutes.signIn()
-              , (route) => false
-            );
+                context, AppRoutes.signIn(), (route) => false);
           }
         },
         builder: (context, state) {
           if (state.isLoading) {
             return const AppLoadingComponent();
-          }
-          else if (state.hasError) {
+          } else if (state.hasError) {
             return ErrorComponent(errorMessage: state.error);
-          }
-          else {
-            return  SingleChildScrollView(
+          } else {
+            return SingleChildScrollView(
               padding: EdgeInsets.only(
                 left: 30.w,
                 right: 30.w,
-                top: 12.h,
+                top: 24.h,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-
+                  Padding(
+                    padding: EdgeInsets.only(top: 24.h, bottom: 38.h),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'profile'.tr(),
+                          style: AdaptiveTheme.of(context)
+                              .theme
+                              .textTheme
+                              .headline1,
+                        ),
+                        SvgPicture.asset(
+                          AppIcons.notificationsOutlined,
+                        ),
+                      ],
+                    ),
+                  ),
                   Row(
                     children: [
-
                       GradientButtonComponent(
                         buttonSize: 64.h,
                         imageUrl: state.profile?.profileImage?.file ?? '',
                         isNetworkImage: true,
                         onPressed: () {},
                       ),
-
                       SizedBox(width: 24.w),
-
                       SizedBox(
                         width: 190.w,
                         child: Column(
@@ -96,147 +96,123 @@ class _ProfilePageState extends State<ProfilePage> {
                           children: [
                             Text(
                               '${state.profile?.firstName} ${state.profile?.lastName}',
-                              style: AdaptiveTheme.of(context).theme.textTheme.headline4,
+                              style: AdaptiveTheme.of(context)
+                                  .theme
+                                  .textTheme
+                                  .headline4,
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                             ),
-
                             SizedBox(height: 3.h),
-
                             Text(
                               state.profile!.email,
-                              style: AdaptiveTheme.of(context).theme.textTheme.subtitle2,
+                              style: AdaptiveTheme.of(context)
+                                  .theme
+                                  .textTheme
+                                  .subtitle2,
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                             ),
                           ],
                         ),
                       ),
-
                       const Spacer(),
-
                       GestureDetector(
-                        onTap: () => Navigator.push(
-                          context,
-                          AppRoutes.editProfile()
-                        ),
+                        onTap: () =>
+                            Navigator.push(context, AppRoutes.editProfile()),
                         child: SvgPicture.asset(AppIcons.createFilled),
                       )
                     ],
                   ),
-
                   SizedBox(height: 16.h),
-
                   MainButtonComponent(
                     onPressed: () {},
                     text: "subscribe".tr(),
                     margin: EdgeInsets.only(bottom: 24.h),
                   ),
-
                   UserInfoRowComponent(
-                    onPressed: () => Navigator.push(
-                      context,
-                      AppRoutes.heightSettings()
-                    ),
+                    onPressed: () =>
+                        Navigator.push(context, AppRoutes.heightSettings()),
                     text: 'height'.tr(),
                     rowInfo: formatFeet(state.profile?.height),
                     leftIcon: AppIcons.height,
                   ),
-
                   UserInfoRowComponent(
-                    onPressed: () => Navigator.push(
-                      context,
-                      AppRoutes.weightSettings()
-                    ),
+                    onPressed: () =>
+                        Navigator.push(context, AppRoutes.weightSettings()),
                     text: 'weight'.tr(),
                     rowInfo: "${state.profile!.weight} ${"lb".tr()}",
                     leftIcon: AppIcons.monitorWeightOut,
                   ),
-
                   UserInfoRowComponent(
-                    onPressed: () => Navigator.push(
-                      context,
-                      AppRoutes.birthdaySettings()
-                    ),
+                    onPressed: () =>
+                        Navigator.push(context, AppRoutes.birthdaySettings()),
                     text: 'birthday'.tr(),
                     leftIcon: AppIcons.calendarTodayOutlined,
                   ),
-
                   UserInfoRowComponent(
-                    onPressed: () => Navigator.push(
-                      context,
-                      AppRoutes.changePassword()
-                    ),
+                    onPressed: () =>
+                        Navigator.push(context, AppRoutes.changePassword()),
                     text: 'password'.tr(),
                     leftIcon: AppIcons.password,
                   ),
-
                   UserInfoRowComponent(
                     onPressed: () => Navigator.push(
-                      context,
-                      AppRoutes.notificationSettings()
-                    ),
+                        context, AppRoutes.notificationSettings()),
                     text: 'notification_settings'.tr(),
                     leftIcon: AppIcons.editNotificationsOut,
                   ),
-
-
                   SizedBox(height: 30.h),
-
                   TextButton(
-                    onPressed: () => Navigator.push(
-                      context,
-                      AppRoutes.faq()
-                    ),
+                    onPressed: () => Navigator.push(context, AppRoutes.faq()),
                     child: SizedBox(
                       width: double.infinity,
                       child: Text(
                         "faq".tr(),
-                        style: AdaptiveTheme.of(context).theme.textTheme.bodyText1,
+                        style:
+                            AdaptiveTheme.of(context).theme.textTheme.bodyText1,
                       ),
                     ),
                   ),
-
-
                   TextButton(
-                    onPressed: () => Navigator.push(
-                      context,
-                      AppRoutes.termsAndConditions()
-                    ),
+                    onPressed: () =>
+                        Navigator.push(context, AppRoutes.termsAndConditions()),
                     child: SizedBox(
                       width: double.infinity,
                       child: Text(
                         "terms_and_conditions".tr(),
-                        style: AdaptiveTheme.of(context).theme.textTheme.bodyText1,
+                        style:
+                            AdaptiveTheme.of(context).theme.textTheme.bodyText1,
                       ),
                     ),
                   ),
-
                   TextButton(
-                    onPressed: () => Navigator.push(
-                      context,
-                      AppRoutes.privacyPolicy()
-                    ),
+                    onPressed: () =>
+                        Navigator.push(context, AppRoutes.privacyPolicy()),
                     child: SizedBox(
                       width: double.infinity,
                       child: Text(
                         "privacy_and_policy".tr(),
-                        style: AdaptiveTheme.of(context).theme.textTheme.bodyText1,
+                        style:
+                            AdaptiveTheme.of(context).theme.textTheme.bodyText1,
                       ),
                     ),
                   ),
-
                   TextButton(
                     onPressed: () {
-                      context.read<ProfileBloc>().add(const ProfileEvent.logout());
+                      context
+                          .read<ProfileBloc>()
+                          .add(const ProfileEvent.logout());
                     },
                     child: SizedBox(
                       width: double.infinity,
                       child: Text(
                         "logout".tr(),
-                        style: AdaptiveTheme.of(context).theme.textTheme.bodyText1!.copyWith(
-                          color: AppColors.red
-                        ),
+                        style: AdaptiveTheme.of(context)
+                            .theme
+                            .textTheme
+                            .bodyText1!
+                            .copyWith(color: AppColors.red),
                       ),
                     ),
                   ),

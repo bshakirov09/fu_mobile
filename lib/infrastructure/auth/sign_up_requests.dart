@@ -34,7 +34,7 @@ class SignUpRequests {
         ));
       }
     } catch(e) {
-      throw left(e.toString());
+      return left(e.toString());
     }
   }
 
@@ -64,7 +64,7 @@ class SignUpRequests {
         ));
       }
     } catch(e) {
-      throw left(e.toString());
+      return left(e.toString());
     }
   }
 

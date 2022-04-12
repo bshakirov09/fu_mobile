@@ -9,7 +9,12 @@ class PhotoBlocState with _$PhotoBlocState {
     @Default(false) bool hasError,
     @Default('') String error,
     @Default(false) bool update,
+    @Default(false) bool isUpdateDetailPhotoRight,
+    @Default(false) bool isUpdateDetailPhotoLeft,
     @Default(null) GetListPhotoModel? getListPhotoModel,
+    @Default(null) GetPhotoFromDateModel? getPhotoFromDateModel,
+    @Default(null) DetailViewPhotoLeftModel? detailViewPhotoLeftModel,
+    @Default(null) DetailViewPhotoRightModel? detailViewPhotoRightModel,
     @Default(ProgressPages.listphoto) ProgressPages currentPage,
   }) = _PhotoBlocState;
 }

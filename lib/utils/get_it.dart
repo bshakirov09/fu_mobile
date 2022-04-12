@@ -1,6 +1,7 @@
 // Created by Muhammed Tolkinov on 10-December-2021
 
 import 'package:dio/dio.dart';
+import 'package:fitness_uncensored/infrastructure/progress/weight/weight_api.dart';
 import 'package:get_it/get_it.dart';
 
 import '../infrastructure/common/refresh_token_request.dart';
@@ -23,7 +24,8 @@ void setupGetIt() {
   getIt.registerLazySingleton<UserApi>(() => UserApi());
   getIt.registerLazySingleton<ProfileRequests>(() => ProfileRequests());
   getIt.registerLazySingleton<AuthApi>(() => AuthApi());
-  getIt.registerLazySingleton<ForgotPasswordRequests>(() => ForgotPasswordRequests());
+  getIt.registerLazySingleton<ForgotPasswordRequests>(
+      () => ForgotPasswordRequests());
   getIt.registerLazySingleton<SignUpRequests>(() => SignUpRequests());
   getIt.registerLazySingleton<RecipesApi>(() => RecipesApi());
   getIt.registerLazySingleton<BlogApi>(() => BlogApi());
@@ -31,4 +33,5 @@ void setupGetIt() {
   getIt.registerLazySingleton<RefreshTokenRequest>(() => RefreshTokenRequest());
   getIt.registerLazySingleton<PhotoApi>(() => PhotoApi());
   getIt.registerLazySingleton<JournalApi>(() => JournalApi());
+  getIt.registerLazySingleton<WeightApi>(() => WeightApi());
 }

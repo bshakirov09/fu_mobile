@@ -1,4 +1,3 @@
-
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:fitness_uncensored/presentation/styles/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +12,7 @@ class AppBarComponent extends StatelessWidget {
   final VoidCallback? onRightButtonPressed;
   final Color? buttonColors;
   final String preIconText;
+  final bool main;
 
   const AppBarComponent({
     Key? key,
@@ -23,6 +23,7 @@ class AppBarComponent extends StatelessWidget {
     this.onRightButtonPressed,
     this.buttonColors,
     this.preIconText = '',
+    this.main = false,
   }) : super(key: key);
 
   @override
@@ -30,28 +31,33 @@ class AppBarComponent extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(
         top: MediaQuery.of(context).padding.top,
-        left: 15.w,
+        left: 16.w,
         right: 16.w,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-
-          BackButton(
-            onPressed: onBackButtonPressed,
-            color: buttonColors,
-          ),
+          main
+              ? SizedBox(
+                  height: 56.h,
+                )
+              : BackButton(
+                  onPressed: onBackButtonPressed,
+                  color: buttonColors,
+                ),
           Expanded(
-            child: SizedBox(
-              width: 230.w,
-              child: Text(
-                text,
-                style: AdaptiveTheme.of(context).theme.textTheme.headline3,
-                maxLines: 1,
+            child: Padding(
+              padding: EdgeInsets.only(left: 16.w),
+              child: SizedBox(
+                width: 230.w,
+                child: Text(
+                  text,
+                  style: AdaptiveTheme.of(context).theme.textTheme.headline3,
+                  maxLines: 1,
+                ),
               ),
             ),
           ),
-
           if (iconPath.isNotEmpty || rightButtonText.isNotEmpty)
             GestureDetector(
               onTap: onRightButtonPressed,

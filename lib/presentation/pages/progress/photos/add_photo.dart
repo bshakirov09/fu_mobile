@@ -12,6 +12,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fitness_uncensored/presentation/components/main_button_component.dart';
 import 'package:fitness_uncensored/presentation/components/app_bar_component.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/svg.dart';
+
+import '../../../styles/app_colors.dart';
 
 class AddPhotoPage extends StatefulWidget {
   const AddPhotoPage({Key? key}) : super(key: key);
@@ -44,11 +47,22 @@ class _AddPhotoPageState extends State<AddPhotoPage> {
       child: Scaffold(
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(56.h),
-          child: AppBarComponent(
-            onRightButtonPressed: () {
-              Navigator.push(context, AppRoutes.helpPhoto());
-            },
-            iconPath: AppIcons.liveHelpFilled,
+          child: AppBar(
+            foregroundColor: AppColors.primaryColor,
+            backgroundColor: AppColors.white,
+            elevation: 4,
+            shadowColor: AppColors.white.withOpacity(0.4),
+            actions: [
+              InkWell(
+                onTap: () {
+                  Navigator.push(context, AppRoutes.helpPhoto());
+                },
+                child: Padding(
+                  padding: EdgeInsets.only(right: 32.w),
+                  child: SvgPicture.asset(AppIcons.liveHelpFilled),
+                ),
+              ),
+            ],
           ),
         ),
         body: BlocConsumer<PhotoBlocBloc, PhotoBlocState>(

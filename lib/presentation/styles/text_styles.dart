@@ -6,17 +6,17 @@ class AppTextStyles {
   const AppTextStyles._();
 
   static const TextStyle medium = TextStyle(
-    fontFamily: 'Helvetica Neue',
-    fontWeight: FontWeight.w500,
+    fontFamily: 'Source Sans Pro',
+    fontWeight: FontWeight.w600,
   );
 
   static const TextStyle regular = TextStyle(
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Source Sans Pro',
     fontWeight: FontWeight.w400,
   );
 
   static const TextStyle bold = TextStyle(
-    fontFamily: 'Helvetica Neue',
+    fontFamily: 'Source Sans Pro',
     fontWeight: FontWeight.w700,
   );
 }

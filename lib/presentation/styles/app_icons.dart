@@ -80,4 +80,5 @@ class AppIcons {
   static const String side = "assets/svg/side.svg";
   static const String back = "assets/svg/back.svg";
   static const String dateRange = "assets/svg/date_range.svg";
+  static const String frame = "assets/svg/Frame.svg";
 }

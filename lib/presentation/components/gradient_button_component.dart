@@ -12,6 +12,7 @@ class GradientButtonComponent extends StatelessWidget {
   final bool isNetworkImage;
   final VoidCallback onPressed;
   final double buttonSize;
+  final bool isPhotoDetailButton;
 
   const GradientButtonComponent({
     Key? key,
@@ -20,6 +21,7 @@ class GradientButtonComponent extends StatelessWidget {
     this.iconPath = '',
     this.isNetworkImage = false,
     this.imageUrl = '',
+    this.isPhotoDetailButton = false,
   }) : super(key: key);
 
   @override
@@ -32,36 +34,34 @@ class GradientButtonComponent extends StatelessWidget {
         width: buttonSize + 8,
         child: Stack(
           children: [
-
             _backgroundContainer(
-              backgroundColor: AppColors.secondaryColor,
-              isRight: false
-            ),
-
+                backgroundColor: AppColors.secondaryColor, isRight: false),
             _backgroundContainer(
-              backgroundColor: AppColors.tertiaryVariantColor,
-              isRight: true
-            ),
-
+                backgroundColor: AppColors.tertiaryVariantColor, isRight: true),
             Center(
               child: Container(
                 width: buttonSize - 5,
                 height: buttonSize,
                 padding: EdgeInsets.all(isNetworkImage ? 0 : buttonSize / 4.3),
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: AppColors.primaryColor
+                  color: isPhotoDetailButton
+                      ? AppColors.white
+                      : AppColors.primaryColor,
                 ),
-                child: isNetworkImage ? CachedImageComponent(
-                  imageUrl: imageUrl,
-                  height: double.infinity,
-                  width: double.infinity,
-                  borderRadius: 100,
-                ) :
-                SvgPicture.asset(
-                  iconPath,
-                  color: AppColors.white,
-                ),
+                child: isNetworkImage
+                    ? CachedImageComponent(
+                        imageUrl: imageUrl,
+                        height: double.infinity,
+                        width: double.infinity,
+                        borderRadius: 100,
+                      )
+                    : SvgPicture.asset(
+                        iconPath,
+                        color: isPhotoDetailButton
+                            ? AppColors.primaryColor
+                            : AppColors.white,
+                      ),
               ),
             )
           ],
@@ -78,14 +78,9 @@ class GradientButtonComponent extends StatelessWidget {
       child: Container(
         height: buttonSize - 3,
         width: buttonSize - 3,
-        margin: EdgeInsets.only(
-          right: isRight ? 0 : 3,
-          left: isRight ? 3 : 0
-        ),
-        decoration: BoxDecoration(
-          color: backgroundColor,
-          shape: BoxShape.circle
-        ),
+        margin: EdgeInsets.only(right: isRight ? 0 : 3, left: isRight ? 3 : 0),
+        decoration:
+            BoxDecoration(color: backgroundColor, shape: BoxShape.circle),
       ),
     );
   }

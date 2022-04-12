@@ -78,7 +78,6 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
     late Either<String, Map<String, dynamic>> result;
     switch(event.socialAuthType) {
       case SocialAuthType.facebook:
-        // TODO: Handle this case.
         break;
       case SocialAuthType.google:
         result = await getIt.get<AuthApi>().googleSignIn();

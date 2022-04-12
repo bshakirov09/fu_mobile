@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'photo_bloc_bloc.dart';
@@ -21,6 +22,12 @@ class _$PhotoBlocEventTearOff {
     return const _GetPhotoList();
   }
 
+  _GetPhotoFromDate getPhotoFromDate({required String date}) {
+    return _GetPhotoFromDate(
+      date: date,
+    );
+  }
+
   _GetNextPhotoListPage getNextPhotoListPage() {
     return const _GetNextPhotoListPage();
   }
@@ -33,6 +40,22 @@ class _$PhotoBlocEventTearOff {
       back: back,
     );
   }
+
+  _DetailViewPhotoRight detailViewPhotoRight(
+      {required String direction, required String currentDate}) {
+    return _DetailViewPhotoRight(
+      direction: direction,
+      currentDate: currentDate,
+    );
+  }
+
+  _DetailViewPhotoLeft detailViewPhotoLeft(
+      {required String direction, required String currentDate}) {
+    return _DetailViewPhotoLeft(
+      direction: direction,
+      currentDate: currentDate,
+    );
+  }
 }
 
 /// @nodoc
@@ -43,44 +66,66 @@ mixin _$PhotoBlocEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getPhotoList,
+    required TResult Function(String date) getPhotoFromDate,
     required TResult Function() getNextPhotoListPage,
     required TResult Function(String front, String side, String back) addPhoto,
+    required TResult Function(String direction, String currentDate)
+        detailViewPhotoRight,
+    required TResult Function(String direction, String currentDate)
+        detailViewPhotoLeft,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getPhotoList,
+    TResult Function(String date)? getPhotoFromDate,
     TResult Function()? getNextPhotoListPage,
     TResult Function(String front, String side, String back)? addPhoto,
+    TResult Function(String direction, String currentDate)?
+        detailViewPhotoRight,
+    TResult Function(String direction, String currentDate)? detailViewPhotoLeft,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getPhotoList,
+    TResult Function(String date)? getPhotoFromDate,
     TResult Function()? getNextPhotoListPage,
     TResult Function(String front, String side, String back)? addPhoto,
+    TResult Function(String direction, String currentDate)?
+        detailViewPhotoRight,
+    TResult Function(String direction, String currentDate)? detailViewPhotoLeft,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetPhotoList value) getPhotoList,
+    required TResult Function(_GetPhotoFromDate value) getPhotoFromDate,
     required TResult Function(_GetNextPhotoListPage value) getNextPhotoListPage,
     required TResult Function(_AddPhoto value) addPhoto,
+    required TResult Function(_DetailViewPhotoRight value) detailViewPhotoRight,
+    required TResult Function(_DetailViewPhotoLeft value) detailViewPhotoLeft,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetPhotoList value)? getPhotoList,
+    TResult Function(_GetPhotoFromDate value)? getPhotoFromDate,
     TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
     TResult Function(_AddPhoto value)? addPhoto,
+    TResult Function(_DetailViewPhotoRight value)? detailViewPhotoRight,
+    TResult Function(_DetailViewPhotoLeft value)? detailViewPhotoLeft,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetPhotoList value)? getPhotoList,
+    TResult Function(_GetPhotoFromDate value)? getPhotoFromDate,
     TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
     TResult Function(_AddPhoto value)? addPhoto,
+    TResult Function(_DetailViewPhotoRight value)? detailViewPhotoRight,
+    TResult Function(_DetailViewPhotoLeft value)? detailViewPhotoLeft,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -145,8 +190,13 @@ class _$_GetPhotoList extends _GetPhotoList {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getPhotoList,
+    required TResult Function(String date) getPhotoFromDate,
     required TResult Function() getNextPhotoListPage,
     required TResult Function(String front, String side, String back) addPhoto,
+    required TResult Function(String direction, String currentDate)
+        detailViewPhotoRight,
+    required TResult Function(String direction, String currentDate)
+        detailViewPhotoLeft,
   }) {
     return getPhotoList();
   }
@@ -155,8 +205,12 @@ class _$_GetPhotoList extends _GetPhotoList {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getPhotoList,
+    TResult Function(String date)? getPhotoFromDate,
     TResult Function()? getNextPhotoListPage,
     TResult Function(String front, String side, String back)? addPhoto,
+    TResult Function(String direction, String currentDate)?
+        detailViewPhotoRight,
+    TResult Function(String direction, String currentDate)? detailViewPhotoLeft,
   }) {
     return getPhotoList?.call();
   }
@@ -165,8 +219,12 @@ class _$_GetPhotoList extends _GetPhotoList {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getPhotoList,
+    TResult Function(String date)? getPhotoFromDate,
     TResult Function()? getNextPhotoListPage,
     TResult Function(String front, String side, String back)? addPhoto,
+    TResult Function(String direction, String currentDate)?
+        detailViewPhotoRight,
+    TResult Function(String direction, String currentDate)? detailViewPhotoLeft,
     required TResult orElse(),
   }) {
     if (getPhotoList != null) {
@@ -179,8 +237,11 @@ class _$_GetPhotoList extends _GetPhotoList {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetPhotoList value) getPhotoList,
+    required TResult Function(_GetPhotoFromDate value) getPhotoFromDate,
     required TResult Function(_GetNextPhotoListPage value) getNextPhotoListPage,
     required TResult Function(_AddPhoto value) addPhoto,
+    required TResult Function(_DetailViewPhotoRight value) detailViewPhotoRight,
+    required TResult Function(_DetailViewPhotoLeft value) detailViewPhotoLeft,
   }) {
     return getPhotoList(this);
   }
@@ -189,8 +250,11 @@ class _$_GetPhotoList extends _GetPhotoList {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetPhotoList value)? getPhotoList,
+    TResult Function(_GetPhotoFromDate value)? getPhotoFromDate,
     TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
     TResult Function(_AddPhoto value)? addPhoto,
+    TResult Function(_DetailViewPhotoRight value)? detailViewPhotoRight,
+    TResult Function(_DetailViewPhotoLeft value)? detailViewPhotoLeft,
   }) {
     return getPhotoList?.call(this);
   }
@@ -199,8 +263,11 @@ class _$_GetPhotoList extends _GetPhotoList {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetPhotoList value)? getPhotoList,
+    TResult Function(_GetPhotoFromDate value)? getPhotoFromDate,
     TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
     TResult Function(_AddPhoto value)? addPhoto,
+    TResult Function(_DetailViewPhotoRight value)? detailViewPhotoRight,
+    TResult Function(_DetailViewPhotoLeft value)? detailViewPhotoLeft,
     required TResult orElse(),
   }) {
     if (getPhotoList != null) {
@@ -213,6 +280,169 @@ class _$_GetPhotoList extends _GetPhotoList {
 abstract class _GetPhotoList extends PhotoBlocEvent {
   const factory _GetPhotoList() = _$_GetPhotoList;
   const _GetPhotoList._() : super._();
+}
+
+/// @nodoc
+abstract class _$GetPhotoFromDateCopyWith<$Res> {
+  factory _$GetPhotoFromDateCopyWith(
+          _GetPhotoFromDate value, $Res Function(_GetPhotoFromDate) then) =
+      __$GetPhotoFromDateCopyWithImpl<$Res>;
+  $Res call({String date});
+}
+
+/// @nodoc
+class __$GetPhotoFromDateCopyWithImpl<$Res>
+    extends _$PhotoBlocEventCopyWithImpl<$Res>
+    implements _$GetPhotoFromDateCopyWith<$Res> {
+  __$GetPhotoFromDateCopyWithImpl(
+      _GetPhotoFromDate _value, $Res Function(_GetPhotoFromDate) _then)
+      : super(_value, (v) => _then(v as _GetPhotoFromDate));
+
+  @override
+  _GetPhotoFromDate get _value => super._value as _GetPhotoFromDate;
+
+  @override
+  $Res call({
+    Object? date = freezed,
+  }) {
+    return _then(_GetPhotoFromDate(
+      date: date == freezed
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_GetPhotoFromDate extends _GetPhotoFromDate {
+  const _$_GetPhotoFromDate({required this.date}) : super._();
+
+  @override
+  final String date;
+
+  @override
+  String toString() {
+    return 'PhotoBlocEvent.getPhotoFromDate(date: $date)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _GetPhotoFromDate &&
+            const DeepCollectionEquality().equals(other.date, date));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(date));
+
+  @JsonKey(ignore: true)
+  @override
+  _$GetPhotoFromDateCopyWith<_GetPhotoFromDate> get copyWith =>
+      __$GetPhotoFromDateCopyWithImpl<_GetPhotoFromDate>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getPhotoList,
+    required TResult Function(String date) getPhotoFromDate,
+    required TResult Function() getNextPhotoListPage,
+    required TResult Function(String front, String side, String back) addPhoto,
+    required TResult Function(String direction, String currentDate)
+        detailViewPhotoRight,
+    required TResult Function(String direction, String currentDate)
+        detailViewPhotoLeft,
+  }) {
+    return getPhotoFromDate(date);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? getPhotoList,
+    TResult Function(String date)? getPhotoFromDate,
+    TResult Function()? getNextPhotoListPage,
+    TResult Function(String front, String side, String back)? addPhoto,
+    TResult Function(String direction, String currentDate)?
+        detailViewPhotoRight,
+    TResult Function(String direction, String currentDate)? detailViewPhotoLeft,
+  }) {
+    return getPhotoFromDate?.call(date);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getPhotoList,
+    TResult Function(String date)? getPhotoFromDate,
+    TResult Function()? getNextPhotoListPage,
+    TResult Function(String front, String side, String back)? addPhoto,
+    TResult Function(String direction, String currentDate)?
+        detailViewPhotoRight,
+    TResult Function(String direction, String currentDate)? detailViewPhotoLeft,
+    required TResult orElse(),
+  }) {
+    if (getPhotoFromDate != null) {
+      return getPhotoFromDate(date);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetPhotoList value) getPhotoList,
+    required TResult Function(_GetPhotoFromDate value) getPhotoFromDate,
+    required TResult Function(_GetNextPhotoListPage value) getNextPhotoListPage,
+    required TResult Function(_AddPhoto value) addPhoto,
+    required TResult Function(_DetailViewPhotoRight value) detailViewPhotoRight,
+    required TResult Function(_DetailViewPhotoLeft value) detailViewPhotoLeft,
+  }) {
+    return getPhotoFromDate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_GetPhotoList value)? getPhotoList,
+    TResult Function(_GetPhotoFromDate value)? getPhotoFromDate,
+    TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
+    TResult Function(_AddPhoto value)? addPhoto,
+    TResult Function(_DetailViewPhotoRight value)? detailViewPhotoRight,
+    TResult Function(_DetailViewPhotoLeft value)? detailViewPhotoLeft,
+  }) {
+    return getPhotoFromDate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetPhotoList value)? getPhotoList,
+    TResult Function(_GetPhotoFromDate value)? getPhotoFromDate,
+    TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
+    TResult Function(_AddPhoto value)? addPhoto,
+    TResult Function(_DetailViewPhotoRight value)? detailViewPhotoRight,
+    TResult Function(_DetailViewPhotoLeft value)? detailViewPhotoLeft,
+    required TResult orElse(),
+  }) {
+    if (getPhotoFromDate != null) {
+      return getPhotoFromDate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetPhotoFromDate extends PhotoBlocEvent {
+  const factory _GetPhotoFromDate({required String date}) = _$_GetPhotoFromDate;
+  const _GetPhotoFromDate._() : super._();
+
+  String get date;
+  @JsonKey(ignore: true)
+  _$GetPhotoFromDateCopyWith<_GetPhotoFromDate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -257,8 +487,13 @@ class _$_GetNextPhotoListPage extends _GetNextPhotoListPage {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getPhotoList,
+    required TResult Function(String date) getPhotoFromDate,
     required TResult Function() getNextPhotoListPage,
     required TResult Function(String front, String side, String back) addPhoto,
+    required TResult Function(String direction, String currentDate)
+        detailViewPhotoRight,
+    required TResult Function(String direction, String currentDate)
+        detailViewPhotoLeft,
   }) {
     return getNextPhotoListPage();
   }
@@ -267,8 +502,12 @@ class _$_GetNextPhotoListPage extends _GetNextPhotoListPage {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getPhotoList,
+    TResult Function(String date)? getPhotoFromDate,
     TResult Function()? getNextPhotoListPage,
     TResult Function(String front, String side, String back)? addPhoto,
+    TResult Function(String direction, String currentDate)?
+        detailViewPhotoRight,
+    TResult Function(String direction, String currentDate)? detailViewPhotoLeft,
   }) {
     return getNextPhotoListPage?.call();
   }
@@ -277,8 +516,12 @@ class _$_GetNextPhotoListPage extends _GetNextPhotoListPage {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getPhotoList,
+    TResult Function(String date)? getPhotoFromDate,
     TResult Function()? getNextPhotoListPage,
     TResult Function(String front, String side, String back)? addPhoto,
+    TResult Function(String direction, String currentDate)?
+        detailViewPhotoRight,
+    TResult Function(String direction, String currentDate)? detailViewPhotoLeft,
     required TResult orElse(),
   }) {
     if (getNextPhotoListPage != null) {
@@ -291,8 +534,11 @@ class _$_GetNextPhotoListPage extends _GetNextPhotoListPage {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetPhotoList value) getPhotoList,
+    required TResult Function(_GetPhotoFromDate value) getPhotoFromDate,
     required TResult Function(_GetNextPhotoListPage value) getNextPhotoListPage,
     required TResult Function(_AddPhoto value) addPhoto,
+    required TResult Function(_DetailViewPhotoRight value) detailViewPhotoRight,
+    required TResult Function(_DetailViewPhotoLeft value) detailViewPhotoLeft,
   }) {
     return getNextPhotoListPage(this);
   }
@@ -301,8 +547,11 @@ class _$_GetNextPhotoListPage extends _GetNextPhotoListPage {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetPhotoList value)? getPhotoList,
+    TResult Function(_GetPhotoFromDate value)? getPhotoFromDate,
     TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
     TResult Function(_AddPhoto value)? addPhoto,
+    TResult Function(_DetailViewPhotoRight value)? detailViewPhotoRight,
+    TResult Function(_DetailViewPhotoLeft value)? detailViewPhotoLeft,
   }) {
     return getNextPhotoListPage?.call(this);
   }
@@ -311,8 +560,11 @@ class _$_GetNextPhotoListPage extends _GetNextPhotoListPage {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetPhotoList value)? getPhotoList,
+    TResult Function(_GetPhotoFromDate value)? getPhotoFromDate,
     TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
     TResult Function(_AddPhoto value)? addPhoto,
+    TResult Function(_DetailViewPhotoRight value)? detailViewPhotoRight,
+    TResult Function(_DetailViewPhotoLeft value)? detailViewPhotoLeft,
     required TResult orElse(),
   }) {
     if (getNextPhotoListPage != null) {
@@ -411,8 +663,13 @@ class _$_AddPhoto extends _AddPhoto {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getPhotoList,
+    required TResult Function(String date) getPhotoFromDate,
     required TResult Function() getNextPhotoListPage,
     required TResult Function(String front, String side, String back) addPhoto,
+    required TResult Function(String direction, String currentDate)
+        detailViewPhotoRight,
+    required TResult Function(String direction, String currentDate)
+        detailViewPhotoLeft,
   }) {
     return addPhoto(front, side, back);
   }
@@ -421,8 +678,12 @@ class _$_AddPhoto extends _AddPhoto {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getPhotoList,
+    TResult Function(String date)? getPhotoFromDate,
     TResult Function()? getNextPhotoListPage,
     TResult Function(String front, String side, String back)? addPhoto,
+    TResult Function(String direction, String currentDate)?
+        detailViewPhotoRight,
+    TResult Function(String direction, String currentDate)? detailViewPhotoLeft,
   }) {
     return addPhoto?.call(front, side, back);
   }
@@ -431,8 +692,12 @@ class _$_AddPhoto extends _AddPhoto {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getPhotoList,
+    TResult Function(String date)? getPhotoFromDate,
     TResult Function()? getNextPhotoListPage,
     TResult Function(String front, String side, String back)? addPhoto,
+    TResult Function(String direction, String currentDate)?
+        detailViewPhotoRight,
+    TResult Function(String direction, String currentDate)? detailViewPhotoLeft,
     required TResult orElse(),
   }) {
     if (addPhoto != null) {
@@ -445,8 +710,11 @@ class _$_AddPhoto extends _AddPhoto {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetPhotoList value) getPhotoList,
+    required TResult Function(_GetPhotoFromDate value) getPhotoFromDate,
     required TResult Function(_GetNextPhotoListPage value) getNextPhotoListPage,
     required TResult Function(_AddPhoto value) addPhoto,
+    required TResult Function(_DetailViewPhotoRight value) detailViewPhotoRight,
+    required TResult Function(_DetailViewPhotoLeft value) detailViewPhotoLeft,
   }) {
     return addPhoto(this);
   }
@@ -455,8 +723,11 @@ class _$_AddPhoto extends _AddPhoto {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetPhotoList value)? getPhotoList,
+    TResult Function(_GetPhotoFromDate value)? getPhotoFromDate,
     TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
     TResult Function(_AddPhoto value)? addPhoto,
+    TResult Function(_DetailViewPhotoRight value)? detailViewPhotoRight,
+    TResult Function(_DetailViewPhotoLeft value)? detailViewPhotoLeft,
   }) {
     return addPhoto?.call(this);
   }
@@ -465,8 +736,11 @@ class _$_AddPhoto extends _AddPhoto {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetPhotoList value)? getPhotoList,
+    TResult Function(_GetPhotoFromDate value)? getPhotoFromDate,
     TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
     TResult Function(_AddPhoto value)? addPhoto,
+    TResult Function(_DetailViewPhotoRight value)? detailViewPhotoRight,
+    TResult Function(_DetailViewPhotoLeft value)? detailViewPhotoLeft,
     required TResult orElse(),
   }) {
     if (addPhoto != null) {
@@ -492,6 +766,366 @@ abstract class _AddPhoto extends PhotoBlocEvent {
 }
 
 /// @nodoc
+abstract class _$DetailViewPhotoRightCopyWith<$Res> {
+  factory _$DetailViewPhotoRightCopyWith(_DetailViewPhotoRight value,
+          $Res Function(_DetailViewPhotoRight) then) =
+      __$DetailViewPhotoRightCopyWithImpl<$Res>;
+  $Res call({String direction, String currentDate});
+}
+
+/// @nodoc
+class __$DetailViewPhotoRightCopyWithImpl<$Res>
+    extends _$PhotoBlocEventCopyWithImpl<$Res>
+    implements _$DetailViewPhotoRightCopyWith<$Res> {
+  __$DetailViewPhotoRightCopyWithImpl(
+      _DetailViewPhotoRight _value, $Res Function(_DetailViewPhotoRight) _then)
+      : super(_value, (v) => _then(v as _DetailViewPhotoRight));
+
+  @override
+  _DetailViewPhotoRight get _value => super._value as _DetailViewPhotoRight;
+
+  @override
+  $Res call({
+    Object? direction = freezed,
+    Object? currentDate = freezed,
+  }) {
+    return _then(_DetailViewPhotoRight(
+      direction: direction == freezed
+          ? _value.direction
+          : direction // ignore: cast_nullable_to_non_nullable
+              as String,
+      currentDate: currentDate == freezed
+          ? _value.currentDate
+          : currentDate // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_DetailViewPhotoRight extends _DetailViewPhotoRight {
+  const _$_DetailViewPhotoRight(
+      {required this.direction, required this.currentDate})
+      : super._();
+
+  @override
+  final String direction;
+  @override
+  final String currentDate;
+
+  @override
+  String toString() {
+    return 'PhotoBlocEvent.detailViewPhotoRight(direction: $direction, currentDate: $currentDate)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _DetailViewPhotoRight &&
+            const DeepCollectionEquality().equals(other.direction, direction) &&
+            const DeepCollectionEquality()
+                .equals(other.currentDate, currentDate));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(direction),
+      const DeepCollectionEquality().hash(currentDate));
+
+  @JsonKey(ignore: true)
+  @override
+  _$DetailViewPhotoRightCopyWith<_DetailViewPhotoRight> get copyWith =>
+      __$DetailViewPhotoRightCopyWithImpl<_DetailViewPhotoRight>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getPhotoList,
+    required TResult Function(String date) getPhotoFromDate,
+    required TResult Function() getNextPhotoListPage,
+    required TResult Function(String front, String side, String back) addPhoto,
+    required TResult Function(String direction, String currentDate)
+        detailViewPhotoRight,
+    required TResult Function(String direction, String currentDate)
+        detailViewPhotoLeft,
+  }) {
+    return detailViewPhotoRight(direction, currentDate);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? getPhotoList,
+    TResult Function(String date)? getPhotoFromDate,
+    TResult Function()? getNextPhotoListPage,
+    TResult Function(String front, String side, String back)? addPhoto,
+    TResult Function(String direction, String currentDate)?
+        detailViewPhotoRight,
+    TResult Function(String direction, String currentDate)? detailViewPhotoLeft,
+  }) {
+    return detailViewPhotoRight?.call(direction, currentDate);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getPhotoList,
+    TResult Function(String date)? getPhotoFromDate,
+    TResult Function()? getNextPhotoListPage,
+    TResult Function(String front, String side, String back)? addPhoto,
+    TResult Function(String direction, String currentDate)?
+        detailViewPhotoRight,
+    TResult Function(String direction, String currentDate)? detailViewPhotoLeft,
+    required TResult orElse(),
+  }) {
+    if (detailViewPhotoRight != null) {
+      return detailViewPhotoRight(direction, currentDate);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetPhotoList value) getPhotoList,
+    required TResult Function(_GetPhotoFromDate value) getPhotoFromDate,
+    required TResult Function(_GetNextPhotoListPage value) getNextPhotoListPage,
+    required TResult Function(_AddPhoto value) addPhoto,
+    required TResult Function(_DetailViewPhotoRight value) detailViewPhotoRight,
+    required TResult Function(_DetailViewPhotoLeft value) detailViewPhotoLeft,
+  }) {
+    return detailViewPhotoRight(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_GetPhotoList value)? getPhotoList,
+    TResult Function(_GetPhotoFromDate value)? getPhotoFromDate,
+    TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
+    TResult Function(_AddPhoto value)? addPhoto,
+    TResult Function(_DetailViewPhotoRight value)? detailViewPhotoRight,
+    TResult Function(_DetailViewPhotoLeft value)? detailViewPhotoLeft,
+  }) {
+    return detailViewPhotoRight?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetPhotoList value)? getPhotoList,
+    TResult Function(_GetPhotoFromDate value)? getPhotoFromDate,
+    TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
+    TResult Function(_AddPhoto value)? addPhoto,
+    TResult Function(_DetailViewPhotoRight value)? detailViewPhotoRight,
+    TResult Function(_DetailViewPhotoLeft value)? detailViewPhotoLeft,
+    required TResult orElse(),
+  }) {
+    if (detailViewPhotoRight != null) {
+      return detailViewPhotoRight(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DetailViewPhotoRight extends PhotoBlocEvent {
+  const factory _DetailViewPhotoRight(
+      {required String direction,
+      required String currentDate}) = _$_DetailViewPhotoRight;
+  const _DetailViewPhotoRight._() : super._();
+
+  String get direction;
+  String get currentDate;
+  @JsonKey(ignore: true)
+  _$DetailViewPhotoRightCopyWith<_DetailViewPhotoRight> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$DetailViewPhotoLeftCopyWith<$Res> {
+  factory _$DetailViewPhotoLeftCopyWith(_DetailViewPhotoLeft value,
+          $Res Function(_DetailViewPhotoLeft) then) =
+      __$DetailViewPhotoLeftCopyWithImpl<$Res>;
+  $Res call({String direction, String currentDate});
+}
+
+/// @nodoc
+class __$DetailViewPhotoLeftCopyWithImpl<$Res>
+    extends _$PhotoBlocEventCopyWithImpl<$Res>
+    implements _$DetailViewPhotoLeftCopyWith<$Res> {
+  __$DetailViewPhotoLeftCopyWithImpl(
+      _DetailViewPhotoLeft _value, $Res Function(_DetailViewPhotoLeft) _then)
+      : super(_value, (v) => _then(v as _DetailViewPhotoLeft));
+
+  @override
+  _DetailViewPhotoLeft get _value => super._value as _DetailViewPhotoLeft;
+
+  @override
+  $Res call({
+    Object? direction = freezed,
+    Object? currentDate = freezed,
+  }) {
+    return _then(_DetailViewPhotoLeft(
+      direction: direction == freezed
+          ? _value.direction
+          : direction // ignore: cast_nullable_to_non_nullable
+              as String,
+      currentDate: currentDate == freezed
+          ? _value.currentDate
+          : currentDate // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_DetailViewPhotoLeft extends _DetailViewPhotoLeft {
+  const _$_DetailViewPhotoLeft(
+      {required this.direction, required this.currentDate})
+      : super._();
+
+  @override
+  final String direction;
+  @override
+  final String currentDate;
+
+  @override
+  String toString() {
+    return 'PhotoBlocEvent.detailViewPhotoLeft(direction: $direction, currentDate: $currentDate)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _DetailViewPhotoLeft &&
+            const DeepCollectionEquality().equals(other.direction, direction) &&
+            const DeepCollectionEquality()
+                .equals(other.currentDate, currentDate));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(direction),
+      const DeepCollectionEquality().hash(currentDate));
+
+  @JsonKey(ignore: true)
+  @override
+  _$DetailViewPhotoLeftCopyWith<_DetailViewPhotoLeft> get copyWith =>
+      __$DetailViewPhotoLeftCopyWithImpl<_DetailViewPhotoLeft>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getPhotoList,
+    required TResult Function(String date) getPhotoFromDate,
+    required TResult Function() getNextPhotoListPage,
+    required TResult Function(String front, String side, String back) addPhoto,
+    required TResult Function(String direction, String currentDate)
+        detailViewPhotoRight,
+    required TResult Function(String direction, String currentDate)
+        detailViewPhotoLeft,
+  }) {
+    return detailViewPhotoLeft(direction, currentDate);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? getPhotoList,
+    TResult Function(String date)? getPhotoFromDate,
+    TResult Function()? getNextPhotoListPage,
+    TResult Function(String front, String side, String back)? addPhoto,
+    TResult Function(String direction, String currentDate)?
+        detailViewPhotoRight,
+    TResult Function(String direction, String currentDate)? detailViewPhotoLeft,
+  }) {
+    return detailViewPhotoLeft?.call(direction, currentDate);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getPhotoList,
+    TResult Function(String date)? getPhotoFromDate,
+    TResult Function()? getNextPhotoListPage,
+    TResult Function(String front, String side, String back)? addPhoto,
+    TResult Function(String direction, String currentDate)?
+        detailViewPhotoRight,
+    TResult Function(String direction, String currentDate)? detailViewPhotoLeft,
+    required TResult orElse(),
+  }) {
+    if (detailViewPhotoLeft != null) {
+      return detailViewPhotoLeft(direction, currentDate);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetPhotoList value) getPhotoList,
+    required TResult Function(_GetPhotoFromDate value) getPhotoFromDate,
+    required TResult Function(_GetNextPhotoListPage value) getNextPhotoListPage,
+    required TResult Function(_AddPhoto value) addPhoto,
+    required TResult Function(_DetailViewPhotoRight value) detailViewPhotoRight,
+    required TResult Function(_DetailViewPhotoLeft value) detailViewPhotoLeft,
+  }) {
+    return detailViewPhotoLeft(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_GetPhotoList value)? getPhotoList,
+    TResult Function(_GetPhotoFromDate value)? getPhotoFromDate,
+    TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
+    TResult Function(_AddPhoto value)? addPhoto,
+    TResult Function(_DetailViewPhotoRight value)? detailViewPhotoRight,
+    TResult Function(_DetailViewPhotoLeft value)? detailViewPhotoLeft,
+  }) {
+    return detailViewPhotoLeft?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetPhotoList value)? getPhotoList,
+    TResult Function(_GetPhotoFromDate value)? getPhotoFromDate,
+    TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
+    TResult Function(_AddPhoto value)? addPhoto,
+    TResult Function(_DetailViewPhotoRight value)? detailViewPhotoRight,
+    TResult Function(_DetailViewPhotoLeft value)? detailViewPhotoLeft,
+    required TResult orElse(),
+  }) {
+    if (detailViewPhotoLeft != null) {
+      return detailViewPhotoLeft(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DetailViewPhotoLeft extends PhotoBlocEvent {
+  const factory _DetailViewPhotoLeft(
+      {required String direction,
+      required String currentDate}) = _$_DetailViewPhotoLeft;
+  const _DetailViewPhotoLeft._() : super._();
+
+  String get direction;
+  String get currentDate;
+  @JsonKey(ignore: true)
+  _$DetailViewPhotoLeftCopyWith<_DetailViewPhotoLeft> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$PhotoBlocStateTearOff {
   const _$PhotoBlocStateTearOff();
 
@@ -500,14 +1134,24 @@ class _$PhotoBlocStateTearOff {
       bool hasError = false,
       String error = '',
       bool update = false,
+      bool isUpdateDetailPhotoRight = false,
+      bool isUpdateDetailPhotoLeft = false,
       GetListPhotoModel? getListPhotoModel = null,
+      GetPhotoFromDateModel? getPhotoFromDateModel = null,
+      DetailViewPhotoLeftModel? detailViewPhotoLeftModel = null,
+      DetailViewPhotoRightModel? detailViewPhotoRightModel = null,
       ProgressPages currentPage = ProgressPages.listphoto}) {
     return _PhotoBlocState(
       isLoading: isLoading,
       hasError: hasError,
       error: error,
       update: update,
+      isUpdateDetailPhotoRight: isUpdateDetailPhotoRight,
+      isUpdateDetailPhotoLeft: isUpdateDetailPhotoLeft,
       getListPhotoModel: getListPhotoModel,
+      getPhotoFromDateModel: getPhotoFromDateModel,
+      detailViewPhotoLeftModel: detailViewPhotoLeftModel,
+      detailViewPhotoRightModel: detailViewPhotoRightModel,
       currentPage: currentPage,
     );
   }
@@ -522,7 +1166,15 @@ mixin _$PhotoBlocState {
   bool get hasError => throw _privateConstructorUsedError;
   String get error => throw _privateConstructorUsedError;
   bool get update => throw _privateConstructorUsedError;
+  bool get isUpdateDetailPhotoRight => throw _privateConstructorUsedError;
+  bool get isUpdateDetailPhotoLeft => throw _privateConstructorUsedError;
   GetListPhotoModel? get getListPhotoModel =>
+      throw _privateConstructorUsedError;
+  GetPhotoFromDateModel? get getPhotoFromDateModel =>
+      throw _privateConstructorUsedError;
+  DetailViewPhotoLeftModel? get detailViewPhotoLeftModel =>
+      throw _privateConstructorUsedError;
+  DetailViewPhotoRightModel? get detailViewPhotoRightModel =>
       throw _privateConstructorUsedError;
   ProgressPages get currentPage => throw _privateConstructorUsedError;
 
@@ -541,7 +1193,12 @@ abstract class $PhotoBlocStateCopyWith<$Res> {
       bool hasError,
       String error,
       bool update,
+      bool isUpdateDetailPhotoRight,
+      bool isUpdateDetailPhotoLeft,
       GetListPhotoModel? getListPhotoModel,
+      GetPhotoFromDateModel? getPhotoFromDateModel,
+      DetailViewPhotoLeftModel? detailViewPhotoLeftModel,
+      DetailViewPhotoRightModel? detailViewPhotoRightModel,
       ProgressPages currentPage});
 }
 
@@ -560,7 +1217,12 @@ class _$PhotoBlocStateCopyWithImpl<$Res>
     Object? hasError = freezed,
     Object? error = freezed,
     Object? update = freezed,
+    Object? isUpdateDetailPhotoRight = freezed,
+    Object? isUpdateDetailPhotoLeft = freezed,
     Object? getListPhotoModel = freezed,
+    Object? getPhotoFromDateModel = freezed,
+    Object? detailViewPhotoLeftModel = freezed,
+    Object? detailViewPhotoRightModel = freezed,
     Object? currentPage = freezed,
   }) {
     return _then(_value.copyWith(
@@ -580,10 +1242,30 @@ class _$PhotoBlocStateCopyWithImpl<$Res>
           ? _value.update
           : update // ignore: cast_nullable_to_non_nullable
               as bool,
+      isUpdateDetailPhotoRight: isUpdateDetailPhotoRight == freezed
+          ? _value.isUpdateDetailPhotoRight
+          : isUpdateDetailPhotoRight // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isUpdateDetailPhotoLeft: isUpdateDetailPhotoLeft == freezed
+          ? _value.isUpdateDetailPhotoLeft
+          : isUpdateDetailPhotoLeft // ignore: cast_nullable_to_non_nullable
+              as bool,
       getListPhotoModel: getListPhotoModel == freezed
           ? _value.getListPhotoModel
           : getListPhotoModel // ignore: cast_nullable_to_non_nullable
               as GetListPhotoModel?,
+      getPhotoFromDateModel: getPhotoFromDateModel == freezed
+          ? _value.getPhotoFromDateModel
+          : getPhotoFromDateModel // ignore: cast_nullable_to_non_nullable
+              as GetPhotoFromDateModel?,
+      detailViewPhotoLeftModel: detailViewPhotoLeftModel == freezed
+          ? _value.detailViewPhotoLeftModel
+          : detailViewPhotoLeftModel // ignore: cast_nullable_to_non_nullable
+              as DetailViewPhotoLeftModel?,
+      detailViewPhotoRightModel: detailViewPhotoRightModel == freezed
+          ? _value.detailViewPhotoRightModel
+          : detailViewPhotoRightModel // ignore: cast_nullable_to_non_nullable
+              as DetailViewPhotoRightModel?,
       currentPage: currentPage == freezed
           ? _value.currentPage
           : currentPage // ignore: cast_nullable_to_non_nullable
@@ -604,7 +1286,12 @@ abstract class _$PhotoBlocStateCopyWith<$Res>
       bool hasError,
       String error,
       bool update,
+      bool isUpdateDetailPhotoRight,
+      bool isUpdateDetailPhotoLeft,
       GetListPhotoModel? getListPhotoModel,
+      GetPhotoFromDateModel? getPhotoFromDateModel,
+      DetailViewPhotoLeftModel? detailViewPhotoLeftModel,
+      DetailViewPhotoRightModel? detailViewPhotoRightModel,
       ProgressPages currentPage});
 }
 
@@ -625,7 +1312,12 @@ class __$PhotoBlocStateCopyWithImpl<$Res>
     Object? hasError = freezed,
     Object? error = freezed,
     Object? update = freezed,
+    Object? isUpdateDetailPhotoRight = freezed,
+    Object? isUpdateDetailPhotoLeft = freezed,
     Object? getListPhotoModel = freezed,
+    Object? getPhotoFromDateModel = freezed,
+    Object? detailViewPhotoLeftModel = freezed,
+    Object? detailViewPhotoRightModel = freezed,
     Object? currentPage = freezed,
   }) {
     return _then(_PhotoBlocState(
@@ -645,10 +1337,30 @@ class __$PhotoBlocStateCopyWithImpl<$Res>
           ? _value.update
           : update // ignore: cast_nullable_to_non_nullable
               as bool,
+      isUpdateDetailPhotoRight: isUpdateDetailPhotoRight == freezed
+          ? _value.isUpdateDetailPhotoRight
+          : isUpdateDetailPhotoRight // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isUpdateDetailPhotoLeft: isUpdateDetailPhotoLeft == freezed
+          ? _value.isUpdateDetailPhotoLeft
+          : isUpdateDetailPhotoLeft // ignore: cast_nullable_to_non_nullable
+              as bool,
       getListPhotoModel: getListPhotoModel == freezed
           ? _value.getListPhotoModel
           : getListPhotoModel // ignore: cast_nullable_to_non_nullable
               as GetListPhotoModel?,
+      getPhotoFromDateModel: getPhotoFromDateModel == freezed
+          ? _value.getPhotoFromDateModel
+          : getPhotoFromDateModel // ignore: cast_nullable_to_non_nullable
+              as GetPhotoFromDateModel?,
+      detailViewPhotoLeftModel: detailViewPhotoLeftModel == freezed
+          ? _value.detailViewPhotoLeftModel
+          : detailViewPhotoLeftModel // ignore: cast_nullable_to_non_nullable
+              as DetailViewPhotoLeftModel?,
+      detailViewPhotoRightModel: detailViewPhotoRightModel == freezed
+          ? _value.detailViewPhotoRightModel
+          : detailViewPhotoRightModel // ignore: cast_nullable_to_non_nullable
+              as DetailViewPhotoRightModel?,
       currentPage: currentPage == freezed
           ? _value.currentPage
           : currentPage // ignore: cast_nullable_to_non_nullable
@@ -665,7 +1377,12 @@ class _$_PhotoBlocState extends _PhotoBlocState {
       this.hasError = false,
       this.error = '',
       this.update = false,
+      this.isUpdateDetailPhotoRight = false,
+      this.isUpdateDetailPhotoLeft = false,
       this.getListPhotoModel = null,
+      this.getPhotoFromDateModel = null,
+      this.detailViewPhotoLeftModel = null,
+      this.detailViewPhotoRightModel = null,
       this.currentPage = ProgressPages.listphoto})
       : super._();
 
@@ -683,14 +1400,29 @@ class _$_PhotoBlocState extends _PhotoBlocState {
   final bool update;
   @JsonKey()
   @override
+  final bool isUpdateDetailPhotoRight;
+  @JsonKey()
+  @override
+  final bool isUpdateDetailPhotoLeft;
+  @JsonKey()
+  @override
   final GetListPhotoModel? getListPhotoModel;
+  @JsonKey()
+  @override
+  final GetPhotoFromDateModel? getPhotoFromDateModel;
+  @JsonKey()
+  @override
+  final DetailViewPhotoLeftModel? detailViewPhotoLeftModel;
+  @JsonKey()
+  @override
+  final DetailViewPhotoRightModel? detailViewPhotoRightModel;
   @JsonKey()
   @override
   final ProgressPages currentPage;
 
   @override
   String toString() {
-    return 'PhotoBlocState(isLoading: $isLoading, hasError: $hasError, error: $error, update: $update, getListPhotoModel: $getListPhotoModel, currentPage: $currentPage)';
+    return 'PhotoBlocState(isLoading: $isLoading, hasError: $hasError, error: $error, update: $update, isUpdateDetailPhotoRight: $isUpdateDetailPhotoRight, isUpdateDetailPhotoLeft: $isUpdateDetailPhotoLeft, getListPhotoModel: $getListPhotoModel, getPhotoFromDateModel: $getPhotoFromDateModel, detailViewPhotoLeftModel: $detailViewPhotoLeftModel, detailViewPhotoRightModel: $detailViewPhotoRightModel, currentPage: $currentPage)';
   }
 
   @override
@@ -702,8 +1434,18 @@ class _$_PhotoBlocState extends _PhotoBlocState {
             const DeepCollectionEquality().equals(other.hasError, hasError) &&
             const DeepCollectionEquality().equals(other.error, error) &&
             const DeepCollectionEquality().equals(other.update, update) &&
+            const DeepCollectionEquality().equals(
+                other.isUpdateDetailPhotoRight, isUpdateDetailPhotoRight) &&
+            const DeepCollectionEquality().equals(
+                other.isUpdateDetailPhotoLeft, isUpdateDetailPhotoLeft) &&
             const DeepCollectionEquality()
                 .equals(other.getListPhotoModel, getListPhotoModel) &&
+            const DeepCollectionEquality()
+                .equals(other.getPhotoFromDateModel, getPhotoFromDateModel) &&
+            const DeepCollectionEquality().equals(
+                other.detailViewPhotoLeftModel, detailViewPhotoLeftModel) &&
+            const DeepCollectionEquality().equals(
+                other.detailViewPhotoRightModel, detailViewPhotoRightModel) &&
             const DeepCollectionEquality()
                 .equals(other.currentPage, currentPage));
   }
@@ -715,7 +1457,12 @@ class _$_PhotoBlocState extends _PhotoBlocState {
       const DeepCollectionEquality().hash(hasError),
       const DeepCollectionEquality().hash(error),
       const DeepCollectionEquality().hash(update),
+      const DeepCollectionEquality().hash(isUpdateDetailPhotoRight),
+      const DeepCollectionEquality().hash(isUpdateDetailPhotoLeft),
       const DeepCollectionEquality().hash(getListPhotoModel),
+      const DeepCollectionEquality().hash(getPhotoFromDateModel),
+      const DeepCollectionEquality().hash(detailViewPhotoLeftModel),
+      const DeepCollectionEquality().hash(detailViewPhotoRightModel),
       const DeepCollectionEquality().hash(currentPage));
 
   @JsonKey(ignore: true)
@@ -730,7 +1477,12 @@ abstract class _PhotoBlocState extends PhotoBlocState {
       bool hasError,
       String error,
       bool update,
+      bool isUpdateDetailPhotoRight,
+      bool isUpdateDetailPhotoLeft,
       GetListPhotoModel? getListPhotoModel,
+      GetPhotoFromDateModel? getPhotoFromDateModel,
+      DetailViewPhotoLeftModel? detailViewPhotoLeftModel,
+      DetailViewPhotoRightModel? detailViewPhotoRightModel,
       ProgressPages currentPage}) = _$_PhotoBlocState;
   const _PhotoBlocState._() : super._();
 
@@ -743,7 +1495,17 @@ abstract class _PhotoBlocState extends PhotoBlocState {
   @override
   bool get update;
   @override
+  bool get isUpdateDetailPhotoRight;
+  @override
+  bool get isUpdateDetailPhotoLeft;
+  @override
   GetListPhotoModel? get getListPhotoModel;
+  @override
+  GetPhotoFromDateModel? get getPhotoFromDateModel;
+  @override
+  DetailViewPhotoLeftModel? get detailViewPhotoLeftModel;
+  @override
+  DetailViewPhotoRightModel? get detailViewPhotoRightModel;
   @override
   ProgressPages get currentPage;
   @override

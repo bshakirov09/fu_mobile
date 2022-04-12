@@ -88,7 +88,6 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
         );
         break;
       case AuthPages.chooseSubscribePlan:
-        // TODO: Handle this case.
         break;
     }
   }

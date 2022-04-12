@@ -1,25 +1,25 @@
-
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:fitness_uncensored/presentation/components/app_loading_component.dart';
 import 'package:flutter/material.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:percent_indicator/percent_indicator.dart';
-import 'package:easy_localization/easy_localization.dart';
 
 import 'package:fitness_uncensored/presentation/routes/app_routes.dart';
 import 'package:fitness_uncensored/presentation/styles/app_icons.dart';
 import 'package:fitness_uncensored/infrastructure/repository/models/workout_splits_roadmap_model.dart';
 import 'package:fitness_uncensored/presentation/styles/app_colors.dart';
+import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class ExpansionTileComponent extends StatefulWidget {
-
   final String title;
   final Map<String, List<WorkoutSplitsRoadmapItemModel>> items;
-
+  final int id;
   const ExpansionTileComponent({
     Key? key,
     required this.title,
     required this.items,
+    required this.id,
   }) : super(key: key);
 
   @override
@@ -36,15 +36,15 @@ class _ExpansionTileComponentState extends State<ExpansionTileComponent> {
       itemBuilder: (context, i) {
         return _buildPlayerModelList(
           weekName: "${i + 1}",
-          children: widget.items["${i + 1}"]
+          children: widget.items["${i + 1}"],
         );
       },
       separatorBuilder: (context, index) {
         return Padding(
           padding: EdgeInsets.only(right: 30.w, left: 30.w),
-          child: const Divider(
+          child: Divider(
             color: AppColors.disabledColor,
-            height: 1,
+            height: 1.h,
           ),
         );
       },
@@ -75,14 +75,17 @@ class _ExpansionTileComponentState extends State<ExpansionTileComponent> {
           padding: EdgeInsets.only(right: 30.w, left: 30.w, top: 16.h),
           child: Text(
             "Week $weekName",
-            style: AdaptiveTheme.of(context).theme.textTheme.headline3,
+            style: AdaptiveTheme.of(context)
+                .theme
+                .textTheme
+                .headline2!
+                .copyWith(fontWeight: FontWeight.w600),
           ),
         ),
         children: [
           Container(
             padding: EdgeInsets.only(right: 30.w, left: 30.w),
             color: AppColors.grey,
-            height: 472.h,
             child: ListView.builder(
                 shrinkWrap: true,
                 itemCount: children?.length ?? 0,
@@ -94,107 +97,120 @@ class _ExpansionTileComponentState extends State<ExpansionTileComponent> {
                         Navigator.push(
                             context,
                             AppRoutes.workoutDayDetail(
-                                id: children![i].id,
-                                title: widget.title + "_split".tr()));
+                              id: children![i].id,
+                              title: "Day ${children[i].day} Workout",
+                              id1: widget.id,
+                              title1: widget.title,
+                            ));
                       },
                       child: Container(
                         child: DecoratedBox(
                           decoration: BoxDecoration(
                             color: AppColors.white,
                             borderRadius: BorderRadius.circular(20.r),
+                            boxShadow: const [
+                              BoxShadow(
+                                blurRadius: 6,
+                                color: Color.fromRGBO(0, 0, 0, 0.06),
+                                // blurRadius: 0, // soften the shadow
+                                // spreadRadius: 6, //extend the shadow
+                                // offset: Offset(
+                                //   0, // Move to right 10  horizontally
+                                //   1, // Move to bottom 5 Vertically
+                                // ),
+                              )
+                            ],
                           ),
-                          child: Stack(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Row(
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsets.only(
-                                            top: 16.h, left: 24),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              "Day ${children?[i].day}",
-                                              style: AdaptiveTheme.of(context)
-                                                  .theme
-                                                  .textTheme
-                                                  .headline4,
-                                            ),
-                                          ],
+                                  ClipRRect(
+                                    clipBehavior: Clip.antiAlias,
+                                    borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(20.r),
+                                      topLeft: Radius.circular(20.r),
+                                    ),
+                                    child: CachedNetworkImage(
+                                      height: 60.h,
+                                      width: 60.w,
+                                      imageUrl: children?[i].image ?? "",
+                                      fit: BoxFit.cover,
+                                      placeholder: (context, url) =>
+                                          const Padding(
+                                        padding: EdgeInsets.all(5),
+                                        child: Center(
+                                          child: AppLoadingComponent(
+                                              showLoadingTextForIOS: false),
                                         ),
                                       ),
-                                      SizedBox(width: 21.w),
+                                      errorWidget: (context, _, __) => Center(
+                                        child: Image.asset(
+                                            'assets/images/default_image.jpg'),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(width: 10.w),
+                                  Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
                                       Text(
-                                        "Quads",
+                                        "Day ${children?[i].day ?? 0}",
                                         style: AdaptiveTheme.of(context)
                                             .theme
                                             .textTheme
-                                            .bodyText2,
+                                            .headline2!
+                                            .copyWith(
+                                                fontSize: 18.sp,
+                                                color: AppColors.secondaryColor
+                                                    .withOpacity(0.6)),
+                                      ),
+                                      Text(
+                                        children?[i].title ?? "",
+                                        style: AdaptiveTheme.of(context)
+                                            .theme
+                                            .textTheme
+                                            .headline1!
+                                            .copyWith(fontSize: 14.sp),
                                       ),
                                     ],
                                   ),
-                                  Padding(
-                                      padding: EdgeInsets.only(right: 24.w),
-                                      child: children?[i].percentage == 100
-                                          ? SvgPicture.asset(
-                                              AppIcons.checkCircleFilled,
-                                              height: 36.r,
-                                            )
-                                          : CircularPercentIndicator(
-                                              radius: 36.r,
-                                              lineWidth: 3.0,
-                                              percent: children![i]
-                                                      .percentage
-                                                      .toDouble() /
-                                                  100,
-                                              center: Text(
-                                                "${children[i].percentage}%",
-                                                style: AdaptiveTheme.of(context)
-                                                    .theme
-                                                    .textTheme
-                                                    .bodyText2!
-                                                    .copyWith(fontSize: 9.sp),
-                                              ),
-                                              progressColor:
-                                                  AppColors.primaryColor,
-                                              backgroundColor:
-                                                  AppColors.disabledColor,
-                                            )
-                                      // Container(
-                                      //   height: 36.h,
-                                      //   width: 36.h,
-                                      //   child: DecoratedBox(
-                                      //     decoration: BoxDecoration(
-                                      //       color: AppColors.white,
-                                      //       borderRadius:
-                                      //           BorderRadius.circular(18.r),
-                                      //     ),
-                                      //     child: Center(
-                                      //       child: Text(
-                                      //         "${children?[i].percentage}",
-                                      //         style: TextStyle(
-                                      //           color: AppColors.primaryColor
-                                      //               .withOpacity(0.5),
-                                      //           fontSize: 9,
-                                      //           fontWeight: FontWeight.w400,
-                                      //         ),
-                                      //       ),
-                                      //     ),
-                                      //   ),
-                                      //   decoration: BoxDecoration(
-                                      //     borderRadius: BorderRadius.circular(18.r),
-                                      //     border: Border.all(
-                                      //       width: 4,
-                                      //     ),
-                                      //   ),
-                                      // ),
-                                      )
                                 ],
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(right: 12.w),
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      "${children?[i].quadsCount ?? 0} Exercises",
+                                      style: AdaptiveTheme.of(context)
+                                          .theme
+                                          .textTheme
+                                          .bodyText2!
+                                          .copyWith(
+                                              color: AppColors.primaryColor
+                                                  .withOpacity(0.2)),
+                                    ),
+                                    SizedBox(width: 6.w),
+                                    children?[i].isCompleted ?? false
+                                        ? SvgPicture.asset(
+                                            AppIcons.checkCircleFilled,
+                                            color: AppColors.secondaryColor,
+                                            height: 24.h,
+                                          )
+                                        : CircularPercentIndicator(
+                                            radius: 22.h,
+                                            lineWidth: 2.0,
+                                            progressColor:
+                                                AppColors.primaryColor,
+                                            backgroundColor:
+                                                AppColors.secondaryColor,
+                                          ),
+                                  ],
+                                ),
                               ),
                             ],
                           ),

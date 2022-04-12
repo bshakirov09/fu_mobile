@@ -1,4 +1,3 @@
-
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -13,8 +12,9 @@ import 'package:fitness_uncensored/presentation/components/text_field_component.
 import 'package:fitness_uncensored/presentation/components/app_bar_component.dart';
 import 'package:fitness_uncensored/presentation/components/main_button_component.dart';
 
-class WeightSettingsPage extends StatefulWidget {
+import '../../styles/app_colors.dart';
 
+class WeightSettingsPage extends StatefulWidget {
   const WeightSettingsPage({Key? key}) : super(key: key);
 
   @override
@@ -22,7 +22,6 @@ class WeightSettingsPage extends StatefulWidget {
 }
 
 class _WeightSettingsPageState extends State<WeightSettingsPage> {
-
   String _weight = '';
 
   @override
@@ -32,8 +31,20 @@ class _WeightSettingsPageState extends State<WeightSettingsPage> {
       child: Scaffold(
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(56.h),
-          child: AppBarComponent(
-            text: "weight".tr(),
+          child: AppBar(
+            foregroundColor: AppColors.primaryColor,
+            title: Text(
+              "weight".tr(),
+              style: AdaptiveTheme.of(context)
+                  .theme
+                  .textTheme
+                  .headline4!
+                  .copyWith(fontWeight: FontWeight.w700),
+            ),
+            centerTitle: true,
+            backgroundColor: AppColors.white,
+            elevation: 4,
+            shadowColor: AppColors.white.withOpacity(0.4),
           ),
         ),
         body: BlocConsumer<ProfileBloc, ProfileState>(
@@ -52,13 +63,11 @@ class _WeightSettingsPageState extends State<WeightSettingsPage> {
           builder: (context, state) {
             if (state.isLoading) {
               return const AppLoadingComponent();
-            }
-            else if (state.hasError) {
+            } else if (state.hasError) {
               return Center(
                 child: ErrorComponent(errorMessage: state.error),
               );
-            }
-            else {
+            } else {
               return Padding(
                 padding: EdgeInsets.only(left: 30.w, right: 30.w, top: 22.h),
                 child: Column(
@@ -67,18 +76,20 @@ class _WeightSettingsPageState extends State<WeightSettingsPage> {
                     RichText(
                       text: TextSpan(
                         text: 'enter_your'.tr(),
-                        style: AdaptiveTheme.of(context).theme.textTheme.headline1,
+                        style:
+                            AdaptiveTheme.of(context).theme.textTheme.headline1,
                         children: <TextSpan>[
                           TextSpan(
                             text: 'weight_'.tr(),
-                            style: AdaptiveTheme.of(context).theme.textTheme.headline2,
+                            style: AdaptiveTheme.of(context)
+                                .theme
+                                .textTheme
+                                .headline2,
                           ),
                         ],
                       ),
                     ),
-
                     SizedBox(height: 24.h),
-
                     TextFieldComponent(
                       inputType: TextInputType.number,
                       hint: "weight_lBs".tr(),
@@ -94,11 +105,11 @@ class _WeightSettingsPageState extends State<WeightSettingsPage> {
           margin: EdgeInsets.only(bottom: 60.h, right: 30.w, left: 30.w),
           text: 'save'.tr(),
           onPressed: () {
-            context.read<ProfileBloc>().add(ProfileEvent.updateUserInfo(
-              userInfo: {
-                "weight": _weight,
-              }
-            ));
+            context
+                .read<ProfileBloc>()
+                .add(ProfileEvent.updateUserInfo(userInfo: {
+                  "weight": _weight,
+                }));
           },
         ),
       ),

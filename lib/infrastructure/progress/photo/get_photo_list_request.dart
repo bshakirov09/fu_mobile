@@ -27,7 +27,7 @@ class GetPhotoListRequest {
                 validateStatus: (status) =>
                     status! <= HttpStatus.internalServerError),
           );
-
+   
       if (response.statusCode == HttpStatus.ok) {
         return right(GetListPhotoModel.fromJson(response.data));
       } else if (response.statusCode == HttpStatus.unauthorized) {

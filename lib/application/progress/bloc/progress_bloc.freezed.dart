@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'progress_bloc.dart';
@@ -17,52 +18,32 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ProgressEventTearOff {
   const _$ProgressEventTearOff();
 
-  _GetPhotoList getPhotoList() {
-    return const _GetPhotoList();
-  }
-
-  _GetNextPhotoListPage getNextPhotoListPage() {
-    return const _GetNextPhotoListPage();
-  }
-
-  _GetJournalList getJournalList() {
-    return const _GetJournalList();
-  }
-
-  _AddJorunal addJorunal(
-      {ProgressJournalDetailModel? progressJournalDetailModel}) {
-    return _AddJorunal(
-      progressJournalDetailModel: progressJournalDetailModel,
+  _GetWeight getWeight({required String duration}) {
+    return _GetWeight(
+      duration: duration,
     );
   }
 
-  _GetNextPage getNextPage(
-      {ProgressJournalDetailModel? progressJournalDetailModel}) {
-    return _GetNextPage(
-      progressJournalDetailModel: progressJournalDetailModel,
+  _AddCheck addCheck() {
+    return const _AddCheck();
+  }
+
+  _CreateWeight createWeight({required String weight}) {
+    return _CreateWeight(
+      weight: weight,
     );
   }
 
-  _RefreshState refreshState() {
-    return const _RefreshState();
-  }
-
-  _GetPreviousPage getPreviousPage() {
-    return const _GetPreviousPage();
-  }
-
-  _GetDetailJournal getDetailJournal({required int id}) {
-    return _GetDetailJournal(
+  _UpdateWeight updateWeight({required String id, required String weight}) {
+    return _UpdateWeight(
       id: id,
+      weight: weight,
     );
   }
 
-  _AddPhoto addPhoto(
-      {required String front, required String side, required String back}) {
-    return _AddPhoto(
-      front: front,
-      side: side,
-      back: back,
+  _GetProgressDetail getProgressDetail({required String id}) {
+    return _GetProgressDetail(
+      id: id,
     );
   }
 }
@@ -74,89 +55,57 @@ const $ProgressEvent = _$ProgressEventTearOff();
 mixin _$ProgressEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() getPhotoList,
-    required TResult Function() getNextPhotoListPage,
-    required TResult Function() getJournalList,
-    required TResult Function(
-            ProgressJournalDetailModel? progressJournalDetailModel)
-        addJorunal,
-    required TResult Function(
-            ProgressJournalDetailModel? progressJournalDetailModel)
-        getNextPage,
-    required TResult Function() refreshState,
-    required TResult Function() getPreviousPage,
-    required TResult Function(int id) getDetailJournal,
-    required TResult Function(String front, String side, String back) addPhoto,
+    required TResult Function(String duration) getWeight,
+    required TResult Function() addCheck,
+    required TResult Function(String weight) createWeight,
+    required TResult Function(String id, String weight) updateWeight,
+    required TResult Function(String id) getProgressDetail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? getPhotoList,
-    TResult Function()? getNextPhotoListPage,
-    TResult Function()? getJournalList,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        addJorunal,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        getNextPage,
-    TResult Function()? refreshState,
-    TResult Function()? getPreviousPage,
-    TResult Function(int id)? getDetailJournal,
-    TResult Function(String front, String side, String back)? addPhoto,
+    TResult Function(String duration)? getWeight,
+    TResult Function()? addCheck,
+    TResult Function(String weight)? createWeight,
+    TResult Function(String id, String weight)? updateWeight,
+    TResult Function(String id)? getProgressDetail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getPhotoList,
-    TResult Function()? getNextPhotoListPage,
-    TResult Function()? getJournalList,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        addJorunal,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        getNextPage,
-    TResult Function()? refreshState,
-    TResult Function()? getPreviousPage,
-    TResult Function(int id)? getDetailJournal,
-    TResult Function(String front, String side, String back)? addPhoto,
+    TResult Function(String duration)? getWeight,
+    TResult Function()? addCheck,
+    TResult Function(String weight)? createWeight,
+    TResult Function(String id, String weight)? updateWeight,
+    TResult Function(String id)? getProgressDetail,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_GetPhotoList value) getPhotoList,
-    required TResult Function(_GetNextPhotoListPage value) getNextPhotoListPage,
-    required TResult Function(_GetJournalList value) getJournalList,
-    required TResult Function(_AddJorunal value) addJorunal,
-    required TResult Function(_GetNextPage value) getNextPage,
-    required TResult Function(_RefreshState value) refreshState,
-    required TResult Function(_GetPreviousPage value) getPreviousPage,
-    required TResult Function(_GetDetailJournal value) getDetailJournal,
-    required TResult Function(_AddPhoto value) addPhoto,
+    required TResult Function(_GetWeight value) getWeight,
+    required TResult Function(_AddCheck value) addCheck,
+    required TResult Function(_CreateWeight value) createWeight,
+    required TResult Function(_UpdateWeight value) updateWeight,
+    required TResult Function(_GetProgressDetail value) getProgressDetail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_GetPhotoList value)? getPhotoList,
-    TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
-    TResult Function(_GetJournalList value)? getJournalList,
-    TResult Function(_AddJorunal value)? addJorunal,
-    TResult Function(_GetNextPage value)? getNextPage,
-    TResult Function(_RefreshState value)? refreshState,
-    TResult Function(_GetPreviousPage value)? getPreviousPage,
-    TResult Function(_GetDetailJournal value)? getDetailJournal,
-    TResult Function(_AddPhoto value)? addPhoto,
+    TResult Function(_GetWeight value)? getWeight,
+    TResult Function(_AddCheck value)? addCheck,
+    TResult Function(_CreateWeight value)? createWeight,
+    TResult Function(_UpdateWeight value)? updateWeight,
+    TResult Function(_GetProgressDetail value)? getProgressDetail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetPhotoList value)? getPhotoList,
-    TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
-    TResult Function(_GetJournalList value)? getJournalList,
-    TResult Function(_AddJorunal value)? addJorunal,
-    TResult Function(_GetNextPage value)? getNextPage,
-    TResult Function(_RefreshState value)? refreshState,
-    TResult Function(_GetPreviousPage value)? getPreviousPage,
-    TResult Function(_GetDetailJournal value)? getDetailJournal,
-    TResult Function(_AddPhoto value)? addPhoto,
+    TResult Function(_GetWeight value)? getWeight,
+    TResult Function(_AddCheck value)? addCheck,
+    TResult Function(_CreateWeight value)? createWeight,
+    TResult Function(_UpdateWeight value)? updateWeight,
+    TResult Function(_GetProgressDetail value)? getProgressDetail,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -180,621 +129,101 @@ class _$ProgressEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$GetPhotoListCopyWith<$Res> {
-  factory _$GetPhotoListCopyWith(
-          _GetPhotoList value, $Res Function(_GetPhotoList) then) =
-      __$GetPhotoListCopyWithImpl<$Res>;
+abstract class _$GetWeightCopyWith<$Res> {
+  factory _$GetWeightCopyWith(
+          _GetWeight value, $Res Function(_GetWeight) then) =
+      __$GetWeightCopyWithImpl<$Res>;
+  $Res call({String duration});
 }
 
 /// @nodoc
-class __$GetPhotoListCopyWithImpl<$Res>
-    extends _$ProgressEventCopyWithImpl<$Res>
-    implements _$GetPhotoListCopyWith<$Res> {
-  __$GetPhotoListCopyWithImpl(
-      _GetPhotoList _value, $Res Function(_GetPhotoList) _then)
-      : super(_value, (v) => _then(v as _GetPhotoList));
+class __$GetWeightCopyWithImpl<$Res> extends _$ProgressEventCopyWithImpl<$Res>
+    implements _$GetWeightCopyWith<$Res> {
+  __$GetWeightCopyWithImpl(_GetWeight _value, $Res Function(_GetWeight) _then)
+      : super(_value, (v) => _then(v as _GetWeight));
 
   @override
-  _GetPhotoList get _value => super._value as _GetPhotoList;
-}
-
-/// @nodoc
-
-class _$_GetPhotoList extends _GetPhotoList with DiagnosticableTreeMixin {
-  const _$_GetPhotoList() : super._();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ProgressEvent.getPhotoList()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'ProgressEvent.getPhotoList'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _GetPhotoList);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() getPhotoList,
-    required TResult Function() getNextPhotoListPage,
-    required TResult Function() getJournalList,
-    required TResult Function(
-            ProgressJournalDetailModel? progressJournalDetailModel)
-        addJorunal,
-    required TResult Function(
-            ProgressJournalDetailModel? progressJournalDetailModel)
-        getNextPage,
-    required TResult Function() refreshState,
-    required TResult Function() getPreviousPage,
-    required TResult Function(int id) getDetailJournal,
-    required TResult Function(String front, String side, String back) addPhoto,
-  }) {
-    return getPhotoList();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? getPhotoList,
-    TResult Function()? getNextPhotoListPage,
-    TResult Function()? getJournalList,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        addJorunal,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        getNextPage,
-    TResult Function()? refreshState,
-    TResult Function()? getPreviousPage,
-    TResult Function(int id)? getDetailJournal,
-    TResult Function(String front, String side, String back)? addPhoto,
-  }) {
-    return getPhotoList?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getPhotoList,
-    TResult Function()? getNextPhotoListPage,
-    TResult Function()? getJournalList,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        addJorunal,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        getNextPage,
-    TResult Function()? refreshState,
-    TResult Function()? getPreviousPage,
-    TResult Function(int id)? getDetailJournal,
-    TResult Function(String front, String side, String back)? addPhoto,
-    required TResult orElse(),
-  }) {
-    if (getPhotoList != null) {
-      return getPhotoList();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_GetPhotoList value) getPhotoList,
-    required TResult Function(_GetNextPhotoListPage value) getNextPhotoListPage,
-    required TResult Function(_GetJournalList value) getJournalList,
-    required TResult Function(_AddJorunal value) addJorunal,
-    required TResult Function(_GetNextPage value) getNextPage,
-    required TResult Function(_RefreshState value) refreshState,
-    required TResult Function(_GetPreviousPage value) getPreviousPage,
-    required TResult Function(_GetDetailJournal value) getDetailJournal,
-    required TResult Function(_AddPhoto value) addPhoto,
-  }) {
-    return getPhotoList(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_GetPhotoList value)? getPhotoList,
-    TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
-    TResult Function(_GetJournalList value)? getJournalList,
-    TResult Function(_AddJorunal value)? addJorunal,
-    TResult Function(_GetNextPage value)? getNextPage,
-    TResult Function(_RefreshState value)? refreshState,
-    TResult Function(_GetPreviousPage value)? getPreviousPage,
-    TResult Function(_GetDetailJournal value)? getDetailJournal,
-    TResult Function(_AddPhoto value)? addPhoto,
-  }) {
-    return getPhotoList?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetPhotoList value)? getPhotoList,
-    TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
-    TResult Function(_GetJournalList value)? getJournalList,
-    TResult Function(_AddJorunal value)? addJorunal,
-    TResult Function(_GetNextPage value)? getNextPage,
-    TResult Function(_RefreshState value)? refreshState,
-    TResult Function(_GetPreviousPage value)? getPreviousPage,
-    TResult Function(_GetDetailJournal value)? getDetailJournal,
-    TResult Function(_AddPhoto value)? addPhoto,
-    required TResult orElse(),
-  }) {
-    if (getPhotoList != null) {
-      return getPhotoList(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _GetPhotoList extends ProgressEvent {
-  const factory _GetPhotoList() = _$_GetPhotoList;
-  const _GetPhotoList._() : super._();
-}
-
-/// @nodoc
-abstract class _$GetNextPhotoListPageCopyWith<$Res> {
-  factory _$GetNextPhotoListPageCopyWith(_GetNextPhotoListPage value,
-          $Res Function(_GetNextPhotoListPage) then) =
-      __$GetNextPhotoListPageCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$GetNextPhotoListPageCopyWithImpl<$Res>
-    extends _$ProgressEventCopyWithImpl<$Res>
-    implements _$GetNextPhotoListPageCopyWith<$Res> {
-  __$GetNextPhotoListPageCopyWithImpl(
-      _GetNextPhotoListPage _value, $Res Function(_GetNextPhotoListPage) _then)
-      : super(_value, (v) => _then(v as _GetNextPhotoListPage));
-
-  @override
-  _GetNextPhotoListPage get _value => super._value as _GetNextPhotoListPage;
-}
-
-/// @nodoc
-
-class _$_GetNextPhotoListPage extends _GetNextPhotoListPage
-    with DiagnosticableTreeMixin {
-  const _$_GetNextPhotoListPage() : super._();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ProgressEvent.getNextPhotoListPage()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ProgressEvent.getNextPhotoListPage'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _GetNextPhotoListPage);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() getPhotoList,
-    required TResult Function() getNextPhotoListPage,
-    required TResult Function() getJournalList,
-    required TResult Function(
-            ProgressJournalDetailModel? progressJournalDetailModel)
-        addJorunal,
-    required TResult Function(
-            ProgressJournalDetailModel? progressJournalDetailModel)
-        getNextPage,
-    required TResult Function() refreshState,
-    required TResult Function() getPreviousPage,
-    required TResult Function(int id) getDetailJournal,
-    required TResult Function(String front, String side, String back) addPhoto,
-  }) {
-    return getNextPhotoListPage();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? getPhotoList,
-    TResult Function()? getNextPhotoListPage,
-    TResult Function()? getJournalList,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        addJorunal,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        getNextPage,
-    TResult Function()? refreshState,
-    TResult Function()? getPreviousPage,
-    TResult Function(int id)? getDetailJournal,
-    TResult Function(String front, String side, String back)? addPhoto,
-  }) {
-    return getNextPhotoListPage?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getPhotoList,
-    TResult Function()? getNextPhotoListPage,
-    TResult Function()? getJournalList,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        addJorunal,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        getNextPage,
-    TResult Function()? refreshState,
-    TResult Function()? getPreviousPage,
-    TResult Function(int id)? getDetailJournal,
-    TResult Function(String front, String side, String back)? addPhoto,
-    required TResult orElse(),
-  }) {
-    if (getNextPhotoListPage != null) {
-      return getNextPhotoListPage();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_GetPhotoList value) getPhotoList,
-    required TResult Function(_GetNextPhotoListPage value) getNextPhotoListPage,
-    required TResult Function(_GetJournalList value) getJournalList,
-    required TResult Function(_AddJorunal value) addJorunal,
-    required TResult Function(_GetNextPage value) getNextPage,
-    required TResult Function(_RefreshState value) refreshState,
-    required TResult Function(_GetPreviousPage value) getPreviousPage,
-    required TResult Function(_GetDetailJournal value) getDetailJournal,
-    required TResult Function(_AddPhoto value) addPhoto,
-  }) {
-    return getNextPhotoListPage(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_GetPhotoList value)? getPhotoList,
-    TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
-    TResult Function(_GetJournalList value)? getJournalList,
-    TResult Function(_AddJorunal value)? addJorunal,
-    TResult Function(_GetNextPage value)? getNextPage,
-    TResult Function(_RefreshState value)? refreshState,
-    TResult Function(_GetPreviousPage value)? getPreviousPage,
-    TResult Function(_GetDetailJournal value)? getDetailJournal,
-    TResult Function(_AddPhoto value)? addPhoto,
-  }) {
-    return getNextPhotoListPage?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetPhotoList value)? getPhotoList,
-    TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
-    TResult Function(_GetJournalList value)? getJournalList,
-    TResult Function(_AddJorunal value)? addJorunal,
-    TResult Function(_GetNextPage value)? getNextPage,
-    TResult Function(_RefreshState value)? refreshState,
-    TResult Function(_GetPreviousPage value)? getPreviousPage,
-    TResult Function(_GetDetailJournal value)? getDetailJournal,
-    TResult Function(_AddPhoto value)? addPhoto,
-    required TResult orElse(),
-  }) {
-    if (getNextPhotoListPage != null) {
-      return getNextPhotoListPage(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _GetNextPhotoListPage extends ProgressEvent {
-  const factory _GetNextPhotoListPage() = _$_GetNextPhotoListPage;
-  const _GetNextPhotoListPage._() : super._();
-}
-
-/// @nodoc
-abstract class _$GetJournalListCopyWith<$Res> {
-  factory _$GetJournalListCopyWith(
-          _GetJournalList value, $Res Function(_GetJournalList) then) =
-      __$GetJournalListCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$GetJournalListCopyWithImpl<$Res>
-    extends _$ProgressEventCopyWithImpl<$Res>
-    implements _$GetJournalListCopyWith<$Res> {
-  __$GetJournalListCopyWithImpl(
-      _GetJournalList _value, $Res Function(_GetJournalList) _then)
-      : super(_value, (v) => _then(v as _GetJournalList));
-
-  @override
-  _GetJournalList get _value => super._value as _GetJournalList;
-}
-
-/// @nodoc
-
-class _$_GetJournalList extends _GetJournalList with DiagnosticableTreeMixin {
-  const _$_GetJournalList() : super._();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ProgressEvent.getJournalList()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ProgressEvent.getJournalList'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _GetJournalList);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() getPhotoList,
-    required TResult Function() getNextPhotoListPage,
-    required TResult Function() getJournalList,
-    required TResult Function(
-            ProgressJournalDetailModel? progressJournalDetailModel)
-        addJorunal,
-    required TResult Function(
-            ProgressJournalDetailModel? progressJournalDetailModel)
-        getNextPage,
-    required TResult Function() refreshState,
-    required TResult Function() getPreviousPage,
-    required TResult Function(int id) getDetailJournal,
-    required TResult Function(String front, String side, String back) addPhoto,
-  }) {
-    return getJournalList();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? getPhotoList,
-    TResult Function()? getNextPhotoListPage,
-    TResult Function()? getJournalList,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        addJorunal,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        getNextPage,
-    TResult Function()? refreshState,
-    TResult Function()? getPreviousPage,
-    TResult Function(int id)? getDetailJournal,
-    TResult Function(String front, String side, String back)? addPhoto,
-  }) {
-    return getJournalList?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getPhotoList,
-    TResult Function()? getNextPhotoListPage,
-    TResult Function()? getJournalList,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        addJorunal,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        getNextPage,
-    TResult Function()? refreshState,
-    TResult Function()? getPreviousPage,
-    TResult Function(int id)? getDetailJournal,
-    TResult Function(String front, String side, String back)? addPhoto,
-    required TResult orElse(),
-  }) {
-    if (getJournalList != null) {
-      return getJournalList();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_GetPhotoList value) getPhotoList,
-    required TResult Function(_GetNextPhotoListPage value) getNextPhotoListPage,
-    required TResult Function(_GetJournalList value) getJournalList,
-    required TResult Function(_AddJorunal value) addJorunal,
-    required TResult Function(_GetNextPage value) getNextPage,
-    required TResult Function(_RefreshState value) refreshState,
-    required TResult Function(_GetPreviousPage value) getPreviousPage,
-    required TResult Function(_GetDetailJournal value) getDetailJournal,
-    required TResult Function(_AddPhoto value) addPhoto,
-  }) {
-    return getJournalList(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_GetPhotoList value)? getPhotoList,
-    TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
-    TResult Function(_GetJournalList value)? getJournalList,
-    TResult Function(_AddJorunal value)? addJorunal,
-    TResult Function(_GetNextPage value)? getNextPage,
-    TResult Function(_RefreshState value)? refreshState,
-    TResult Function(_GetPreviousPage value)? getPreviousPage,
-    TResult Function(_GetDetailJournal value)? getDetailJournal,
-    TResult Function(_AddPhoto value)? addPhoto,
-  }) {
-    return getJournalList?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetPhotoList value)? getPhotoList,
-    TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
-    TResult Function(_GetJournalList value)? getJournalList,
-    TResult Function(_AddJorunal value)? addJorunal,
-    TResult Function(_GetNextPage value)? getNextPage,
-    TResult Function(_RefreshState value)? refreshState,
-    TResult Function(_GetPreviousPage value)? getPreviousPage,
-    TResult Function(_GetDetailJournal value)? getDetailJournal,
-    TResult Function(_AddPhoto value)? addPhoto,
-    required TResult orElse(),
-  }) {
-    if (getJournalList != null) {
-      return getJournalList(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _GetJournalList extends ProgressEvent {
-  const factory _GetJournalList() = _$_GetJournalList;
-  const _GetJournalList._() : super._();
-}
-
-/// @nodoc
-abstract class _$AddJorunalCopyWith<$Res> {
-  factory _$AddJorunalCopyWith(
-          _AddJorunal value, $Res Function(_AddJorunal) then) =
-      __$AddJorunalCopyWithImpl<$Res>;
-  $Res call({ProgressJournalDetailModel? progressJournalDetailModel});
-}
-
-/// @nodoc
-class __$AddJorunalCopyWithImpl<$Res> extends _$ProgressEventCopyWithImpl<$Res>
-    implements _$AddJorunalCopyWith<$Res> {
-  __$AddJorunalCopyWithImpl(
-      _AddJorunal _value, $Res Function(_AddJorunal) _then)
-      : super(_value, (v) => _then(v as _AddJorunal));
-
-  @override
-  _AddJorunal get _value => super._value as _AddJorunal;
+  _GetWeight get _value => super._value as _GetWeight;
 
   @override
   $Res call({
-    Object? progressJournalDetailModel = freezed,
+    Object? duration = freezed,
   }) {
-    return _then(_AddJorunal(
-      progressJournalDetailModel: progressJournalDetailModel == freezed
-          ? _value.progressJournalDetailModel
-          : progressJournalDetailModel // ignore: cast_nullable_to_non_nullable
-              as ProgressJournalDetailModel?,
+    return _then(_GetWeight(
+      duration: duration == freezed
+          ? _value.duration
+          : duration // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_AddJorunal extends _AddJorunal with DiagnosticableTreeMixin {
-  const _$_AddJorunal({this.progressJournalDetailModel}) : super._();
+class _$_GetWeight extends _GetWeight {
+  const _$_GetWeight({required this.duration}) : super._();
 
   @override
-  final ProgressJournalDetailModel? progressJournalDetailModel;
+  final String duration;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ProgressEvent.addJorunal(progressJournalDetailModel: $progressJournalDetailModel)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ProgressEvent.addJorunal'))
-      ..add(DiagnosticsProperty(
-          'progressJournalDetailModel', progressJournalDetailModel));
+  String toString() {
+    return 'ProgressEvent.getWeight(duration: $duration)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _AddJorunal &&
-            const DeepCollectionEquality().equals(
-                other.progressJournalDetailModel, progressJournalDetailModel));
+            other is _GetWeight &&
+            const DeepCollectionEquality().equals(other.duration, duration));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(progressJournalDetailModel));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(duration));
 
   @JsonKey(ignore: true)
   @override
-  _$AddJorunalCopyWith<_AddJorunal> get copyWith =>
-      __$AddJorunalCopyWithImpl<_AddJorunal>(this, _$identity);
+  _$GetWeightCopyWith<_GetWeight> get copyWith =>
+      __$GetWeightCopyWithImpl<_GetWeight>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() getPhotoList,
-    required TResult Function() getNextPhotoListPage,
-    required TResult Function() getJournalList,
-    required TResult Function(
-            ProgressJournalDetailModel? progressJournalDetailModel)
-        addJorunal,
-    required TResult Function(
-            ProgressJournalDetailModel? progressJournalDetailModel)
-        getNextPage,
-    required TResult Function() refreshState,
-    required TResult Function() getPreviousPage,
-    required TResult Function(int id) getDetailJournal,
-    required TResult Function(String front, String side, String back) addPhoto,
+    required TResult Function(String duration) getWeight,
+    required TResult Function() addCheck,
+    required TResult Function(String weight) createWeight,
+    required TResult Function(String id, String weight) updateWeight,
+    required TResult Function(String id) getProgressDetail,
   }) {
-    return addJorunal(progressJournalDetailModel);
+    return getWeight(duration);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? getPhotoList,
-    TResult Function()? getNextPhotoListPage,
-    TResult Function()? getJournalList,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        addJorunal,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        getNextPage,
-    TResult Function()? refreshState,
-    TResult Function()? getPreviousPage,
-    TResult Function(int id)? getDetailJournal,
-    TResult Function(String front, String side, String back)? addPhoto,
+    TResult Function(String duration)? getWeight,
+    TResult Function()? addCheck,
+    TResult Function(String weight)? createWeight,
+    TResult Function(String id, String weight)? updateWeight,
+    TResult Function(String id)? getProgressDetail,
   }) {
-    return addJorunal?.call(progressJournalDetailModel);
+    return getWeight?.call(duration);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getPhotoList,
-    TResult Function()? getNextPhotoListPage,
-    TResult Function()? getJournalList,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        addJorunal,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        getNextPage,
-    TResult Function()? refreshState,
-    TResult Function()? getPreviousPage,
-    TResult Function(int id)? getDetailJournal,
-    TResult Function(String front, String side, String back)? addPhoto,
+    TResult Function(String duration)? getWeight,
+    TResult Function()? addCheck,
+    TResult Function(String weight)? createWeight,
+    TResult Function(String id, String weight)? updateWeight,
+    TResult Function(String id)? getProgressDetail,
     required TResult orElse(),
   }) {
-    if (addJorunal != null) {
-      return addJorunal(progressJournalDetailModel);
+    if (getWeight != null) {
+      return getWeight(duration);
     }
     return orElse();
   }
@@ -802,194 +231,273 @@ class _$_AddJorunal extends _AddJorunal with DiagnosticableTreeMixin {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_GetPhotoList value) getPhotoList,
-    required TResult Function(_GetNextPhotoListPage value) getNextPhotoListPage,
-    required TResult Function(_GetJournalList value) getJournalList,
-    required TResult Function(_AddJorunal value) addJorunal,
-    required TResult Function(_GetNextPage value) getNextPage,
-    required TResult Function(_RefreshState value) refreshState,
-    required TResult Function(_GetPreviousPage value) getPreviousPage,
-    required TResult Function(_GetDetailJournal value) getDetailJournal,
-    required TResult Function(_AddPhoto value) addPhoto,
+    required TResult Function(_GetWeight value) getWeight,
+    required TResult Function(_AddCheck value) addCheck,
+    required TResult Function(_CreateWeight value) createWeight,
+    required TResult Function(_UpdateWeight value) updateWeight,
+    required TResult Function(_GetProgressDetail value) getProgressDetail,
   }) {
-    return addJorunal(this);
+    return getWeight(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_GetPhotoList value)? getPhotoList,
-    TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
-    TResult Function(_GetJournalList value)? getJournalList,
-    TResult Function(_AddJorunal value)? addJorunal,
-    TResult Function(_GetNextPage value)? getNextPage,
-    TResult Function(_RefreshState value)? refreshState,
-    TResult Function(_GetPreviousPage value)? getPreviousPage,
-    TResult Function(_GetDetailJournal value)? getDetailJournal,
-    TResult Function(_AddPhoto value)? addPhoto,
+    TResult Function(_GetWeight value)? getWeight,
+    TResult Function(_AddCheck value)? addCheck,
+    TResult Function(_CreateWeight value)? createWeight,
+    TResult Function(_UpdateWeight value)? updateWeight,
+    TResult Function(_GetProgressDetail value)? getProgressDetail,
   }) {
-    return addJorunal?.call(this);
+    return getWeight?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetPhotoList value)? getPhotoList,
-    TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
-    TResult Function(_GetJournalList value)? getJournalList,
-    TResult Function(_AddJorunal value)? addJorunal,
-    TResult Function(_GetNextPage value)? getNextPage,
-    TResult Function(_RefreshState value)? refreshState,
-    TResult Function(_GetPreviousPage value)? getPreviousPage,
-    TResult Function(_GetDetailJournal value)? getDetailJournal,
-    TResult Function(_AddPhoto value)? addPhoto,
+    TResult Function(_GetWeight value)? getWeight,
+    TResult Function(_AddCheck value)? addCheck,
+    TResult Function(_CreateWeight value)? createWeight,
+    TResult Function(_UpdateWeight value)? updateWeight,
+    TResult Function(_GetProgressDetail value)? getProgressDetail,
     required TResult orElse(),
   }) {
-    if (addJorunal != null) {
-      return addJorunal(this);
+    if (getWeight != null) {
+      return getWeight(this);
     }
     return orElse();
   }
 }
 
-abstract class _AddJorunal extends ProgressEvent {
-  const factory _AddJorunal(
-      {ProgressJournalDetailModel? progressJournalDetailModel}) = _$_AddJorunal;
-  const _AddJorunal._() : super._();
+abstract class _GetWeight extends ProgressEvent {
+  const factory _GetWeight({required String duration}) = _$_GetWeight;
+  const _GetWeight._() : super._();
 
-  ProgressJournalDetailModel? get progressJournalDetailModel;
+  String get duration;
   @JsonKey(ignore: true)
-  _$AddJorunalCopyWith<_AddJorunal> get copyWith =>
+  _$GetWeightCopyWith<_GetWeight> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$GetNextPageCopyWith<$Res> {
-  factory _$GetNextPageCopyWith(
-          _GetNextPage value, $Res Function(_GetNextPage) then) =
-      __$GetNextPageCopyWithImpl<$Res>;
-  $Res call({ProgressJournalDetailModel? progressJournalDetailModel});
+abstract class _$AddCheckCopyWith<$Res> {
+  factory _$AddCheckCopyWith(_AddCheck value, $Res Function(_AddCheck) then) =
+      __$AddCheckCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$GetNextPageCopyWithImpl<$Res> extends _$ProgressEventCopyWithImpl<$Res>
-    implements _$GetNextPageCopyWith<$Res> {
-  __$GetNextPageCopyWithImpl(
-      _GetNextPage _value, $Res Function(_GetNextPage) _then)
-      : super(_value, (v) => _then(v as _GetNextPage));
+class __$AddCheckCopyWithImpl<$Res> extends _$ProgressEventCopyWithImpl<$Res>
+    implements _$AddCheckCopyWith<$Res> {
+  __$AddCheckCopyWithImpl(_AddCheck _value, $Res Function(_AddCheck) _then)
+      : super(_value, (v) => _then(v as _AddCheck));
 
   @override
-  _GetNextPage get _value => super._value as _GetNextPage;
+  _AddCheck get _value => super._value as _AddCheck;
+}
+
+/// @nodoc
+
+class _$_AddCheck extends _AddCheck {
+  const _$_AddCheck() : super._();
+
+  @override
+  String toString() {
+    return 'ProgressEvent.addCheck()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _AddCheck);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String duration) getWeight,
+    required TResult Function() addCheck,
+    required TResult Function(String weight) createWeight,
+    required TResult Function(String id, String weight) updateWeight,
+    required TResult Function(String id) getProgressDetail,
+  }) {
+    return addCheck();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String duration)? getWeight,
+    TResult Function()? addCheck,
+    TResult Function(String weight)? createWeight,
+    TResult Function(String id, String weight)? updateWeight,
+    TResult Function(String id)? getProgressDetail,
+  }) {
+    return addCheck?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String duration)? getWeight,
+    TResult Function()? addCheck,
+    TResult Function(String weight)? createWeight,
+    TResult Function(String id, String weight)? updateWeight,
+    TResult Function(String id)? getProgressDetail,
+    required TResult orElse(),
+  }) {
+    if (addCheck != null) {
+      return addCheck();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetWeight value) getWeight,
+    required TResult Function(_AddCheck value) addCheck,
+    required TResult Function(_CreateWeight value) createWeight,
+    required TResult Function(_UpdateWeight value) updateWeight,
+    required TResult Function(_GetProgressDetail value) getProgressDetail,
+  }) {
+    return addCheck(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_GetWeight value)? getWeight,
+    TResult Function(_AddCheck value)? addCheck,
+    TResult Function(_CreateWeight value)? createWeight,
+    TResult Function(_UpdateWeight value)? updateWeight,
+    TResult Function(_GetProgressDetail value)? getProgressDetail,
+  }) {
+    return addCheck?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetWeight value)? getWeight,
+    TResult Function(_AddCheck value)? addCheck,
+    TResult Function(_CreateWeight value)? createWeight,
+    TResult Function(_UpdateWeight value)? updateWeight,
+    TResult Function(_GetProgressDetail value)? getProgressDetail,
+    required TResult orElse(),
+  }) {
+    if (addCheck != null) {
+      return addCheck(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AddCheck extends ProgressEvent {
+  const factory _AddCheck() = _$_AddCheck;
+  const _AddCheck._() : super._();
+}
+
+/// @nodoc
+abstract class _$CreateWeightCopyWith<$Res> {
+  factory _$CreateWeightCopyWith(
+          _CreateWeight value, $Res Function(_CreateWeight) then) =
+      __$CreateWeightCopyWithImpl<$Res>;
+  $Res call({String weight});
+}
+
+/// @nodoc
+class __$CreateWeightCopyWithImpl<$Res>
+    extends _$ProgressEventCopyWithImpl<$Res>
+    implements _$CreateWeightCopyWith<$Res> {
+  __$CreateWeightCopyWithImpl(
+      _CreateWeight _value, $Res Function(_CreateWeight) _then)
+      : super(_value, (v) => _then(v as _CreateWeight));
+
+  @override
+  _CreateWeight get _value => super._value as _CreateWeight;
 
   @override
   $Res call({
-    Object? progressJournalDetailModel = freezed,
+    Object? weight = freezed,
   }) {
-    return _then(_GetNextPage(
-      progressJournalDetailModel: progressJournalDetailModel == freezed
-          ? _value.progressJournalDetailModel
-          : progressJournalDetailModel // ignore: cast_nullable_to_non_nullable
-              as ProgressJournalDetailModel?,
+    return _then(_CreateWeight(
+      weight: weight == freezed
+          ? _value.weight
+          : weight // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_GetNextPage extends _GetNextPage with DiagnosticableTreeMixin {
-  const _$_GetNextPage({this.progressJournalDetailModel}) : super._();
+class _$_CreateWeight extends _CreateWeight {
+  const _$_CreateWeight({required this.weight}) : super._();
 
   @override
-  final ProgressJournalDetailModel? progressJournalDetailModel;
+  final String weight;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ProgressEvent.getNextPage(progressJournalDetailModel: $progressJournalDetailModel)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ProgressEvent.getNextPage'))
-      ..add(DiagnosticsProperty(
-          'progressJournalDetailModel', progressJournalDetailModel));
+  String toString() {
+    return 'ProgressEvent.createWeight(weight: $weight)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _GetNextPage &&
-            const DeepCollectionEquality().equals(
-                other.progressJournalDetailModel, progressJournalDetailModel));
+            other is _CreateWeight &&
+            const DeepCollectionEquality().equals(other.weight, weight));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(progressJournalDetailModel));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(weight));
 
   @JsonKey(ignore: true)
   @override
-  _$GetNextPageCopyWith<_GetNextPage> get copyWith =>
-      __$GetNextPageCopyWithImpl<_GetNextPage>(this, _$identity);
+  _$CreateWeightCopyWith<_CreateWeight> get copyWith =>
+      __$CreateWeightCopyWithImpl<_CreateWeight>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() getPhotoList,
-    required TResult Function() getNextPhotoListPage,
-    required TResult Function() getJournalList,
-    required TResult Function(
-            ProgressJournalDetailModel? progressJournalDetailModel)
-        addJorunal,
-    required TResult Function(
-            ProgressJournalDetailModel? progressJournalDetailModel)
-        getNextPage,
-    required TResult Function() refreshState,
-    required TResult Function() getPreviousPage,
-    required TResult Function(int id) getDetailJournal,
-    required TResult Function(String front, String side, String back) addPhoto,
+    required TResult Function(String duration) getWeight,
+    required TResult Function() addCheck,
+    required TResult Function(String weight) createWeight,
+    required TResult Function(String id, String weight) updateWeight,
+    required TResult Function(String id) getProgressDetail,
   }) {
-    return getNextPage(progressJournalDetailModel);
+    return createWeight(weight);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? getPhotoList,
-    TResult Function()? getNextPhotoListPage,
-    TResult Function()? getJournalList,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        addJorunal,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        getNextPage,
-    TResult Function()? refreshState,
-    TResult Function()? getPreviousPage,
-    TResult Function(int id)? getDetailJournal,
-    TResult Function(String front, String side, String back)? addPhoto,
+    TResult Function(String duration)? getWeight,
+    TResult Function()? addCheck,
+    TResult Function(String weight)? createWeight,
+    TResult Function(String id, String weight)? updateWeight,
+    TResult Function(String id)? getProgressDetail,
   }) {
-    return getNextPage?.call(progressJournalDetailModel);
+    return createWeight?.call(weight);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getPhotoList,
-    TResult Function()? getNextPhotoListPage,
-    TResult Function()? getJournalList,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        addJorunal,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        getNextPage,
-    TResult Function()? refreshState,
-    TResult Function()? getPreviousPage,
-    TResult Function(int id)? getDetailJournal,
-    TResult Function(String front, String side, String back)? addPhoto,
+    TResult Function(String duration)? getWeight,
+    TResult Function()? addCheck,
+    TResult Function(String weight)? createWeight,
+    TResult Function(String id, String weight)? updateWeight,
+    TResult Function(String id)? getProgressDetail,
     required TResult orElse(),
   }) {
-    if (getNextPage != null) {
-      return getNextPage(progressJournalDetailModel);
+    if (createWeight != null) {
+      return createWeight(weight);
     }
     return orElse();
   }
@@ -997,168 +505,162 @@ class _$_GetNextPage extends _GetNextPage with DiagnosticableTreeMixin {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_GetPhotoList value) getPhotoList,
-    required TResult Function(_GetNextPhotoListPage value) getNextPhotoListPage,
-    required TResult Function(_GetJournalList value) getJournalList,
-    required TResult Function(_AddJorunal value) addJorunal,
-    required TResult Function(_GetNextPage value) getNextPage,
-    required TResult Function(_RefreshState value) refreshState,
-    required TResult Function(_GetPreviousPage value) getPreviousPage,
-    required TResult Function(_GetDetailJournal value) getDetailJournal,
-    required TResult Function(_AddPhoto value) addPhoto,
+    required TResult Function(_GetWeight value) getWeight,
+    required TResult Function(_AddCheck value) addCheck,
+    required TResult Function(_CreateWeight value) createWeight,
+    required TResult Function(_UpdateWeight value) updateWeight,
+    required TResult Function(_GetProgressDetail value) getProgressDetail,
   }) {
-    return getNextPage(this);
+    return createWeight(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_GetPhotoList value)? getPhotoList,
-    TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
-    TResult Function(_GetJournalList value)? getJournalList,
-    TResult Function(_AddJorunal value)? addJorunal,
-    TResult Function(_GetNextPage value)? getNextPage,
-    TResult Function(_RefreshState value)? refreshState,
-    TResult Function(_GetPreviousPage value)? getPreviousPage,
-    TResult Function(_GetDetailJournal value)? getDetailJournal,
-    TResult Function(_AddPhoto value)? addPhoto,
+    TResult Function(_GetWeight value)? getWeight,
+    TResult Function(_AddCheck value)? addCheck,
+    TResult Function(_CreateWeight value)? createWeight,
+    TResult Function(_UpdateWeight value)? updateWeight,
+    TResult Function(_GetProgressDetail value)? getProgressDetail,
   }) {
-    return getNextPage?.call(this);
+    return createWeight?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetPhotoList value)? getPhotoList,
-    TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
-    TResult Function(_GetJournalList value)? getJournalList,
-    TResult Function(_AddJorunal value)? addJorunal,
-    TResult Function(_GetNextPage value)? getNextPage,
-    TResult Function(_RefreshState value)? refreshState,
-    TResult Function(_GetPreviousPage value)? getPreviousPage,
-    TResult Function(_GetDetailJournal value)? getDetailJournal,
-    TResult Function(_AddPhoto value)? addPhoto,
+    TResult Function(_GetWeight value)? getWeight,
+    TResult Function(_AddCheck value)? addCheck,
+    TResult Function(_CreateWeight value)? createWeight,
+    TResult Function(_UpdateWeight value)? updateWeight,
+    TResult Function(_GetProgressDetail value)? getProgressDetail,
     required TResult orElse(),
   }) {
-    if (getNextPage != null) {
-      return getNextPage(this);
+    if (createWeight != null) {
+      return createWeight(this);
     }
     return orElse();
   }
 }
 
-abstract class _GetNextPage extends ProgressEvent {
-  const factory _GetNextPage(
-          {ProgressJournalDetailModel? progressJournalDetailModel}) =
-      _$_GetNextPage;
-  const _GetNextPage._() : super._();
+abstract class _CreateWeight extends ProgressEvent {
+  const factory _CreateWeight({required String weight}) = _$_CreateWeight;
+  const _CreateWeight._() : super._();
 
-  ProgressJournalDetailModel? get progressJournalDetailModel;
+  String get weight;
   @JsonKey(ignore: true)
-  _$GetNextPageCopyWith<_GetNextPage> get copyWith =>
+  _$CreateWeightCopyWith<_CreateWeight> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$RefreshStateCopyWith<$Res> {
-  factory _$RefreshStateCopyWith(
-          _RefreshState value, $Res Function(_RefreshState) then) =
-      __$RefreshStateCopyWithImpl<$Res>;
+abstract class _$UpdateWeightCopyWith<$Res> {
+  factory _$UpdateWeightCopyWith(
+          _UpdateWeight value, $Res Function(_UpdateWeight) then) =
+      __$UpdateWeightCopyWithImpl<$Res>;
+  $Res call({String id, String weight});
 }
 
 /// @nodoc
-class __$RefreshStateCopyWithImpl<$Res>
+class __$UpdateWeightCopyWithImpl<$Res>
     extends _$ProgressEventCopyWithImpl<$Res>
-    implements _$RefreshStateCopyWith<$Res> {
-  __$RefreshStateCopyWithImpl(
-      _RefreshState _value, $Res Function(_RefreshState) _then)
-      : super(_value, (v) => _then(v as _RefreshState));
+    implements _$UpdateWeightCopyWith<$Res> {
+  __$UpdateWeightCopyWithImpl(
+      _UpdateWeight _value, $Res Function(_UpdateWeight) _then)
+      : super(_value, (v) => _then(v as _UpdateWeight));
 
   @override
-  _RefreshState get _value => super._value as _RefreshState;
+  _UpdateWeight get _value => super._value as _UpdateWeight;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? weight = freezed,
+  }) {
+    return _then(_UpdateWeight(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      weight: weight == freezed
+          ? _value.weight
+          : weight // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$_RefreshState extends _RefreshState with DiagnosticableTreeMixin {
-  const _$_RefreshState() : super._();
+class _$_UpdateWeight extends _UpdateWeight {
+  const _$_UpdateWeight({required this.id, required this.weight}) : super._();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ProgressEvent.refreshState()';
-  }
+  final String id;
+  @override
+  final String weight;
 
   @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'ProgressEvent.refreshState'));
+  String toString() {
+    return 'ProgressEvent.updateWeight(id: $id, weight: $weight)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _RefreshState);
+        (other.runtimeType == runtimeType &&
+            other is _UpdateWeight &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.weight, weight));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(weight));
+
+  @JsonKey(ignore: true)
+  @override
+  _$UpdateWeightCopyWith<_UpdateWeight> get copyWith =>
+      __$UpdateWeightCopyWithImpl<_UpdateWeight>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() getPhotoList,
-    required TResult Function() getNextPhotoListPage,
-    required TResult Function() getJournalList,
-    required TResult Function(
-            ProgressJournalDetailModel? progressJournalDetailModel)
-        addJorunal,
-    required TResult Function(
-            ProgressJournalDetailModel? progressJournalDetailModel)
-        getNextPage,
-    required TResult Function() refreshState,
-    required TResult Function() getPreviousPage,
-    required TResult Function(int id) getDetailJournal,
-    required TResult Function(String front, String side, String back) addPhoto,
+    required TResult Function(String duration) getWeight,
+    required TResult Function() addCheck,
+    required TResult Function(String weight) createWeight,
+    required TResult Function(String id, String weight) updateWeight,
+    required TResult Function(String id) getProgressDetail,
   }) {
-    return refreshState();
+    return updateWeight(id, weight);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? getPhotoList,
-    TResult Function()? getNextPhotoListPage,
-    TResult Function()? getJournalList,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        addJorunal,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        getNextPage,
-    TResult Function()? refreshState,
-    TResult Function()? getPreviousPage,
-    TResult Function(int id)? getDetailJournal,
-    TResult Function(String front, String side, String back)? addPhoto,
+    TResult Function(String duration)? getWeight,
+    TResult Function()? addCheck,
+    TResult Function(String weight)? createWeight,
+    TResult Function(String id, String weight)? updateWeight,
+    TResult Function(String id)? getProgressDetail,
   }) {
-    return refreshState?.call();
+    return updateWeight?.call(id, weight);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getPhotoList,
-    TResult Function()? getNextPhotoListPage,
-    TResult Function()? getJournalList,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        addJorunal,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        getNextPage,
-    TResult Function()? refreshState,
-    TResult Function()? getPreviousPage,
-    TResult Function(int id)? getDetailJournal,
-    TResult Function(String front, String side, String back)? addPhoto,
+    TResult Function(String duration)? getWeight,
+    TResult Function()? addCheck,
+    TResult Function(String weight)? createWeight,
+    TResult Function(String id, String weight)? updateWeight,
+    TResult Function(String id)? getProgressDetail,
     required TResult orElse(),
   }) {
-    if (refreshState != null) {
-      return refreshState();
+    if (updateWeight != null) {
+      return updateWeight(id, weight);
     }
     return orElse();
   }
@@ -1166,283 +668,106 @@ class _$_RefreshState extends _RefreshState with DiagnosticableTreeMixin {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_GetPhotoList value) getPhotoList,
-    required TResult Function(_GetNextPhotoListPage value) getNextPhotoListPage,
-    required TResult Function(_GetJournalList value) getJournalList,
-    required TResult Function(_AddJorunal value) addJorunal,
-    required TResult Function(_GetNextPage value) getNextPage,
-    required TResult Function(_RefreshState value) refreshState,
-    required TResult Function(_GetPreviousPage value) getPreviousPage,
-    required TResult Function(_GetDetailJournal value) getDetailJournal,
-    required TResult Function(_AddPhoto value) addPhoto,
+    required TResult Function(_GetWeight value) getWeight,
+    required TResult Function(_AddCheck value) addCheck,
+    required TResult Function(_CreateWeight value) createWeight,
+    required TResult Function(_UpdateWeight value) updateWeight,
+    required TResult Function(_GetProgressDetail value) getProgressDetail,
   }) {
-    return refreshState(this);
+    return updateWeight(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_GetPhotoList value)? getPhotoList,
-    TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
-    TResult Function(_GetJournalList value)? getJournalList,
-    TResult Function(_AddJorunal value)? addJorunal,
-    TResult Function(_GetNextPage value)? getNextPage,
-    TResult Function(_RefreshState value)? refreshState,
-    TResult Function(_GetPreviousPage value)? getPreviousPage,
-    TResult Function(_GetDetailJournal value)? getDetailJournal,
-    TResult Function(_AddPhoto value)? addPhoto,
+    TResult Function(_GetWeight value)? getWeight,
+    TResult Function(_AddCheck value)? addCheck,
+    TResult Function(_CreateWeight value)? createWeight,
+    TResult Function(_UpdateWeight value)? updateWeight,
+    TResult Function(_GetProgressDetail value)? getProgressDetail,
   }) {
-    return refreshState?.call(this);
+    return updateWeight?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetPhotoList value)? getPhotoList,
-    TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
-    TResult Function(_GetJournalList value)? getJournalList,
-    TResult Function(_AddJorunal value)? addJorunal,
-    TResult Function(_GetNextPage value)? getNextPage,
-    TResult Function(_RefreshState value)? refreshState,
-    TResult Function(_GetPreviousPage value)? getPreviousPage,
-    TResult Function(_GetDetailJournal value)? getDetailJournal,
-    TResult Function(_AddPhoto value)? addPhoto,
+    TResult Function(_GetWeight value)? getWeight,
+    TResult Function(_AddCheck value)? addCheck,
+    TResult Function(_CreateWeight value)? createWeight,
+    TResult Function(_UpdateWeight value)? updateWeight,
+    TResult Function(_GetProgressDetail value)? getProgressDetail,
     required TResult orElse(),
   }) {
-    if (refreshState != null) {
-      return refreshState(this);
+    if (updateWeight != null) {
+      return updateWeight(this);
     }
     return orElse();
   }
 }
 
-abstract class _RefreshState extends ProgressEvent {
-  const factory _RefreshState() = _$_RefreshState;
-  const _RefreshState._() : super._();
+abstract class _UpdateWeight extends ProgressEvent {
+  const factory _UpdateWeight({required String id, required String weight}) =
+      _$_UpdateWeight;
+  const _UpdateWeight._() : super._();
+
+  String get id;
+  String get weight;
+  @JsonKey(ignore: true)
+  _$UpdateWeightCopyWith<_UpdateWeight> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$GetPreviousPageCopyWith<$Res> {
-  factory _$GetPreviousPageCopyWith(
-          _GetPreviousPage value, $Res Function(_GetPreviousPage) then) =
-      __$GetPreviousPageCopyWithImpl<$Res>;
+abstract class _$GetProgressDetailCopyWith<$Res> {
+  factory _$GetProgressDetailCopyWith(
+          _GetProgressDetail value, $Res Function(_GetProgressDetail) then) =
+      __$GetProgressDetailCopyWithImpl<$Res>;
+  $Res call({String id});
 }
 
 /// @nodoc
-class __$GetPreviousPageCopyWithImpl<$Res>
+class __$GetProgressDetailCopyWithImpl<$Res>
     extends _$ProgressEventCopyWithImpl<$Res>
-    implements _$GetPreviousPageCopyWith<$Res> {
-  __$GetPreviousPageCopyWithImpl(
-      _GetPreviousPage _value, $Res Function(_GetPreviousPage) _then)
-      : super(_value, (v) => _then(v as _GetPreviousPage));
+    implements _$GetProgressDetailCopyWith<$Res> {
+  __$GetProgressDetailCopyWithImpl(
+      _GetProgressDetail _value, $Res Function(_GetProgressDetail) _then)
+      : super(_value, (v) => _then(v as _GetProgressDetail));
 
   @override
-  _GetPreviousPage get _value => super._value as _GetPreviousPage;
-}
-
-/// @nodoc
-
-class _$_GetPreviousPage extends _GetPreviousPage with DiagnosticableTreeMixin {
-  const _$_GetPreviousPage() : super._();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ProgressEvent.getPreviousPage()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ProgressEvent.getPreviousPage'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _GetPreviousPage);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() getPhotoList,
-    required TResult Function() getNextPhotoListPage,
-    required TResult Function() getJournalList,
-    required TResult Function(
-            ProgressJournalDetailModel? progressJournalDetailModel)
-        addJorunal,
-    required TResult Function(
-            ProgressJournalDetailModel? progressJournalDetailModel)
-        getNextPage,
-    required TResult Function() refreshState,
-    required TResult Function() getPreviousPage,
-    required TResult Function(int id) getDetailJournal,
-    required TResult Function(String front, String side, String back) addPhoto,
-  }) {
-    return getPreviousPage();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? getPhotoList,
-    TResult Function()? getNextPhotoListPage,
-    TResult Function()? getJournalList,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        addJorunal,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        getNextPage,
-    TResult Function()? refreshState,
-    TResult Function()? getPreviousPage,
-    TResult Function(int id)? getDetailJournal,
-    TResult Function(String front, String side, String back)? addPhoto,
-  }) {
-    return getPreviousPage?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getPhotoList,
-    TResult Function()? getNextPhotoListPage,
-    TResult Function()? getJournalList,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        addJorunal,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        getNextPage,
-    TResult Function()? refreshState,
-    TResult Function()? getPreviousPage,
-    TResult Function(int id)? getDetailJournal,
-    TResult Function(String front, String side, String back)? addPhoto,
-    required TResult orElse(),
-  }) {
-    if (getPreviousPage != null) {
-      return getPreviousPage();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_GetPhotoList value) getPhotoList,
-    required TResult Function(_GetNextPhotoListPage value) getNextPhotoListPage,
-    required TResult Function(_GetJournalList value) getJournalList,
-    required TResult Function(_AddJorunal value) addJorunal,
-    required TResult Function(_GetNextPage value) getNextPage,
-    required TResult Function(_RefreshState value) refreshState,
-    required TResult Function(_GetPreviousPage value) getPreviousPage,
-    required TResult Function(_GetDetailJournal value) getDetailJournal,
-    required TResult Function(_AddPhoto value) addPhoto,
-  }) {
-    return getPreviousPage(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_GetPhotoList value)? getPhotoList,
-    TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
-    TResult Function(_GetJournalList value)? getJournalList,
-    TResult Function(_AddJorunal value)? addJorunal,
-    TResult Function(_GetNextPage value)? getNextPage,
-    TResult Function(_RefreshState value)? refreshState,
-    TResult Function(_GetPreviousPage value)? getPreviousPage,
-    TResult Function(_GetDetailJournal value)? getDetailJournal,
-    TResult Function(_AddPhoto value)? addPhoto,
-  }) {
-    return getPreviousPage?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetPhotoList value)? getPhotoList,
-    TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
-    TResult Function(_GetJournalList value)? getJournalList,
-    TResult Function(_AddJorunal value)? addJorunal,
-    TResult Function(_GetNextPage value)? getNextPage,
-    TResult Function(_RefreshState value)? refreshState,
-    TResult Function(_GetPreviousPage value)? getPreviousPage,
-    TResult Function(_GetDetailJournal value)? getDetailJournal,
-    TResult Function(_AddPhoto value)? addPhoto,
-    required TResult orElse(),
-  }) {
-    if (getPreviousPage != null) {
-      return getPreviousPage(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _GetPreviousPage extends ProgressEvent {
-  const factory _GetPreviousPage() = _$_GetPreviousPage;
-  const _GetPreviousPage._() : super._();
-}
-
-/// @nodoc
-abstract class _$GetDetailJournalCopyWith<$Res> {
-  factory _$GetDetailJournalCopyWith(
-          _GetDetailJournal value, $Res Function(_GetDetailJournal) then) =
-      __$GetDetailJournalCopyWithImpl<$Res>;
-  $Res call({int id});
-}
-
-/// @nodoc
-class __$GetDetailJournalCopyWithImpl<$Res>
-    extends _$ProgressEventCopyWithImpl<$Res>
-    implements _$GetDetailJournalCopyWith<$Res> {
-  __$GetDetailJournalCopyWithImpl(
-      _GetDetailJournal _value, $Res Function(_GetDetailJournal) _then)
-      : super(_value, (v) => _then(v as _GetDetailJournal));
-
-  @override
-  _GetDetailJournal get _value => super._value as _GetDetailJournal;
+  _GetProgressDetail get _value => super._value as _GetProgressDetail;
 
   @override
   $Res call({
     Object? id = freezed,
   }) {
-    return _then(_GetDetailJournal(
+    return _then(_GetProgressDetail(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_GetDetailJournal extends _GetDetailJournal
-    with DiagnosticableTreeMixin {
-  const _$_GetDetailJournal({required this.id}) : super._();
+class _$_GetProgressDetail extends _GetProgressDetail {
+  const _$_GetProgressDetail({required this.id}) : super._();
 
   @override
-  final int id;
+  final String id;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ProgressEvent.getDetailJournal(id: $id)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ProgressEvent.getDetailJournal'))
-      ..add(DiagnosticsProperty('id', id));
+  String toString() {
+    return 'ProgressEvent.getProgressDetail(id: $id)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _GetDetailJournal &&
+            other is _GetProgressDetail &&
             const DeepCollectionEquality().equals(other.id, id));
   }
 
@@ -1452,65 +777,45 @@ class _$_GetDetailJournal extends _GetDetailJournal
 
   @JsonKey(ignore: true)
   @override
-  _$GetDetailJournalCopyWith<_GetDetailJournal> get copyWith =>
-      __$GetDetailJournalCopyWithImpl<_GetDetailJournal>(this, _$identity);
+  _$GetProgressDetailCopyWith<_GetProgressDetail> get copyWith =>
+      __$GetProgressDetailCopyWithImpl<_GetProgressDetail>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() getPhotoList,
-    required TResult Function() getNextPhotoListPage,
-    required TResult Function() getJournalList,
-    required TResult Function(
-            ProgressJournalDetailModel? progressJournalDetailModel)
-        addJorunal,
-    required TResult Function(
-            ProgressJournalDetailModel? progressJournalDetailModel)
-        getNextPage,
-    required TResult Function() refreshState,
-    required TResult Function() getPreviousPage,
-    required TResult Function(int id) getDetailJournal,
-    required TResult Function(String front, String side, String back) addPhoto,
+    required TResult Function(String duration) getWeight,
+    required TResult Function() addCheck,
+    required TResult Function(String weight) createWeight,
+    required TResult Function(String id, String weight) updateWeight,
+    required TResult Function(String id) getProgressDetail,
   }) {
-    return getDetailJournal(id);
+    return getProgressDetail(id);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? getPhotoList,
-    TResult Function()? getNextPhotoListPage,
-    TResult Function()? getJournalList,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        addJorunal,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        getNextPage,
-    TResult Function()? refreshState,
-    TResult Function()? getPreviousPage,
-    TResult Function(int id)? getDetailJournal,
-    TResult Function(String front, String side, String back)? addPhoto,
+    TResult Function(String duration)? getWeight,
+    TResult Function()? addCheck,
+    TResult Function(String weight)? createWeight,
+    TResult Function(String id, String weight)? updateWeight,
+    TResult Function(String id)? getProgressDetail,
   }) {
-    return getDetailJournal?.call(id);
+    return getProgressDetail?.call(id);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getPhotoList,
-    TResult Function()? getNextPhotoListPage,
-    TResult Function()? getJournalList,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        addJorunal,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        getNextPage,
-    TResult Function()? refreshState,
-    TResult Function()? getPreviousPage,
-    TResult Function(int id)? getDetailJournal,
-    TResult Function(String front, String side, String back)? addPhoto,
+    TResult Function(String duration)? getWeight,
+    TResult Function()? addCheck,
+    TResult Function(String weight)? createWeight,
+    TResult Function(String id, String weight)? updateWeight,
+    TResult Function(String id)? getProgressDetail,
     required TResult orElse(),
   }) {
-    if (getDetailJournal != null) {
-      return getDetailJournal(id);
+    if (getProgressDetail != null) {
+      return getProgressDetail(id);
     }
     return orElse();
   }
@@ -1518,281 +823,51 @@ class _$_GetDetailJournal extends _GetDetailJournal
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_GetPhotoList value) getPhotoList,
-    required TResult Function(_GetNextPhotoListPage value) getNextPhotoListPage,
-    required TResult Function(_GetJournalList value) getJournalList,
-    required TResult Function(_AddJorunal value) addJorunal,
-    required TResult Function(_GetNextPage value) getNextPage,
-    required TResult Function(_RefreshState value) refreshState,
-    required TResult Function(_GetPreviousPage value) getPreviousPage,
-    required TResult Function(_GetDetailJournal value) getDetailJournal,
-    required TResult Function(_AddPhoto value) addPhoto,
+    required TResult Function(_GetWeight value) getWeight,
+    required TResult Function(_AddCheck value) addCheck,
+    required TResult Function(_CreateWeight value) createWeight,
+    required TResult Function(_UpdateWeight value) updateWeight,
+    required TResult Function(_GetProgressDetail value) getProgressDetail,
   }) {
-    return getDetailJournal(this);
+    return getProgressDetail(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_GetPhotoList value)? getPhotoList,
-    TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
-    TResult Function(_GetJournalList value)? getJournalList,
-    TResult Function(_AddJorunal value)? addJorunal,
-    TResult Function(_GetNextPage value)? getNextPage,
-    TResult Function(_RefreshState value)? refreshState,
-    TResult Function(_GetPreviousPage value)? getPreviousPage,
-    TResult Function(_GetDetailJournal value)? getDetailJournal,
-    TResult Function(_AddPhoto value)? addPhoto,
+    TResult Function(_GetWeight value)? getWeight,
+    TResult Function(_AddCheck value)? addCheck,
+    TResult Function(_CreateWeight value)? createWeight,
+    TResult Function(_UpdateWeight value)? updateWeight,
+    TResult Function(_GetProgressDetail value)? getProgressDetail,
   }) {
-    return getDetailJournal?.call(this);
+    return getProgressDetail?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetPhotoList value)? getPhotoList,
-    TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
-    TResult Function(_GetJournalList value)? getJournalList,
-    TResult Function(_AddJorunal value)? addJorunal,
-    TResult Function(_GetNextPage value)? getNextPage,
-    TResult Function(_RefreshState value)? refreshState,
-    TResult Function(_GetPreviousPage value)? getPreviousPage,
-    TResult Function(_GetDetailJournal value)? getDetailJournal,
-    TResult Function(_AddPhoto value)? addPhoto,
+    TResult Function(_GetWeight value)? getWeight,
+    TResult Function(_AddCheck value)? addCheck,
+    TResult Function(_CreateWeight value)? createWeight,
+    TResult Function(_UpdateWeight value)? updateWeight,
+    TResult Function(_GetProgressDetail value)? getProgressDetail,
     required TResult orElse(),
   }) {
-    if (getDetailJournal != null) {
-      return getDetailJournal(this);
+    if (getProgressDetail != null) {
+      return getProgressDetail(this);
     }
     return orElse();
   }
 }
 
-abstract class _GetDetailJournal extends ProgressEvent {
-  const factory _GetDetailJournal({required int id}) = _$_GetDetailJournal;
-  const _GetDetailJournal._() : super._();
+abstract class _GetProgressDetail extends ProgressEvent {
+  const factory _GetProgressDetail({required String id}) = _$_GetProgressDetail;
+  const _GetProgressDetail._() : super._();
 
-  int get id;
+  String get id;
   @JsonKey(ignore: true)
-  _$GetDetailJournalCopyWith<_GetDetailJournal> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$AddPhotoCopyWith<$Res> {
-  factory _$AddPhotoCopyWith(_AddPhoto value, $Res Function(_AddPhoto) then) =
-      __$AddPhotoCopyWithImpl<$Res>;
-  $Res call({String front, String side, String back});
-}
-
-/// @nodoc
-class __$AddPhotoCopyWithImpl<$Res> extends _$ProgressEventCopyWithImpl<$Res>
-    implements _$AddPhotoCopyWith<$Res> {
-  __$AddPhotoCopyWithImpl(_AddPhoto _value, $Res Function(_AddPhoto) _then)
-      : super(_value, (v) => _then(v as _AddPhoto));
-
-  @override
-  _AddPhoto get _value => super._value as _AddPhoto;
-
-  @override
-  $Res call({
-    Object? front = freezed,
-    Object? side = freezed,
-    Object? back = freezed,
-  }) {
-    return _then(_AddPhoto(
-      front: front == freezed
-          ? _value.front
-          : front // ignore: cast_nullable_to_non_nullable
-              as String,
-      side: side == freezed
-          ? _value.side
-          : side // ignore: cast_nullable_to_non_nullable
-              as String,
-      back: back == freezed
-          ? _value.back
-          : back // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_AddPhoto extends _AddPhoto with DiagnosticableTreeMixin {
-  const _$_AddPhoto(
-      {required this.front, required this.side, required this.back})
-      : super._();
-
-  @override
-  final String front;
-  @override
-  final String side;
-  @override
-  final String back;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ProgressEvent.addPhoto(front: $front, side: $side, back: $back)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ProgressEvent.addPhoto'))
-      ..add(DiagnosticsProperty('front', front))
-      ..add(DiagnosticsProperty('side', side))
-      ..add(DiagnosticsProperty('back', back));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _AddPhoto &&
-            const DeepCollectionEquality().equals(other.front, front) &&
-            const DeepCollectionEquality().equals(other.side, side) &&
-            const DeepCollectionEquality().equals(other.back, back));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(front),
-      const DeepCollectionEquality().hash(side),
-      const DeepCollectionEquality().hash(back));
-
-  @JsonKey(ignore: true)
-  @override
-  _$AddPhotoCopyWith<_AddPhoto> get copyWith =>
-      __$AddPhotoCopyWithImpl<_AddPhoto>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() getPhotoList,
-    required TResult Function() getNextPhotoListPage,
-    required TResult Function() getJournalList,
-    required TResult Function(
-            ProgressJournalDetailModel? progressJournalDetailModel)
-        addJorunal,
-    required TResult Function(
-            ProgressJournalDetailModel? progressJournalDetailModel)
-        getNextPage,
-    required TResult Function() refreshState,
-    required TResult Function() getPreviousPage,
-    required TResult Function(int id) getDetailJournal,
-    required TResult Function(String front, String side, String back) addPhoto,
-  }) {
-    return addPhoto(front, side, back);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? getPhotoList,
-    TResult Function()? getNextPhotoListPage,
-    TResult Function()? getJournalList,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        addJorunal,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        getNextPage,
-    TResult Function()? refreshState,
-    TResult Function()? getPreviousPage,
-    TResult Function(int id)? getDetailJournal,
-    TResult Function(String front, String side, String back)? addPhoto,
-  }) {
-    return addPhoto?.call(front, side, back);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getPhotoList,
-    TResult Function()? getNextPhotoListPage,
-    TResult Function()? getJournalList,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        addJorunal,
-    TResult Function(ProgressJournalDetailModel? progressJournalDetailModel)?
-        getNextPage,
-    TResult Function()? refreshState,
-    TResult Function()? getPreviousPage,
-    TResult Function(int id)? getDetailJournal,
-    TResult Function(String front, String side, String back)? addPhoto,
-    required TResult orElse(),
-  }) {
-    if (addPhoto != null) {
-      return addPhoto(front, side, back);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_GetPhotoList value) getPhotoList,
-    required TResult Function(_GetNextPhotoListPage value) getNextPhotoListPage,
-    required TResult Function(_GetJournalList value) getJournalList,
-    required TResult Function(_AddJorunal value) addJorunal,
-    required TResult Function(_GetNextPage value) getNextPage,
-    required TResult Function(_RefreshState value) refreshState,
-    required TResult Function(_GetPreviousPage value) getPreviousPage,
-    required TResult Function(_GetDetailJournal value) getDetailJournal,
-    required TResult Function(_AddPhoto value) addPhoto,
-  }) {
-    return addPhoto(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_GetPhotoList value)? getPhotoList,
-    TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
-    TResult Function(_GetJournalList value)? getJournalList,
-    TResult Function(_AddJorunal value)? addJorunal,
-    TResult Function(_GetNextPage value)? getNextPage,
-    TResult Function(_RefreshState value)? refreshState,
-    TResult Function(_GetPreviousPage value)? getPreviousPage,
-    TResult Function(_GetDetailJournal value)? getDetailJournal,
-    TResult Function(_AddPhoto value)? addPhoto,
-  }) {
-    return addPhoto?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetPhotoList value)? getPhotoList,
-    TResult Function(_GetNextPhotoListPage value)? getNextPhotoListPage,
-    TResult Function(_GetJournalList value)? getJournalList,
-    TResult Function(_AddJorunal value)? addJorunal,
-    TResult Function(_GetNextPage value)? getNextPage,
-    TResult Function(_RefreshState value)? refreshState,
-    TResult Function(_GetPreviousPage value)? getPreviousPage,
-    TResult Function(_GetDetailJournal value)? getDetailJournal,
-    TResult Function(_AddPhoto value)? addPhoto,
-    required TResult orElse(),
-  }) {
-    if (addPhoto != null) {
-      return addPhoto(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _AddPhoto extends ProgressEvent {
-  const factory _AddPhoto(
-      {required String front,
-      required String side,
-      required String back}) = _$_AddPhoto;
-  const _AddPhoto._() : super._();
-
-  String get front;
-  String get side;
-  String get back;
-  @JsonKey(ignore: true)
-  _$AddPhotoCopyWith<_AddPhoto> get copyWith =>
+  _$GetProgressDetailCopyWith<_GetProgressDetail> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1805,24 +880,18 @@ class _$ProgressStateTearOff {
       bool hasError = false,
       String error = '',
       bool update = false,
-      GetListPhotoModel? getListPhotoModel = null,
-      GetJournalListModel? getJournalList = null,
-      Widget currentPageJournal = const AddJournalOnePage(),
-      JournalPages currentPageJournalEnum = JournalPages.addOneJournal,
-      int progressIndicatorIndex = 0,
-      ProgressJournalDetailModel? progressJournalDetailModel = null,
-      ProgressPages currentPage = ProgressPages.listphoto}) {
+      Map<dynamic, dynamic> weight = const {},
+      AddCheckWeightModel? addCheckWeightModel = null,
+      GetProgressDetailModel? getProgressDetailModel = null,
+      ProgressPages currentPage = ProgressPages.listweight}) {
     return _ProgressState(
       isLoading: isLoading,
       hasError: hasError,
       error: error,
       update: update,
-      getListPhotoModel: getListPhotoModel,
-      getJournalList: getJournalList,
-      currentPageJournal: currentPageJournal,
-      currentPageJournalEnum: currentPageJournalEnum,
-      progressIndicatorIndex: progressIndicatorIndex,
-      progressJournalDetailModel: progressJournalDetailModel,
+      weight: weight,
+      addCheckWeightModel: addCheckWeightModel,
+      getProgressDetailModel: getProgressDetailModel,
       currentPage: currentPage,
     );
   }
@@ -1837,13 +906,10 @@ mixin _$ProgressState {
   bool get hasError => throw _privateConstructorUsedError;
   String get error => throw _privateConstructorUsedError;
   bool get update => throw _privateConstructorUsedError;
-  GetListPhotoModel? get getListPhotoModel =>
+  Map<dynamic, dynamic> get weight => throw _privateConstructorUsedError;
+  AddCheckWeightModel? get addCheckWeightModel =>
       throw _privateConstructorUsedError;
-  GetJournalListModel? get getJournalList => throw _privateConstructorUsedError;
-  Widget get currentPageJournal => throw _privateConstructorUsedError;
-  JournalPages get currentPageJournalEnum => throw _privateConstructorUsedError;
-  int get progressIndicatorIndex => throw _privateConstructorUsedError;
-  ProgressJournalDetailModel? get progressJournalDetailModel =>
+  GetProgressDetailModel? get getProgressDetailModel =>
       throw _privateConstructorUsedError;
   ProgressPages get currentPage => throw _privateConstructorUsedError;
 
@@ -1862,12 +928,9 @@ abstract class $ProgressStateCopyWith<$Res> {
       bool hasError,
       String error,
       bool update,
-      GetListPhotoModel? getListPhotoModel,
-      GetJournalListModel? getJournalList,
-      Widget currentPageJournal,
-      JournalPages currentPageJournalEnum,
-      int progressIndicatorIndex,
-      ProgressJournalDetailModel? progressJournalDetailModel,
+      Map<dynamic, dynamic> weight,
+      AddCheckWeightModel? addCheckWeightModel,
+      GetProgressDetailModel? getProgressDetailModel,
       ProgressPages currentPage});
 }
 
@@ -1886,12 +949,9 @@ class _$ProgressStateCopyWithImpl<$Res>
     Object? hasError = freezed,
     Object? error = freezed,
     Object? update = freezed,
-    Object? getListPhotoModel = freezed,
-    Object? getJournalList = freezed,
-    Object? currentPageJournal = freezed,
-    Object? currentPageJournalEnum = freezed,
-    Object? progressIndicatorIndex = freezed,
-    Object? progressJournalDetailModel = freezed,
+    Object? weight = freezed,
+    Object? addCheckWeightModel = freezed,
+    Object? getProgressDetailModel = freezed,
     Object? currentPage = freezed,
   }) {
     return _then(_value.copyWith(
@@ -1911,30 +971,18 @@ class _$ProgressStateCopyWithImpl<$Res>
           ? _value.update
           : update // ignore: cast_nullable_to_non_nullable
               as bool,
-      getListPhotoModel: getListPhotoModel == freezed
-          ? _value.getListPhotoModel
-          : getListPhotoModel // ignore: cast_nullable_to_non_nullable
-              as GetListPhotoModel?,
-      getJournalList: getJournalList == freezed
-          ? _value.getJournalList
-          : getJournalList // ignore: cast_nullable_to_non_nullable
-              as GetJournalListModel?,
-      currentPageJournal: currentPageJournal == freezed
-          ? _value.currentPageJournal
-          : currentPageJournal // ignore: cast_nullable_to_non_nullable
-              as Widget,
-      currentPageJournalEnum: currentPageJournalEnum == freezed
-          ? _value.currentPageJournalEnum
-          : currentPageJournalEnum // ignore: cast_nullable_to_non_nullable
-              as JournalPages,
-      progressIndicatorIndex: progressIndicatorIndex == freezed
-          ? _value.progressIndicatorIndex
-          : progressIndicatorIndex // ignore: cast_nullable_to_non_nullable
-              as int,
-      progressJournalDetailModel: progressJournalDetailModel == freezed
-          ? _value.progressJournalDetailModel
-          : progressJournalDetailModel // ignore: cast_nullable_to_non_nullable
-              as ProgressJournalDetailModel?,
+      weight: weight == freezed
+          ? _value.weight
+          : weight // ignore: cast_nullable_to_non_nullable
+              as Map<dynamic, dynamic>,
+      addCheckWeightModel: addCheckWeightModel == freezed
+          ? _value.addCheckWeightModel
+          : addCheckWeightModel // ignore: cast_nullable_to_non_nullable
+              as AddCheckWeightModel?,
+      getProgressDetailModel: getProgressDetailModel == freezed
+          ? _value.getProgressDetailModel
+          : getProgressDetailModel // ignore: cast_nullable_to_non_nullable
+              as GetProgressDetailModel?,
       currentPage: currentPage == freezed
           ? _value.currentPage
           : currentPage // ignore: cast_nullable_to_non_nullable
@@ -1955,12 +1003,9 @@ abstract class _$ProgressStateCopyWith<$Res>
       bool hasError,
       String error,
       bool update,
-      GetListPhotoModel? getListPhotoModel,
-      GetJournalListModel? getJournalList,
-      Widget currentPageJournal,
-      JournalPages currentPageJournalEnum,
-      int progressIndicatorIndex,
-      ProgressJournalDetailModel? progressJournalDetailModel,
+      Map<dynamic, dynamic> weight,
+      AddCheckWeightModel? addCheckWeightModel,
+      GetProgressDetailModel? getProgressDetailModel,
       ProgressPages currentPage});
 }
 
@@ -1981,12 +1026,9 @@ class __$ProgressStateCopyWithImpl<$Res>
     Object? hasError = freezed,
     Object? error = freezed,
     Object? update = freezed,
-    Object? getListPhotoModel = freezed,
-    Object? getJournalList = freezed,
-    Object? currentPageJournal = freezed,
-    Object? currentPageJournalEnum = freezed,
-    Object? progressIndicatorIndex = freezed,
-    Object? progressJournalDetailModel = freezed,
+    Object? weight = freezed,
+    Object? addCheckWeightModel = freezed,
+    Object? getProgressDetailModel = freezed,
     Object? currentPage = freezed,
   }) {
     return _then(_ProgressState(
@@ -2006,30 +1048,18 @@ class __$ProgressStateCopyWithImpl<$Res>
           ? _value.update
           : update // ignore: cast_nullable_to_non_nullable
               as bool,
-      getListPhotoModel: getListPhotoModel == freezed
-          ? _value.getListPhotoModel
-          : getListPhotoModel // ignore: cast_nullable_to_non_nullable
-              as GetListPhotoModel?,
-      getJournalList: getJournalList == freezed
-          ? _value.getJournalList
-          : getJournalList // ignore: cast_nullable_to_non_nullable
-              as GetJournalListModel?,
-      currentPageJournal: currentPageJournal == freezed
-          ? _value.currentPageJournal
-          : currentPageJournal // ignore: cast_nullable_to_non_nullable
-              as Widget,
-      currentPageJournalEnum: currentPageJournalEnum == freezed
-          ? _value.currentPageJournalEnum
-          : currentPageJournalEnum // ignore: cast_nullable_to_non_nullable
-              as JournalPages,
-      progressIndicatorIndex: progressIndicatorIndex == freezed
-          ? _value.progressIndicatorIndex
-          : progressIndicatorIndex // ignore: cast_nullable_to_non_nullable
-              as int,
-      progressJournalDetailModel: progressJournalDetailModel == freezed
-          ? _value.progressJournalDetailModel
-          : progressJournalDetailModel // ignore: cast_nullable_to_non_nullable
-              as ProgressJournalDetailModel?,
+      weight: weight == freezed
+          ? _value.weight
+          : weight // ignore: cast_nullable_to_non_nullable
+              as Map<dynamic, dynamic>,
+      addCheckWeightModel: addCheckWeightModel == freezed
+          ? _value.addCheckWeightModel
+          : addCheckWeightModel // ignore: cast_nullable_to_non_nullable
+              as AddCheckWeightModel?,
+      getProgressDetailModel: getProgressDetailModel == freezed
+          ? _value.getProgressDetailModel
+          : getProgressDetailModel // ignore: cast_nullable_to_non_nullable
+              as GetProgressDetailModel?,
       currentPage: currentPage == freezed
           ? _value.currentPage
           : currentPage // ignore: cast_nullable_to_non_nullable
@@ -2040,19 +1070,16 @@ class __$ProgressStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ProgressState extends _ProgressState with DiagnosticableTreeMixin {
+class _$_ProgressState extends _ProgressState {
   const _$_ProgressState(
       {this.isLoading = true,
       this.hasError = false,
       this.error = '',
       this.update = false,
-      this.getListPhotoModel = null,
-      this.getJournalList = null,
-      this.currentPageJournal = const AddJournalOnePage(),
-      this.currentPageJournalEnum = JournalPages.addOneJournal,
-      this.progressIndicatorIndex = 0,
-      this.progressJournalDetailModel = null,
-      this.currentPage = ProgressPages.listphoto})
+      this.weight = const {},
+      this.addCheckWeightModel = null,
+      this.getProgressDetailModel = null,
+      this.currentPage = ProgressPages.listweight})
       : super._();
 
   @JsonKey()
@@ -2069,50 +1096,20 @@ class _$_ProgressState extends _ProgressState with DiagnosticableTreeMixin {
   final bool update;
   @JsonKey()
   @override
-  final GetListPhotoModel? getListPhotoModel;
+  final Map<dynamic, dynamic> weight;
   @JsonKey()
   @override
-  final GetJournalListModel? getJournalList;
+  final AddCheckWeightModel? addCheckWeightModel;
   @JsonKey()
   @override
-  final Widget currentPageJournal;
-  @JsonKey()
-  @override
-  final JournalPages currentPageJournalEnum;
-  @JsonKey()
-  @override
-  final int progressIndicatorIndex;
-  @JsonKey()
-  @override
-  final ProgressJournalDetailModel? progressJournalDetailModel;
+  final GetProgressDetailModel? getProgressDetailModel;
   @JsonKey()
   @override
   final ProgressPages currentPage;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ProgressState(isLoading: $isLoading, hasError: $hasError, error: $error, update: $update, getListPhotoModel: $getListPhotoModel, getJournalList: $getJournalList, currentPageJournal: $currentPageJournal, currentPageJournalEnum: $currentPageJournalEnum, progressIndicatorIndex: $progressIndicatorIndex, progressJournalDetailModel: $progressJournalDetailModel, currentPage: $currentPage)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ProgressState'))
-      ..add(DiagnosticsProperty('isLoading', isLoading))
-      ..add(DiagnosticsProperty('hasError', hasError))
-      ..add(DiagnosticsProperty('error', error))
-      ..add(DiagnosticsProperty('update', update))
-      ..add(DiagnosticsProperty('getListPhotoModel', getListPhotoModel))
-      ..add(DiagnosticsProperty('getJournalList', getJournalList))
-      ..add(DiagnosticsProperty('currentPageJournal', currentPageJournal))
-      ..add(
-          DiagnosticsProperty('currentPageJournalEnum', currentPageJournalEnum))
-      ..add(
-          DiagnosticsProperty('progressIndicatorIndex', progressIndicatorIndex))
-      ..add(DiagnosticsProperty(
-          'progressJournalDetailModel', progressJournalDetailModel))
-      ..add(DiagnosticsProperty('currentPage', currentPage));
+  String toString() {
+    return 'ProgressState(isLoading: $isLoading, hasError: $hasError, error: $error, update: $update, weight: $weight, addCheckWeightModel: $addCheckWeightModel, getProgressDetailModel: $getProgressDetailModel, currentPage: $currentPage)';
   }
 
   @override
@@ -2124,18 +1121,11 @@ class _$_ProgressState extends _ProgressState with DiagnosticableTreeMixin {
             const DeepCollectionEquality().equals(other.hasError, hasError) &&
             const DeepCollectionEquality().equals(other.error, error) &&
             const DeepCollectionEquality().equals(other.update, update) &&
+            const DeepCollectionEquality().equals(other.weight, weight) &&
             const DeepCollectionEquality()
-                .equals(other.getListPhotoModel, getListPhotoModel) &&
+                .equals(other.addCheckWeightModel, addCheckWeightModel) &&
             const DeepCollectionEquality()
-                .equals(other.getJournalList, getJournalList) &&
-            const DeepCollectionEquality()
-                .equals(other.currentPageJournal, currentPageJournal) &&
-            const DeepCollectionEquality()
-                .equals(other.currentPageJournalEnum, currentPageJournalEnum) &&
-            const DeepCollectionEquality()
-                .equals(other.progressIndicatorIndex, progressIndicatorIndex) &&
-            const DeepCollectionEquality().equals(
-                other.progressJournalDetailModel, progressJournalDetailModel) &&
+                .equals(other.getProgressDetailModel, getProgressDetailModel) &&
             const DeepCollectionEquality()
                 .equals(other.currentPage, currentPage));
   }
@@ -2147,12 +1137,9 @@ class _$_ProgressState extends _ProgressState with DiagnosticableTreeMixin {
       const DeepCollectionEquality().hash(hasError),
       const DeepCollectionEquality().hash(error),
       const DeepCollectionEquality().hash(update),
-      const DeepCollectionEquality().hash(getListPhotoModel),
-      const DeepCollectionEquality().hash(getJournalList),
-      const DeepCollectionEquality().hash(currentPageJournal),
-      const DeepCollectionEquality().hash(currentPageJournalEnum),
-      const DeepCollectionEquality().hash(progressIndicatorIndex),
-      const DeepCollectionEquality().hash(progressJournalDetailModel),
+      const DeepCollectionEquality().hash(weight),
+      const DeepCollectionEquality().hash(addCheckWeightModel),
+      const DeepCollectionEquality().hash(getProgressDetailModel),
       const DeepCollectionEquality().hash(currentPage));
 
   @JsonKey(ignore: true)
@@ -2167,12 +1154,9 @@ abstract class _ProgressState extends ProgressState {
       bool hasError,
       String error,
       bool update,
-      GetListPhotoModel? getListPhotoModel,
-      GetJournalListModel? getJournalList,
-      Widget currentPageJournal,
-      JournalPages currentPageJournalEnum,
-      int progressIndicatorIndex,
-      ProgressJournalDetailModel? progressJournalDetailModel,
+      Map<dynamic, dynamic> weight,
+      AddCheckWeightModel? addCheckWeightModel,
+      GetProgressDetailModel? getProgressDetailModel,
       ProgressPages currentPage}) = _$_ProgressState;
   const _ProgressState._() : super._();
 
@@ -2185,17 +1169,11 @@ abstract class _ProgressState extends ProgressState {
   @override
   bool get update;
   @override
-  GetListPhotoModel? get getListPhotoModel;
+  Map<dynamic, dynamic> get weight;
   @override
-  GetJournalListModel? get getJournalList;
+  AddCheckWeightModel? get addCheckWeightModel;
   @override
-  Widget get currentPageJournal;
-  @override
-  JournalPages get currentPageJournalEnum;
-  @override
-  int get progressIndicatorIndex;
-  @override
-  ProgressJournalDetailModel? get progressJournalDetailModel;
+  GetProgressDetailModel? get getProgressDetailModel;
   @override
   ProgressPages get currentPage;
   @override

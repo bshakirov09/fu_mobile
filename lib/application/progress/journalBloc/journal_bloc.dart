@@ -4,6 +4,7 @@ import 'package:fitness_uncensored/domain/progress/journal_pages.dart';
 import 'package:fitness_uncensored/domain/progress/pages.dart';
 import 'package:fitness_uncensored/infrastructure/progress/jounal/journal_api.dart';
 import 'package:fitness_uncensored/infrastructure/repository/models/progress_journal_detail_model.dart';
+import 'package:fitness_uncensored/infrastructure/repository/models/progress_journal_fromDate_model.dart';
 import 'package:fitness_uncensored/infrastructure/repository/models/progress_journal_list_model.dart';
 import 'package:fitness_uncensored/presentation/pages/progress/journal/add_journal_four_page.dart';
 import 'package:fitness_uncensored/presentation/pages/progress/journal/add_journal_one_page.dart';
@@ -23,6 +24,8 @@ class JournalBloc extends Bloc<JournalEvent, JournalState> {
   ProgressJournalDetailModel? progressJournalDetailModel =
       ProgressJournalDetailModel();
 
+  int _page = 1;
+
   @override
   Stream<JournalState> mapEventToState(JournalEvent event) async* {
     yield* event.map(
@@ -34,7 +37,9 @@ class JournalBloc extends Bloc<JournalEvent, JournalState> {
       addJorunal: _addJournal,
       getPreviousPage: _getPreviousPage,
       getJournalList: _getJournalList,
+      getNextJournalList: _getNextJournalList,
       getDetailJournal: _getDetailJournal,
+      getJournalFromDate: _getJournalFromDate,
     );
   }
 
@@ -85,7 +90,7 @@ class JournalBloc extends Bloc<JournalEvent, JournalState> {
       update: false,
     );
 
-    final Either<String, Unit> result = await getIt
+    final Either<String, Map<dynamic, dynamic>> result = await getIt
         .get<JournalApi>()
         .addJournal(progressJournalDetailModel: progressJournalDetailModel!);
 
@@ -140,7 +145,7 @@ class JournalBloc extends Bloc<JournalEvent, JournalState> {
     );
 
     final Either<String, GetJournalListModel> result =
-        await getIt.get<JournalApi>().getJournalList();
+        await getIt.get<JournalApi>().getJournalList(page: _page);
 
     yield* result.fold((l) async* {
       yield state.copyWith(
@@ -152,7 +157,41 @@ class JournalBloc extends Bloc<JournalEvent, JournalState> {
       yield state.copyWith(
         isLoading: false,
         hasError: false,
-        getJournalList: Right(r).value,
+        getJournalList: r,
+      );
+    });
+  }
+
+  Stream<JournalState> _getNextJournalList(_GetNextJournalList event) async* {
+    _page += 1;
+
+    yield state.copyWith(
+      currentPage: ProgressPages.listjournal,
+    );
+
+    final Either<String, GetJournalListModel> result =
+        await getIt.get<JournalApi>().getJournalList(page: _page);
+
+    yield* result.fold((l) async* {
+      yield state.copyWith(
+        isLoading: false,
+        hasError: true,
+        error: Left(l).value,
+      );
+    }, (journals) async* {
+      // if (photos.next == null) {
+      //   _page -= 1;
+      // }
+
+      final GetJournalListModel data = GetJournalListModel(
+        count: journals.count,
+        results: state.getJournalList!.results + journals.results,
+      );
+
+      yield state.copyWith(
+        isLoading: false,
+        hasError: false,
+        getJournalList: data,
       );
     });
   }
@@ -177,6 +216,30 @@ class JournalBloc extends Bloc<JournalEvent, JournalState> {
         isLoading: false,
         hasError: false,
         progressJournalDetailModel: Right(r).value,
+      );
+    });
+  }
+
+  Stream<JournalState> _getJournalFromDate(_GetJournalFromDate event) async* {
+    yield state.copyWith(
+      getJournalFromDateModel: null,
+      isLoading: true,
+    );
+
+    final Either<String, GetJournalFromDateModel> result =
+        await getIt.get<JournalApi>().getJournalFromDate(date: event.date);
+
+    yield* result.fold((l) async* {
+      yield state.copyWith(
+        isLoading: false,
+        hasError: true,
+        error: l,
+      );
+    }, (r) async* {
+      yield state.copyWith(
+        isLoading: false,
+        hasError: false,
+        getJournalFromDateModel: r,
       );
     });
   }

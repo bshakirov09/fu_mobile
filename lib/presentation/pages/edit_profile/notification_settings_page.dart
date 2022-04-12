@@ -12,11 +12,11 @@ class NotificationSettingsPage extends StatefulWidget {
   const NotificationSettingsPage({Key? key}) : super(key: key);
 
   @override
-  State<NotificationSettingsPage> createState() => _NotificationSettingsPageState();
+  State<NotificationSettingsPage> createState() =>
+      _NotificationSettingsPageState();
 }
 
 class _NotificationSettingsPageState extends State<NotificationSettingsPage> {
-
   bool status = false;
 
   @override
@@ -24,8 +24,20 @@ class _NotificationSettingsPageState extends State<NotificationSettingsPage> {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(56.h),
-        child: AppBarComponent(
-          text: "notification_settings".tr(),
+        child: AppBar(
+          foregroundColor: AppColors.primaryColor,
+          title: Text(
+            "notification_settings".tr(),
+            style: AdaptiveTheme.of(context)
+                .theme
+                .textTheme
+                .headline4!
+                .copyWith(fontWeight: FontWeight.w700),
+          ),
+          centerTitle: true,
+          backgroundColor: AppColors.white,
+          elevation: 4,
+          shadowColor: AppColors.white.withOpacity(0.4),
         ),
       ),
       body: Padding(

@@ -15,9 +15,23 @@ class NotificationPage extends StatelessWidget {
       child: Scaffold(
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(56.h),
-          child: AppBarComponent(
-            text: "notifications".tr(),
+          child:
+          AppBar(
+            foregroundColor: AppColors.primaryColor,
+            title: Text(
+              "notifications".tr(),
+              style: AdaptiveTheme.of(context)
+                  .theme
+                  .textTheme
+                  .headline4!
+                  .copyWith(fontWeight: FontWeight.w700),
+            ),
+            centerTitle: true,
+            backgroundColor: AppColors.white,
+            elevation: 4,
+            shadowColor: AppColors.white.withOpacity(0.4),
           ),
+           
         ),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 30.w),

@@ -12,36 +12,29 @@ import 'package:fitness_uncensored/services/firebase_service/firebase_service.da
 import 'package:fitness_uncensored/utils/get_it.dart';
 
 class SignInRequests {
-
   Future<Either<String, Map<String, dynamic>>> signIn({
     required String email,
     required String password,
   }) async {
-
     try {
-      final Response response = await getIt.get<Dio>().post(
-        APIList.signIn,
-        data: {
-          "email": email,
-          "password": password,
-          "device" : FirebaseService.token,
-        },
-        options: Options(
-          validateStatus: (status) => status! <= HttpStatus.internalServerError
-        )
-      );
+      final Response response = await getIt.get<Dio>().post(APIList.signIn,
+          data: {
+            "email": email,
+            "password": password,
+            // "device": FirebaseService.token,
+          },
+          options: Options(
+              validateStatus: (status) =>
+                  status! <= HttpStatus.internalServerError));
 
       if (response.statusCode == HttpStatus.ok) {
         return right(response.data);
-      }
-      else {
+      } else {
         return left(ServerFailure.getFailureMessage(
-          error: response.data,
-          statusCode: response.statusCode
-        ));
+            error: response.data, statusCode: response.statusCode));
       }
-    } catch(e) {
-      throw left(e.toString());
+    } catch (e) {
+      return left(e.toString());
     }
   }
 
@@ -49,12 +42,10 @@ class SignInRequests {
     required String token,
     required SocialAuthType socialAuthType,
   }) async {
-
     try {
-
       String url = '';
 
-      switch(socialAuthType) {
+      switch (socialAuthType) {
         case SocialAuthType.facebook:
           url = APIList.facebookAuth;
           break;
@@ -69,26 +60,22 @@ class SignInRequests {
       final Response response = await getIt.get<Dio>().post(
         url,
         options: Options(
-          validateStatus: (status) => status! <= HttpStatus.internalServerError
-        ),
+            validateStatus: (status) =>
+                status! <= HttpStatus.internalServerError),
         data: {
           "auth_token": token,
-          "device" : FirebaseService.token,
+          "device": FirebaseService.token,
         },
       );
 
       if (response.statusCode == HttpStatus.created) {
         return right(response.data);
-      }
-      else {
+      } else {
         return left(ServerFailure.getFailureMessage(
-          error: response.data,
-          statusCode: response.statusCode
-        ));
+            error: response.data, statusCode: response.statusCode));
       }
-    } catch(e) {
+    } catch (e) {
       throw left(e.toString());
     }
   }
-
 }

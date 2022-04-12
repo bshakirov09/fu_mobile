@@ -1,15 +1,15 @@
 class GetJournalListModel {
   GetJournalListModel({
-    this.count,
+    required this.count,
     this.next,
     this.previous,
-    this.results,
+    required this.results,
   });
 
-  final int? count;
+  final int count;
   final dynamic next;
   final dynamic previous;
-  final List<Result>? results;
+  final List<Result> results;
 
   factory GetJournalListModel.fromJson(Map<String, dynamic> json) =>
       GetJournalListModel(
@@ -24,7 +24,7 @@ class GetJournalListModel {
         "count": count,
         "next": next,
         "previous": previous,
-        "results": List<dynamic>.from(results!.map((x) => x.toJson())),
+        "results": List<dynamic>.from(results.map((x) => x.toJson())),
       };
 }
 

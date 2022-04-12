@@ -1,5 +1,5 @@
-
 import 'package:enum_to_string/enum_to_string.dart';
+import 'package:fitness_uncensored/presentation/styles/app_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -26,16 +26,15 @@ class EditProfilePage extends StatefulWidget {
 }
 
 class _EditProfilePageState extends State<EditProfilePage> {
-
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   String _profileAvatar = '', _name = '', _secondName = '';
   GenderType _genderType = GenderType.male;
 
-
   @override
   void initState() {
-    _profileAvatar = context.read<ProfileBloc>().state.profile?.profileImage?.file ?? '';
+    _profileAvatar =
+        context.read<ProfileBloc>().state.profile?.profileImage?.file ?? '';
     _name = context.read<ProfileBloc>().state.profile?.firstName ?? '';
     _secondName = context.read<ProfileBloc>().state.profile?.lastName ?? '';
     super.initState();
@@ -47,15 +46,11 @@ class _EditProfilePageState extends State<EditProfilePage> {
       listener: (context, state) {
         if (state.hasError) {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBarComponent.errorSnackBar(message: state.error)
-          );
-        }
-        else if (state.isUpdatedUserInfo) {
+              SnackBarComponent.errorSnackBar(message: state.error));
+        } else if (state.isUpdatedUserInfo) {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBarComponent.successSnackBar(
-              message: "your_info_updated".tr()
-            )
-          );
+              SnackBarComponent.successSnackBar(
+                  message: "your_info_updated".tr()));
 
           context.read<ProfileBloc>().add(const ProfileEvent.getProfile());
           Navigator.pop(context);
@@ -67,15 +62,26 @@ class _EditProfilePageState extends State<EditProfilePage> {
             color: AppColors.white,
             child: AppLoadingComponent(),
           );
-        }
-        else {
+        } else {
           return GestureDetector(
             onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
             child: Scaffold(
               appBar: PreferredSize(
                 preferredSize: Size.fromHeight(56.h),
-                child: AppBarComponent(
-                  text: "edit_profile".tr(),
+                child: AppBar(
+                  foregroundColor: AppColors.primaryColor,
+                  title: Text(
+                    "edit_profile".tr(),
+                    style: AdaptiveTheme.of(context)
+                        .theme
+                        .textTheme
+                        .headline4!
+                        .copyWith(fontWeight: FontWeight.w700),
+                  ),
+                  centerTitle: true,
+                  backgroundColor: AppColors.white,
+                  elevation: 4,
+                  shadowColor: AppColors.white.withOpacity(0.4),
                 ),
               ),
               body: Form(
@@ -85,40 +91,39 @@ class _EditProfilePageState extends State<EditProfilePage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-
                       Text(
                         "photo".tr(),
-                        style: AdaptiveTheme.of(context).theme.textTheme.headline4,
+                        style:
+                            AdaptiveTheme.of(context).theme.textTheme.headline4,
                       ),
-
                       SizedBox(height: 24.h),
-
                       ProfileAvatarComponent(
-                        initAvatarPhoto: context.read<ProfileBloc>().state.profile?.profileImage?.file ?? '',
+                        initAvatarPhoto: context
+                                .read<ProfileBloc>()
+                                .state
+                                .profile
+                                ?.profileImage
+                                ?.file ??
+                            '',
                         onProfileChanged: (profile) => _profileAvatar = profile,
                       ),
-
                       SizedBox(height: 38.h),
-
                       TextFieldComponent(
                         hint: "name".tr(),
                         initialValue: _name,
                         onChanged: (value) => _name = value,
                       ),
-
                       SizedBox(height: 16.h),
-
                       TextFieldComponent(
                         hint: "second_name".tr(),
                         initialValue: _secondName,
                         onChanged: (value) => _secondName = value,
                       ),
-
                       SizedBox(height: 24.h),
-
                       GenderComponent(
                         genderType: _genderType,
-                        onChanged: (gender) => setState(() => _genderType = gender),
+                        onChanged: (gender) =>
+                            setState(() => _genderType = gender),
                       ),
                     ],
                   ),
@@ -129,14 +134,14 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 margin: EdgeInsets.only(left: 30.w, right: 30.w, bottom: 16.h),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    context.read<ProfileBloc>().add(ProfileEvent.updateUserInfo(
-                      userInfo: {
-                        "profile_image": _profileAvatar,
-                        "first_name" : _name,
-                        "last_name" : _secondName,
-                        "gender" : EnumToString.convertToString(_genderType)
-                      }
-                    ));
+                    context
+                        .read<ProfileBloc>()
+                        .add(ProfileEvent.updateUserInfo(userInfo: {
+                          "profile_image": _profileAvatar,
+                          "first_name": _name,
+                          "last_name": _secondName,
+                          "gender": EnumToString.convertToString(_genderType)
+                        }));
                   }
                 },
               ),

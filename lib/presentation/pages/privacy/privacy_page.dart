@@ -1,9 +1,10 @@
-
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:fitness_uncensored/presentation/components/app_bar_component.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../styles/app_colors.dart';
 
 class PrivacyPage extends StatelessWidget {
   const PrivacyPage({Key? key}) : super(key: key);
@@ -15,8 +16,20 @@ class PrivacyPage extends StatelessWidget {
       child: Scaffold(
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(56.h),
-          child: AppBarComponent(
-            text: "privacy_policy".tr(),
+          child: AppBar(
+            foregroundColor: AppColors.primaryColor,
+            title: Text(
+              "privacy_policy".tr(),
+              style: AdaptiveTheme.of(context)
+                  .theme
+                  .textTheme
+                  .headline4!
+                  .copyWith(fontWeight: FontWeight.w700),
+            ),
+            centerTitle: true,
+            backgroundColor: AppColors.white,
+            elevation: 4,
+            shadowColor: AppColors.white.withOpacity(0.4),
           ),
         ),
         body: Padding(
@@ -40,7 +53,8 @@ By accessing this website we assume you accept these terms and conditions. Do no
 The following terminology applies to these Terms and Conditions, Privacy Statement and Disclaimer Notice and all Agreements: "Client", "You" and "Your" refers to you, the person log on this website and compliant to the Company’s terms and conditions. "The Company", "Ourselves", "We", "Our" and "Us", refers to our Company. "Party", "Parties", or "Us", refers to both the Client and ourselves. All terms refer to the offer, acceptance and consideration of payment necessary to undertake the process of our assistance to the Client in the most appropriate manner for the express purpose of meeting the Client’s needs in respect of provision of the Company’s stated services, in accordance with and subject to, prevailing law of Netherlands. Any use of the above terminology or other words in the singular, plural, capitalization and/or he/she or they, are taken as interchangeable and therefore as referring to same. Cookies We employ the use of cookies. By accessing Fitness Unsencored, you agreed to use cookies in agreement with the Fitness Unsencored's Privacy Policy. Most interactive websites use cookies to let us retrieve the user’s details for each visit. Cookies are used by our website to enable the functionality of certain areas to make it easier for people visiting our website. Some of our affiliate/advertising partners may also use cookies. License
 Unless otherwise stated, Fitness Unsencored and/or its licensors own the intellectual property rights for all material on Fitness Unsencored. All intellectual property rights are reserved. You may access this from Fitness Unsencored for your own personal use subjected to restrictions set in these terms and conditions.""",
                   style: AdaptiveTheme.of(context).theme.textTheme.bodyText1,
-                )
+                ),
+                SizedBox(height: 24.h),
               ],
             ),
           ),

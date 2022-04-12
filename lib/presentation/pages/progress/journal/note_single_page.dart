@@ -245,7 +245,7 @@ class _NoteSinglePageState extends State<NoteSinglePage> {
                                 ),
                               ],
                             ),
-                            SizedBox(width: 24.h),
+                            SizedBox(height: 24.h),
                             ThreeTypeTextComponent(
                               text1: "how_many_days_a_week_did_you_hit_water"
                                       .tr() +

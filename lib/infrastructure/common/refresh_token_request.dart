@@ -12,22 +12,24 @@ import 'package:fitness_uncensored/infrastructure/user/user_api.dart';
 import 'package:fitness_uncensored/utils/get_it.dart';
 
 class RefreshTokenRequest {
-
   Future<bool> refresh() async {
     try {
       final Response response = await getIt.get<Dio>().post(
-        APIList.refreshToken,
-        data: {
-          "refresh": UserRepositoryModel.refreshToken,
-        },
-      );
-
+            APIList.refreshToken,
+            data: {
+              "refresh": UserRepositoryModel.refreshToken,
+            },
+            options: Options(
+                validateStatus: (status) =>
+                    status! <= HttpStatus.internalServerError),
+          );
       if (response.statusCode == HttpStatus.ok) {
         UserRepositoryModel.accessToken = response.data['access'];
-        await getIt.get<UserApi>().refreshAccessToken(token: response.data['access']);
+        await getIt
+            .get<UserApi>()
+            .refreshAccessToken(token: response.data['access']);
         return true;
-      }
-      else {
+      } else {
         AppManagerCubit.context.read<AppManagerCubit>().logout();
         return false;
       }
@@ -35,5 +37,4 @@ class RefreshTokenRequest {
       return false;
     }
   }
-
 }

@@ -1,5 +1,7 @@
 // Created by Muhammed Tolkinov on 09-December-2021
 
+import 'package:fitness_uncensored/application/progress/journalBloc/journal_bloc.dart';
+import 'package:fitness_uncensored/application/progress/photoBloc/photo_bloc_bloc.dart';
 import 'package:fitness_uncensored/presentation/pages/profile/profile_page.dart';
 import 'package:fitness_uncensored/presentation/pages/progress/add_weight_page.dart';
 import 'package:fitness_uncensored/presentation/pages/progress/journal/add_journal_page.dart';
@@ -7,8 +9,11 @@ import 'package:fitness_uncensored/presentation/pages/progress/journal/all_notes
 import 'package:fitness_uncensored/presentation/pages/progress/journal/note_single_page.dart';
 import 'package:fitness_uncensored/presentation/pages/progress/photos/add_photo.dart';
 import 'package:fitness_uncensored/presentation/pages/progress/photos/help_photo_page.dart';
+import 'package:fitness_uncensored/presentation/pages/progress/photos/photo_detail_sort_page.dart';
 import 'package:fitness_uncensored/presentation/pages/progress/photos/photos_page.dart';
+import 'package:fitness_uncensored/presentation/pages/progress/point_chart/progress_single.dart';
 import 'package:fitness_uncensored/presentation/pages/progress/progress_main_page.dart';
+import 'package:fitness_uncensored/presentation/pages/workout/workout_main_detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -17,7 +22,6 @@ import 'package:fitness_uncensored/application/change_password/change_password_b
 import '../pages/faq/faq_page.dart';
 import '../pages/workout/workout_day_detail_page.dart';
 import '../pages/workout/workout_splits_roadmap_page.dart';
-import '../pages/workout/workout_splits_page.dart';
 import '../pages/blog/blog_detail_page.dart';
 import '../pages/blog/blog_search_page.dart';
 import '../pages/edit_profile/notification_settings_page.dart';
@@ -39,7 +43,6 @@ import '../pages/recipes/recipe_single_page.dart';
 import '../pages/auth/sign_up/sign_up_page.dart';
 
 class AppRoutes {
-
   const AppRoutes._();
 
   static MaterialPageRoute main() {
@@ -54,20 +57,22 @@ class AppRoutes {
     required int categoryId,
     required String categoryName,
   }) {
-    return MaterialPageRoute(builder: (_) => RecipesCategoryPage(
-      categoryId: categoryId,
-      headlineText: categoryName,
-    ));
+    return MaterialPageRoute(
+        builder: (_) => RecipesCategoryPage(
+              categoryId: categoryId,
+              headlineText: categoryName,
+            ));
   }
 
   static MaterialPageRoute recipeDetail({
     required String headlineText,
     required int categoryId,
   }) {
-    return MaterialPageRoute(builder: (_) => RecipeSinglePage(
-      categoryId: categoryId,
-      headlineText: headlineText,
-    ));
+    return MaterialPageRoute(
+        builder: (_) => RecipeSinglePage(
+              categoryId: categoryId,
+              headlineText: headlineText,
+            ));
   }
 
   static MaterialPageRoute editProfile() {
@@ -87,10 +92,11 @@ class AppRoutes {
   }
 
   static MaterialPageRoute changePassword() {
-    return MaterialPageRoute(builder: (_) => BlocProvider<ChangePasswordBloc>(
-      create: (_) => ChangePasswordBloc(),
-      child: const PasswordSettingsPage(),
-    ));
+    return MaterialPageRoute(
+        builder: (_) => BlocProvider<ChangePasswordBloc>(
+              create: (_) => ChangePasswordBloc(),
+              child: const PasswordSettingsPage(),
+            ));
   }
 
   static MaterialPageRoute notification() {
@@ -137,36 +143,40 @@ class AppRoutes {
     return MaterialPageRoute(builder: (_) => const BlogSearchPage());
   }
 
-  static MaterialPageRoute workoutSplit({
-    required int id,
-    required String title,
-    required String description
-  }) {
-    return MaterialPageRoute(builder: (_) => WorkoutSplitsPage(
-      id: id,
-      title: title,
-      description: description,
-    ));
-  }
+  // static MaterialPageRoute workoutSplit(
+  //     {required int id, required String title, required String description}) {
+  //   return MaterialPageRoute(
+  //       builder: (_) => WorkoutSplitsPage(
+  //             id: id,
+  //             title: title,
+  //             description: description,
+  //           ));
+  // }
 
   static MaterialPageRoute workoutDayDetail({
     required int id,
     required String title,
+    required int id1,
+    required String title1,
   }) {
-    return MaterialPageRoute(builder: (_) =>  WorkoutDayDetailPage(
-      id: id,
-      title: title,
-    ));
+    return MaterialPageRoute(
+        builder: (_) => WorkoutDayDetailPage(
+              id: id,
+              title: title,
+              id1: id1,
+              title1: title1,
+            ));
   }
 
   static MaterialPageRoute workoutSplitsRoadmap({
     required int id,
     required String title,
   }) {
-    return MaterialPageRoute(builder: (_) => WorkoutSplitsRoadmapPage(
-      id: id,
-      title: title,
-    ));
+    return MaterialPageRoute(
+        builder: (_) => WorkoutSplitsRoadmapPage(
+              id: id,
+              title: title,
+            ));
   }
 
   static MaterialPageRoute profile() {
@@ -186,11 +196,19 @@ class AppRoutes {
   }
 
   static MaterialPageRoute getPhotos() {
-    return MaterialPageRoute(builder: (_) => const PhotosPage());
+    return MaterialPageRoute(
+        builder: (_) => BlocProvider(
+              create: (context) => PhotoBlocBloc(),
+              child: const PhotosPage(),
+            ));
   }
 
   static MaterialPageRoute allJournal() {
-    return MaterialPageRoute(builder: (_) => const AllJournalPage());
+    return MaterialPageRoute(
+        builder: (_) => BlocProvider(
+              create: (context) => JournalBloc(),
+              child: const AllJournalPage(),
+            ));
   }
 
   static MaterialPageRoute addWeightProgress() {
@@ -207,6 +225,39 @@ class AppRoutes {
     return MaterialPageRoute(
         builder: (_) => NoteSinglePage(
               id: id,
+            ));
+  }
+
+  static MaterialPageRoute photoDetailSort({
+    required String photo,
+    required String dropdown,
+    required String dateTime,
+  }) {
+    return MaterialPageRoute(
+        builder: (_) => PhotoDetailSortPage(
+              photo: photo,
+              dropdown: dropdown,
+              dateTime: dateTime,
+            ));
+  }
+
+  static MaterialPageRoute progressSingle({
+    required String id,
+  }) {
+    return MaterialPageRoute(
+        builder: (_) => ProgressSingle(
+              id: id,
+            ));
+  }
+
+  static MaterialPageRoute workoutMainDetailPage({
+    required int id,
+    required String title,
+  }) {
+    return MaterialPageRoute(
+        builder: (_) => WorkoutMainDetailPage(
+              id: id,
+              title: title,
             ));
   }
 }

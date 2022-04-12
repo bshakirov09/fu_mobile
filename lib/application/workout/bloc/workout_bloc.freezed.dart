@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'workout_bloc.dart';
@@ -21,29 +22,40 @@ class _$WorkoutEventTearOff {
     return const _GetWorkoutList();
   }
 
-  _GetWorkoutSplits getWorkoutSplits({required int id, required String title}) {
-    return _GetWorkoutSplits(
+  _GetWorkoutMainDetail getWorkoutMainDetail({required int id}) {
+    return _GetWorkoutMainDetail(
       id: id,
-      title: title,
     );
   }
 
-  _GetWorkoutDayDetail getWorkoutDayDetail(
-      {required int id,
-      required String title,
-      required int week,
-      required int day}) {
+  _GetWorkoutDayDetail getWorkoutDayDetail({required int id}) {
     return _GetWorkoutDayDetail(
       id: id,
-      title: title,
-      week: week,
-      day: day,
     );
   }
 
   _GetWorkoutSplitsRoadmap getWorkoutSplitsRoadmap({required int id}) {
     return _GetWorkoutSplitsRoadmap(
       id: id,
+    );
+  }
+
+  _GetWorkoutQuad getWorkoutQuad({required int id}) {
+    return _GetWorkoutQuad(
+      id: id,
+    );
+  }
+
+  _CompleteWorkout completeWorkout({required int id}) {
+    return _CompleteWorkout(
+      id: id,
+    );
+  }
+
+  _AddWeightQuad addWeightQuad({required int id, required String data}) {
+    return _AddWeightQuad(
+      id: id,
+      data: data,
     );
   }
 }
@@ -56,54 +68,69 @@ mixin _$WorkoutEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getWorkoutList,
-    required TResult Function(int id, String title) getWorkoutSplits,
-    required TResult Function(int id, String title, int week, int day)
-        getWorkoutDayDetail,
+    required TResult Function(int id) getWorkoutMainDetail,
+    required TResult Function(int id) getWorkoutDayDetail,
     required TResult Function(int id) getWorkoutSplitsRoadmap,
+    required TResult Function(int id) getWorkoutQuad,
+    required TResult Function(int id) completeWorkout,
+    required TResult Function(int id, String data) addWeightQuad,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getWorkoutList,
-    TResult Function(int id, String title)? getWorkoutSplits,
-    TResult Function(int id, String title, int week, int day)?
-        getWorkoutDayDetail,
+    TResult Function(int id)? getWorkoutMainDetail,
+    TResult Function(int id)? getWorkoutDayDetail,
     TResult Function(int id)? getWorkoutSplitsRoadmap,
+    TResult Function(int id)? getWorkoutQuad,
+    TResult Function(int id)? completeWorkout,
+    TResult Function(int id, String data)? addWeightQuad,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getWorkoutList,
-    TResult Function(int id, String title)? getWorkoutSplits,
-    TResult Function(int id, String title, int week, int day)?
-        getWorkoutDayDetail,
+    TResult Function(int id)? getWorkoutMainDetail,
+    TResult Function(int id)? getWorkoutDayDetail,
     TResult Function(int id)? getWorkoutSplitsRoadmap,
+    TResult Function(int id)? getWorkoutQuad,
+    TResult Function(int id)? completeWorkout,
+    TResult Function(int id, String data)? addWeightQuad,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetWorkoutList value) getWorkoutList,
-    required TResult Function(_GetWorkoutSplits value) getWorkoutSplits,
+    required TResult Function(_GetWorkoutMainDetail value) getWorkoutMainDetail,
     required TResult Function(_GetWorkoutDayDetail value) getWorkoutDayDetail,
     required TResult Function(_GetWorkoutSplitsRoadmap value)
         getWorkoutSplitsRoadmap,
+    required TResult Function(_GetWorkoutQuad value) getWorkoutQuad,
+    required TResult Function(_CompleteWorkout value) completeWorkout,
+    required TResult Function(_AddWeightQuad value) addWeightQuad,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetWorkoutList value)? getWorkoutList,
-    TResult Function(_GetWorkoutSplits value)? getWorkoutSplits,
+    TResult Function(_GetWorkoutMainDetail value)? getWorkoutMainDetail,
     TResult Function(_GetWorkoutDayDetail value)? getWorkoutDayDetail,
     TResult Function(_GetWorkoutSplitsRoadmap value)? getWorkoutSplitsRoadmap,
+    TResult Function(_GetWorkoutQuad value)? getWorkoutQuad,
+    TResult Function(_CompleteWorkout value)? completeWorkout,
+    TResult Function(_AddWeightQuad value)? addWeightQuad,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetWorkoutList value)? getWorkoutList,
-    TResult Function(_GetWorkoutSplits value)? getWorkoutSplits,
+    TResult Function(_GetWorkoutMainDetail value)? getWorkoutMainDetail,
     TResult Function(_GetWorkoutDayDetail value)? getWorkoutDayDetail,
     TResult Function(_GetWorkoutSplitsRoadmap value)? getWorkoutSplitsRoadmap,
+    TResult Function(_GetWorkoutQuad value)? getWorkoutQuad,
+    TResult Function(_CompleteWorkout value)? completeWorkout,
+    TResult Function(_AddWeightQuad value)? addWeightQuad,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -146,12 +173,18 @@ class __$GetWorkoutListCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_GetWorkoutList extends _GetWorkoutList {
+class _$_GetWorkoutList extends _GetWorkoutList with DiagnosticableTreeMixin {
   const _$_GetWorkoutList() : super._();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'WorkoutEvent.getWorkoutList()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'WorkoutEvent.getWorkoutList'));
   }
 
   @override
@@ -167,10 +200,12 @@ class _$_GetWorkoutList extends _GetWorkoutList {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getWorkoutList,
-    required TResult Function(int id, String title) getWorkoutSplits,
-    required TResult Function(int id, String title, int week, int day)
-        getWorkoutDayDetail,
+    required TResult Function(int id) getWorkoutMainDetail,
+    required TResult Function(int id) getWorkoutDayDetail,
     required TResult Function(int id) getWorkoutSplitsRoadmap,
+    required TResult Function(int id) getWorkoutQuad,
+    required TResult Function(int id) completeWorkout,
+    required TResult Function(int id, String data) addWeightQuad,
   }) {
     return getWorkoutList();
   }
@@ -179,10 +214,12 @@ class _$_GetWorkoutList extends _GetWorkoutList {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getWorkoutList,
-    TResult Function(int id, String title)? getWorkoutSplits,
-    TResult Function(int id, String title, int week, int day)?
-        getWorkoutDayDetail,
+    TResult Function(int id)? getWorkoutMainDetail,
+    TResult Function(int id)? getWorkoutDayDetail,
     TResult Function(int id)? getWorkoutSplitsRoadmap,
+    TResult Function(int id)? getWorkoutQuad,
+    TResult Function(int id)? completeWorkout,
+    TResult Function(int id, String data)? addWeightQuad,
   }) {
     return getWorkoutList?.call();
   }
@@ -191,10 +228,12 @@ class _$_GetWorkoutList extends _GetWorkoutList {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getWorkoutList,
-    TResult Function(int id, String title)? getWorkoutSplits,
-    TResult Function(int id, String title, int week, int day)?
-        getWorkoutDayDetail,
+    TResult Function(int id)? getWorkoutMainDetail,
+    TResult Function(int id)? getWorkoutDayDetail,
     TResult Function(int id)? getWorkoutSplitsRoadmap,
+    TResult Function(int id)? getWorkoutQuad,
+    TResult Function(int id)? completeWorkout,
+    TResult Function(int id, String data)? addWeightQuad,
     required TResult orElse(),
   }) {
     if (getWorkoutList != null) {
@@ -207,10 +246,13 @@ class _$_GetWorkoutList extends _GetWorkoutList {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetWorkoutList value) getWorkoutList,
-    required TResult Function(_GetWorkoutSplits value) getWorkoutSplits,
+    required TResult Function(_GetWorkoutMainDetail value) getWorkoutMainDetail,
     required TResult Function(_GetWorkoutDayDetail value) getWorkoutDayDetail,
     required TResult Function(_GetWorkoutSplitsRoadmap value)
         getWorkoutSplitsRoadmap,
+    required TResult Function(_GetWorkoutQuad value) getWorkoutQuad,
+    required TResult Function(_CompleteWorkout value) completeWorkout,
+    required TResult Function(_AddWeightQuad value) addWeightQuad,
   }) {
     return getWorkoutList(this);
   }
@@ -219,9 +261,12 @@ class _$_GetWorkoutList extends _GetWorkoutList {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetWorkoutList value)? getWorkoutList,
-    TResult Function(_GetWorkoutSplits value)? getWorkoutSplits,
+    TResult Function(_GetWorkoutMainDetail value)? getWorkoutMainDetail,
     TResult Function(_GetWorkoutDayDetail value)? getWorkoutDayDetail,
     TResult Function(_GetWorkoutSplitsRoadmap value)? getWorkoutSplitsRoadmap,
+    TResult Function(_GetWorkoutQuad value)? getWorkoutQuad,
+    TResult Function(_CompleteWorkout value)? completeWorkout,
+    TResult Function(_AddWeightQuad value)? addWeightQuad,
   }) {
     return getWorkoutList?.call(this);
   }
@@ -230,9 +275,12 @@ class _$_GetWorkoutList extends _GetWorkoutList {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetWorkoutList value)? getWorkoutList,
-    TResult Function(_GetWorkoutSplits value)? getWorkoutSplits,
+    TResult Function(_GetWorkoutMainDetail value)? getWorkoutMainDetail,
     TResult Function(_GetWorkoutDayDetail value)? getWorkoutDayDetail,
     TResult Function(_GetWorkoutSplitsRoadmap value)? getWorkoutSplitsRoadmap,
+    TResult Function(_GetWorkoutQuad value)? getWorkoutQuad,
+    TResult Function(_CompleteWorkout value)? completeWorkout,
+    TResult Function(_AddWeightQuad value)? addWeightQuad,
     required TResult orElse(),
   }) {
     if (getWorkoutList != null) {
@@ -248,114 +296,119 @@ abstract class _GetWorkoutList extends WorkoutEvent {
 }
 
 /// @nodoc
-abstract class _$GetWorkoutSplitsCopyWith<$Res> {
-  factory _$GetWorkoutSplitsCopyWith(
-          _GetWorkoutSplits value, $Res Function(_GetWorkoutSplits) then) =
-      __$GetWorkoutSplitsCopyWithImpl<$Res>;
-  $Res call({int id, String title});
+abstract class _$GetWorkoutMainDetailCopyWith<$Res> {
+  factory _$GetWorkoutMainDetailCopyWith(_GetWorkoutMainDetail value,
+          $Res Function(_GetWorkoutMainDetail) then) =
+      __$GetWorkoutMainDetailCopyWithImpl<$Res>;
+  $Res call({int id});
 }
 
 /// @nodoc
-class __$GetWorkoutSplitsCopyWithImpl<$Res>
+class __$GetWorkoutMainDetailCopyWithImpl<$Res>
     extends _$WorkoutEventCopyWithImpl<$Res>
-    implements _$GetWorkoutSplitsCopyWith<$Res> {
-  __$GetWorkoutSplitsCopyWithImpl(
-      _GetWorkoutSplits _value, $Res Function(_GetWorkoutSplits) _then)
-      : super(_value, (v) => _then(v as _GetWorkoutSplits));
+    implements _$GetWorkoutMainDetailCopyWith<$Res> {
+  __$GetWorkoutMainDetailCopyWithImpl(
+      _GetWorkoutMainDetail _value, $Res Function(_GetWorkoutMainDetail) _then)
+      : super(_value, (v) => _then(v as _GetWorkoutMainDetail));
 
   @override
-  _GetWorkoutSplits get _value => super._value as _GetWorkoutSplits;
+  _GetWorkoutMainDetail get _value => super._value as _GetWorkoutMainDetail;
 
   @override
   $Res call({
     Object? id = freezed,
-    Object? title = freezed,
   }) {
-    return _then(_GetWorkoutSplits(
+    return _then(_GetWorkoutMainDetail(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      title: title == freezed
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_GetWorkoutSplits extends _GetWorkoutSplits {
-  const _$_GetWorkoutSplits({required this.id, required this.title})
-      : super._();
+class _$_GetWorkoutMainDetail extends _GetWorkoutMainDetail
+    with DiagnosticableTreeMixin {
+  const _$_GetWorkoutMainDetail({required this.id}) : super._();
 
   @override
   final int id;
-  @override
-  final String title;
 
   @override
-  String toString() {
-    return 'WorkoutEvent.getWorkoutSplits(id: $id, title: $title)';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'WorkoutEvent.getWorkoutMainDetail(id: $id)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'WorkoutEvent.getWorkoutMainDetail'))
+      ..add(DiagnosticsProperty('id', id));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _GetWorkoutSplits &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.title, title));
+            other is _GetWorkoutMainDetail &&
+            const DeepCollectionEquality().equals(other.id, id));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(title));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(id));
 
   @JsonKey(ignore: true)
   @override
-  _$GetWorkoutSplitsCopyWith<_GetWorkoutSplits> get copyWith =>
-      __$GetWorkoutSplitsCopyWithImpl<_GetWorkoutSplits>(this, _$identity);
+  _$GetWorkoutMainDetailCopyWith<_GetWorkoutMainDetail> get copyWith =>
+      __$GetWorkoutMainDetailCopyWithImpl<_GetWorkoutMainDetail>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getWorkoutList,
-    required TResult Function(int id, String title) getWorkoutSplits,
-    required TResult Function(int id, String title, int week, int day)
-        getWorkoutDayDetail,
+    required TResult Function(int id) getWorkoutMainDetail,
+    required TResult Function(int id) getWorkoutDayDetail,
     required TResult Function(int id) getWorkoutSplitsRoadmap,
+    required TResult Function(int id) getWorkoutQuad,
+    required TResult Function(int id) completeWorkout,
+    required TResult Function(int id, String data) addWeightQuad,
   }) {
-    return getWorkoutSplits(id, title);
+    return getWorkoutMainDetail(id);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getWorkoutList,
-    TResult Function(int id, String title)? getWorkoutSplits,
-    TResult Function(int id, String title, int week, int day)?
-        getWorkoutDayDetail,
+    TResult Function(int id)? getWorkoutMainDetail,
+    TResult Function(int id)? getWorkoutDayDetail,
     TResult Function(int id)? getWorkoutSplitsRoadmap,
+    TResult Function(int id)? getWorkoutQuad,
+    TResult Function(int id)? completeWorkout,
+    TResult Function(int id, String data)? addWeightQuad,
   }) {
-    return getWorkoutSplits?.call(id, title);
+    return getWorkoutMainDetail?.call(id);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getWorkoutList,
-    TResult Function(int id, String title)? getWorkoutSplits,
-    TResult Function(int id, String title, int week, int day)?
-        getWorkoutDayDetail,
+    TResult Function(int id)? getWorkoutMainDetail,
+    TResult Function(int id)? getWorkoutDayDetail,
     TResult Function(int id)? getWorkoutSplitsRoadmap,
+    TResult Function(int id)? getWorkoutQuad,
+    TResult Function(int id)? completeWorkout,
+    TResult Function(int id, String data)? addWeightQuad,
     required TResult orElse(),
   }) {
-    if (getWorkoutSplits != null) {
-      return getWorkoutSplits(id, title);
+    if (getWorkoutMainDetail != null) {
+      return getWorkoutMainDetail(id);
     }
     return orElse();
   }
@@ -364,50 +417,58 @@ class _$_GetWorkoutSplits extends _GetWorkoutSplits {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetWorkoutList value) getWorkoutList,
-    required TResult Function(_GetWorkoutSplits value) getWorkoutSplits,
+    required TResult Function(_GetWorkoutMainDetail value) getWorkoutMainDetail,
     required TResult Function(_GetWorkoutDayDetail value) getWorkoutDayDetail,
     required TResult Function(_GetWorkoutSplitsRoadmap value)
         getWorkoutSplitsRoadmap,
+    required TResult Function(_GetWorkoutQuad value) getWorkoutQuad,
+    required TResult Function(_CompleteWorkout value) completeWorkout,
+    required TResult Function(_AddWeightQuad value) addWeightQuad,
   }) {
-    return getWorkoutSplits(this);
+    return getWorkoutMainDetail(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetWorkoutList value)? getWorkoutList,
-    TResult Function(_GetWorkoutSplits value)? getWorkoutSplits,
+    TResult Function(_GetWorkoutMainDetail value)? getWorkoutMainDetail,
     TResult Function(_GetWorkoutDayDetail value)? getWorkoutDayDetail,
     TResult Function(_GetWorkoutSplitsRoadmap value)? getWorkoutSplitsRoadmap,
+    TResult Function(_GetWorkoutQuad value)? getWorkoutQuad,
+    TResult Function(_CompleteWorkout value)? completeWorkout,
+    TResult Function(_AddWeightQuad value)? addWeightQuad,
   }) {
-    return getWorkoutSplits?.call(this);
+    return getWorkoutMainDetail?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetWorkoutList value)? getWorkoutList,
-    TResult Function(_GetWorkoutSplits value)? getWorkoutSplits,
+    TResult Function(_GetWorkoutMainDetail value)? getWorkoutMainDetail,
     TResult Function(_GetWorkoutDayDetail value)? getWorkoutDayDetail,
     TResult Function(_GetWorkoutSplitsRoadmap value)? getWorkoutSplitsRoadmap,
+    TResult Function(_GetWorkoutQuad value)? getWorkoutQuad,
+    TResult Function(_CompleteWorkout value)? completeWorkout,
+    TResult Function(_AddWeightQuad value)? addWeightQuad,
     required TResult orElse(),
   }) {
-    if (getWorkoutSplits != null) {
-      return getWorkoutSplits(this);
+    if (getWorkoutMainDetail != null) {
+      return getWorkoutMainDetail(this);
     }
     return orElse();
   }
 }
 
-abstract class _GetWorkoutSplits extends WorkoutEvent {
-  const factory _GetWorkoutSplits({required int id, required String title}) =
-      _$_GetWorkoutSplits;
-  const _GetWorkoutSplits._() : super._();
+abstract class _GetWorkoutMainDetail extends WorkoutEvent {
+  const factory _GetWorkoutMainDetail({required int id}) =
+      _$_GetWorkoutMainDetail;
+  const _GetWorkoutMainDetail._() : super._();
 
   int get id;
-  String get title;
   @JsonKey(ignore: true)
-  _$GetWorkoutSplitsCopyWith<_GetWorkoutSplits> get copyWith =>
+  _$GetWorkoutMainDetailCopyWith<_GetWorkoutMainDetail> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -416,7 +477,7 @@ abstract class _$GetWorkoutDayDetailCopyWith<$Res> {
   factory _$GetWorkoutDayDetailCopyWith(_GetWorkoutDayDetail value,
           $Res Function(_GetWorkoutDayDetail) then) =
       __$GetWorkoutDayDetailCopyWithImpl<$Res>;
-  $Res call({int id, String title, int week, int day});
+  $Res call({int id});
 }
 
 /// @nodoc
@@ -433,26 +494,11 @@ class __$GetWorkoutDayDetailCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? title = freezed,
-    Object? week = freezed,
-    Object? day = freezed,
   }) {
     return _then(_GetWorkoutDayDetail(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      title: title == freezed
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      week: week == freezed
-          ? _value.week
-          : week // ignore: cast_nullable_to_non_nullable
-              as int,
-      day: day == freezed
-          ? _value.day
-          : day // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -460,26 +506,24 @@ class __$GetWorkoutDayDetailCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_GetWorkoutDayDetail extends _GetWorkoutDayDetail {
-  const _$_GetWorkoutDayDetail(
-      {required this.id,
-      required this.title,
-      required this.week,
-      required this.day})
-      : super._();
+class _$_GetWorkoutDayDetail extends _GetWorkoutDayDetail
+    with DiagnosticableTreeMixin {
+  const _$_GetWorkoutDayDetail({required this.id}) : super._();
 
   @override
   final int id;
-  @override
-  final String title;
-  @override
-  final int week;
-  @override
-  final int day;
 
   @override
-  String toString() {
-    return 'WorkoutEvent.getWorkoutDayDetail(id: $id, title: $title, week: $week, day: $day)';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'WorkoutEvent.getWorkoutDayDetail(id: $id)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'WorkoutEvent.getWorkoutDayDetail'))
+      ..add(DiagnosticsProperty('id', id));
   }
 
   @override
@@ -487,19 +531,12 @@ class _$_GetWorkoutDayDetail extends _GetWorkoutDayDetail {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _GetWorkoutDayDetail &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality().equals(other.week, week) &&
-            const DeepCollectionEquality().equals(other.day, day));
+            const DeepCollectionEquality().equals(other.id, id));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(week),
-      const DeepCollectionEquality().hash(day));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(id));
 
   @JsonKey(ignore: true)
   @override
@@ -511,38 +548,44 @@ class _$_GetWorkoutDayDetail extends _GetWorkoutDayDetail {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getWorkoutList,
-    required TResult Function(int id, String title) getWorkoutSplits,
-    required TResult Function(int id, String title, int week, int day)
-        getWorkoutDayDetail,
+    required TResult Function(int id) getWorkoutMainDetail,
+    required TResult Function(int id) getWorkoutDayDetail,
     required TResult Function(int id) getWorkoutSplitsRoadmap,
+    required TResult Function(int id) getWorkoutQuad,
+    required TResult Function(int id) completeWorkout,
+    required TResult Function(int id, String data) addWeightQuad,
   }) {
-    return getWorkoutDayDetail(id, title, week, day);
+    return getWorkoutDayDetail(id);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getWorkoutList,
-    TResult Function(int id, String title)? getWorkoutSplits,
-    TResult Function(int id, String title, int week, int day)?
-        getWorkoutDayDetail,
+    TResult Function(int id)? getWorkoutMainDetail,
+    TResult Function(int id)? getWorkoutDayDetail,
     TResult Function(int id)? getWorkoutSplitsRoadmap,
+    TResult Function(int id)? getWorkoutQuad,
+    TResult Function(int id)? completeWorkout,
+    TResult Function(int id, String data)? addWeightQuad,
   }) {
-    return getWorkoutDayDetail?.call(id, title, week, day);
+    return getWorkoutDayDetail?.call(id);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getWorkoutList,
-    TResult Function(int id, String title)? getWorkoutSplits,
-    TResult Function(int id, String title, int week, int day)?
-        getWorkoutDayDetail,
+    TResult Function(int id)? getWorkoutMainDetail,
+    TResult Function(int id)? getWorkoutDayDetail,
     TResult Function(int id)? getWorkoutSplitsRoadmap,
+    TResult Function(int id)? getWorkoutQuad,
+    TResult Function(int id)? completeWorkout,
+    TResult Function(int id, String data)? addWeightQuad,
     required TResult orElse(),
   }) {
     if (getWorkoutDayDetail != null) {
-      return getWorkoutDayDetail(id, title, week, day);
+      return getWorkoutDayDetail(id);
     }
     return orElse();
   }
@@ -551,10 +594,13 @@ class _$_GetWorkoutDayDetail extends _GetWorkoutDayDetail {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetWorkoutList value) getWorkoutList,
-    required TResult Function(_GetWorkoutSplits value) getWorkoutSplits,
+    required TResult Function(_GetWorkoutMainDetail value) getWorkoutMainDetail,
     required TResult Function(_GetWorkoutDayDetail value) getWorkoutDayDetail,
     required TResult Function(_GetWorkoutSplitsRoadmap value)
         getWorkoutSplitsRoadmap,
+    required TResult Function(_GetWorkoutQuad value) getWorkoutQuad,
+    required TResult Function(_CompleteWorkout value) completeWorkout,
+    required TResult Function(_AddWeightQuad value) addWeightQuad,
   }) {
     return getWorkoutDayDetail(this);
   }
@@ -563,9 +609,12 @@ class _$_GetWorkoutDayDetail extends _GetWorkoutDayDetail {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetWorkoutList value)? getWorkoutList,
-    TResult Function(_GetWorkoutSplits value)? getWorkoutSplits,
+    TResult Function(_GetWorkoutMainDetail value)? getWorkoutMainDetail,
     TResult Function(_GetWorkoutDayDetail value)? getWorkoutDayDetail,
     TResult Function(_GetWorkoutSplitsRoadmap value)? getWorkoutSplitsRoadmap,
+    TResult Function(_GetWorkoutQuad value)? getWorkoutQuad,
+    TResult Function(_CompleteWorkout value)? completeWorkout,
+    TResult Function(_AddWeightQuad value)? addWeightQuad,
   }) {
     return getWorkoutDayDetail?.call(this);
   }
@@ -574,9 +623,12 @@ class _$_GetWorkoutDayDetail extends _GetWorkoutDayDetail {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetWorkoutList value)? getWorkoutList,
-    TResult Function(_GetWorkoutSplits value)? getWorkoutSplits,
+    TResult Function(_GetWorkoutMainDetail value)? getWorkoutMainDetail,
     TResult Function(_GetWorkoutDayDetail value)? getWorkoutDayDetail,
     TResult Function(_GetWorkoutSplitsRoadmap value)? getWorkoutSplitsRoadmap,
+    TResult Function(_GetWorkoutQuad value)? getWorkoutQuad,
+    TResult Function(_CompleteWorkout value)? completeWorkout,
+    TResult Function(_AddWeightQuad value)? addWeightQuad,
     required TResult orElse(),
   }) {
     if (getWorkoutDayDetail != null) {
@@ -587,17 +639,11 @@ class _$_GetWorkoutDayDetail extends _GetWorkoutDayDetail {
 }
 
 abstract class _GetWorkoutDayDetail extends WorkoutEvent {
-  const factory _GetWorkoutDayDetail(
-      {required int id,
-      required String title,
-      required int week,
-      required int day}) = _$_GetWorkoutDayDetail;
+  const factory _GetWorkoutDayDetail({required int id}) =
+      _$_GetWorkoutDayDetail;
   const _GetWorkoutDayDetail._() : super._();
 
   int get id;
-  String get title;
-  int get week;
-  int get day;
   @JsonKey(ignore: true)
   _$GetWorkoutDayDetailCopyWith<_GetWorkoutDayDetail> get copyWith =>
       throw _privateConstructorUsedError;
@@ -638,15 +684,24 @@ class __$GetWorkoutSplitsRoadmapCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_GetWorkoutSplitsRoadmap extends _GetWorkoutSplitsRoadmap {
+class _$_GetWorkoutSplitsRoadmap extends _GetWorkoutSplitsRoadmap
+    with DiagnosticableTreeMixin {
   const _$_GetWorkoutSplitsRoadmap({required this.id}) : super._();
 
   @override
   final int id;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'WorkoutEvent.getWorkoutSplitsRoadmap(id: $id)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'WorkoutEvent.getWorkoutSplitsRoadmap'))
+      ..add(DiagnosticsProperty('id', id));
   }
 
   @override
@@ -671,10 +726,12 @@ class _$_GetWorkoutSplitsRoadmap extends _GetWorkoutSplitsRoadmap {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getWorkoutList,
-    required TResult Function(int id, String title) getWorkoutSplits,
-    required TResult Function(int id, String title, int week, int day)
-        getWorkoutDayDetail,
+    required TResult Function(int id) getWorkoutMainDetail,
+    required TResult Function(int id) getWorkoutDayDetail,
     required TResult Function(int id) getWorkoutSplitsRoadmap,
+    required TResult Function(int id) getWorkoutQuad,
+    required TResult Function(int id) completeWorkout,
+    required TResult Function(int id, String data) addWeightQuad,
   }) {
     return getWorkoutSplitsRoadmap(id);
   }
@@ -683,10 +740,12 @@ class _$_GetWorkoutSplitsRoadmap extends _GetWorkoutSplitsRoadmap {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getWorkoutList,
-    TResult Function(int id, String title)? getWorkoutSplits,
-    TResult Function(int id, String title, int week, int day)?
-        getWorkoutDayDetail,
+    TResult Function(int id)? getWorkoutMainDetail,
+    TResult Function(int id)? getWorkoutDayDetail,
     TResult Function(int id)? getWorkoutSplitsRoadmap,
+    TResult Function(int id)? getWorkoutQuad,
+    TResult Function(int id)? completeWorkout,
+    TResult Function(int id, String data)? addWeightQuad,
   }) {
     return getWorkoutSplitsRoadmap?.call(id);
   }
@@ -695,10 +754,12 @@ class _$_GetWorkoutSplitsRoadmap extends _GetWorkoutSplitsRoadmap {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getWorkoutList,
-    TResult Function(int id, String title)? getWorkoutSplits,
-    TResult Function(int id, String title, int week, int day)?
-        getWorkoutDayDetail,
+    TResult Function(int id)? getWorkoutMainDetail,
+    TResult Function(int id)? getWorkoutDayDetail,
     TResult Function(int id)? getWorkoutSplitsRoadmap,
+    TResult Function(int id)? getWorkoutQuad,
+    TResult Function(int id)? completeWorkout,
+    TResult Function(int id, String data)? addWeightQuad,
     required TResult orElse(),
   }) {
     if (getWorkoutSplitsRoadmap != null) {
@@ -711,10 +772,13 @@ class _$_GetWorkoutSplitsRoadmap extends _GetWorkoutSplitsRoadmap {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetWorkoutList value) getWorkoutList,
-    required TResult Function(_GetWorkoutSplits value) getWorkoutSplits,
+    required TResult Function(_GetWorkoutMainDetail value) getWorkoutMainDetail,
     required TResult Function(_GetWorkoutDayDetail value) getWorkoutDayDetail,
     required TResult Function(_GetWorkoutSplitsRoadmap value)
         getWorkoutSplitsRoadmap,
+    required TResult Function(_GetWorkoutQuad value) getWorkoutQuad,
+    required TResult Function(_CompleteWorkout value) completeWorkout,
+    required TResult Function(_AddWeightQuad value) addWeightQuad,
   }) {
     return getWorkoutSplitsRoadmap(this);
   }
@@ -723,9 +787,12 @@ class _$_GetWorkoutSplitsRoadmap extends _GetWorkoutSplitsRoadmap {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetWorkoutList value)? getWorkoutList,
-    TResult Function(_GetWorkoutSplits value)? getWorkoutSplits,
+    TResult Function(_GetWorkoutMainDetail value)? getWorkoutMainDetail,
     TResult Function(_GetWorkoutDayDetail value)? getWorkoutDayDetail,
     TResult Function(_GetWorkoutSplitsRoadmap value)? getWorkoutSplitsRoadmap,
+    TResult Function(_GetWorkoutQuad value)? getWorkoutQuad,
+    TResult Function(_CompleteWorkout value)? completeWorkout,
+    TResult Function(_AddWeightQuad value)? addWeightQuad,
   }) {
     return getWorkoutSplitsRoadmap?.call(this);
   }
@@ -734,9 +801,12 @@ class _$_GetWorkoutSplitsRoadmap extends _GetWorkoutSplitsRoadmap {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetWorkoutList value)? getWorkoutList,
-    TResult Function(_GetWorkoutSplits value)? getWorkoutSplits,
+    TResult Function(_GetWorkoutMainDetail value)? getWorkoutMainDetail,
     TResult Function(_GetWorkoutDayDetail value)? getWorkoutDayDetail,
     TResult Function(_GetWorkoutSplitsRoadmap value)? getWorkoutSplitsRoadmap,
+    TResult Function(_GetWorkoutQuad value)? getWorkoutQuad,
+    TResult Function(_CompleteWorkout value)? completeWorkout,
+    TResult Function(_AddWeightQuad value)? addWeightQuad,
     required TResult orElse(),
   }) {
     if (getWorkoutSplitsRoadmap != null) {
@@ -758,6 +828,541 @@ abstract class _GetWorkoutSplitsRoadmap extends WorkoutEvent {
 }
 
 /// @nodoc
+abstract class _$GetWorkoutQuadCopyWith<$Res> {
+  factory _$GetWorkoutQuadCopyWith(
+          _GetWorkoutQuad value, $Res Function(_GetWorkoutQuad) then) =
+      __$GetWorkoutQuadCopyWithImpl<$Res>;
+  $Res call({int id});
+}
+
+/// @nodoc
+class __$GetWorkoutQuadCopyWithImpl<$Res>
+    extends _$WorkoutEventCopyWithImpl<$Res>
+    implements _$GetWorkoutQuadCopyWith<$Res> {
+  __$GetWorkoutQuadCopyWithImpl(
+      _GetWorkoutQuad _value, $Res Function(_GetWorkoutQuad) _then)
+      : super(_value, (v) => _then(v as _GetWorkoutQuad));
+
+  @override
+  _GetWorkoutQuad get _value => super._value as _GetWorkoutQuad;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+  }) {
+    return _then(_GetWorkoutQuad(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_GetWorkoutQuad extends _GetWorkoutQuad with DiagnosticableTreeMixin {
+  const _$_GetWorkoutQuad({required this.id}) : super._();
+
+  @override
+  final int id;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'WorkoutEvent.getWorkoutQuad(id: $id)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'WorkoutEvent.getWorkoutQuad'))
+      ..add(DiagnosticsProperty('id', id));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _GetWorkoutQuad &&
+            const DeepCollectionEquality().equals(other.id, id));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(id));
+
+  @JsonKey(ignore: true)
+  @override
+  _$GetWorkoutQuadCopyWith<_GetWorkoutQuad> get copyWith =>
+      __$GetWorkoutQuadCopyWithImpl<_GetWorkoutQuad>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getWorkoutList,
+    required TResult Function(int id) getWorkoutMainDetail,
+    required TResult Function(int id) getWorkoutDayDetail,
+    required TResult Function(int id) getWorkoutSplitsRoadmap,
+    required TResult Function(int id) getWorkoutQuad,
+    required TResult Function(int id) completeWorkout,
+    required TResult Function(int id, String data) addWeightQuad,
+  }) {
+    return getWorkoutQuad(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? getWorkoutList,
+    TResult Function(int id)? getWorkoutMainDetail,
+    TResult Function(int id)? getWorkoutDayDetail,
+    TResult Function(int id)? getWorkoutSplitsRoadmap,
+    TResult Function(int id)? getWorkoutQuad,
+    TResult Function(int id)? completeWorkout,
+    TResult Function(int id, String data)? addWeightQuad,
+  }) {
+    return getWorkoutQuad?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getWorkoutList,
+    TResult Function(int id)? getWorkoutMainDetail,
+    TResult Function(int id)? getWorkoutDayDetail,
+    TResult Function(int id)? getWorkoutSplitsRoadmap,
+    TResult Function(int id)? getWorkoutQuad,
+    TResult Function(int id)? completeWorkout,
+    TResult Function(int id, String data)? addWeightQuad,
+    required TResult orElse(),
+  }) {
+    if (getWorkoutQuad != null) {
+      return getWorkoutQuad(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetWorkoutList value) getWorkoutList,
+    required TResult Function(_GetWorkoutMainDetail value) getWorkoutMainDetail,
+    required TResult Function(_GetWorkoutDayDetail value) getWorkoutDayDetail,
+    required TResult Function(_GetWorkoutSplitsRoadmap value)
+        getWorkoutSplitsRoadmap,
+    required TResult Function(_GetWorkoutQuad value) getWorkoutQuad,
+    required TResult Function(_CompleteWorkout value) completeWorkout,
+    required TResult Function(_AddWeightQuad value) addWeightQuad,
+  }) {
+    return getWorkoutQuad(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_GetWorkoutList value)? getWorkoutList,
+    TResult Function(_GetWorkoutMainDetail value)? getWorkoutMainDetail,
+    TResult Function(_GetWorkoutDayDetail value)? getWorkoutDayDetail,
+    TResult Function(_GetWorkoutSplitsRoadmap value)? getWorkoutSplitsRoadmap,
+    TResult Function(_GetWorkoutQuad value)? getWorkoutQuad,
+    TResult Function(_CompleteWorkout value)? completeWorkout,
+    TResult Function(_AddWeightQuad value)? addWeightQuad,
+  }) {
+    return getWorkoutQuad?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetWorkoutList value)? getWorkoutList,
+    TResult Function(_GetWorkoutMainDetail value)? getWorkoutMainDetail,
+    TResult Function(_GetWorkoutDayDetail value)? getWorkoutDayDetail,
+    TResult Function(_GetWorkoutSplitsRoadmap value)? getWorkoutSplitsRoadmap,
+    TResult Function(_GetWorkoutQuad value)? getWorkoutQuad,
+    TResult Function(_CompleteWorkout value)? completeWorkout,
+    TResult Function(_AddWeightQuad value)? addWeightQuad,
+    required TResult orElse(),
+  }) {
+    if (getWorkoutQuad != null) {
+      return getWorkoutQuad(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetWorkoutQuad extends WorkoutEvent {
+  const factory _GetWorkoutQuad({required int id}) = _$_GetWorkoutQuad;
+  const _GetWorkoutQuad._() : super._();
+
+  int get id;
+  @JsonKey(ignore: true)
+  _$GetWorkoutQuadCopyWith<_GetWorkoutQuad> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$CompleteWorkoutCopyWith<$Res> {
+  factory _$CompleteWorkoutCopyWith(
+          _CompleteWorkout value, $Res Function(_CompleteWorkout) then) =
+      __$CompleteWorkoutCopyWithImpl<$Res>;
+  $Res call({int id});
+}
+
+/// @nodoc
+class __$CompleteWorkoutCopyWithImpl<$Res>
+    extends _$WorkoutEventCopyWithImpl<$Res>
+    implements _$CompleteWorkoutCopyWith<$Res> {
+  __$CompleteWorkoutCopyWithImpl(
+      _CompleteWorkout _value, $Res Function(_CompleteWorkout) _then)
+      : super(_value, (v) => _then(v as _CompleteWorkout));
+
+  @override
+  _CompleteWorkout get _value => super._value as _CompleteWorkout;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+  }) {
+    return _then(_CompleteWorkout(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_CompleteWorkout extends _CompleteWorkout with DiagnosticableTreeMixin {
+  const _$_CompleteWorkout({required this.id}) : super._();
+
+  @override
+  final int id;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'WorkoutEvent.completeWorkout(id: $id)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'WorkoutEvent.completeWorkout'))
+      ..add(DiagnosticsProperty('id', id));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _CompleteWorkout &&
+            const DeepCollectionEquality().equals(other.id, id));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(id));
+
+  @JsonKey(ignore: true)
+  @override
+  _$CompleteWorkoutCopyWith<_CompleteWorkout> get copyWith =>
+      __$CompleteWorkoutCopyWithImpl<_CompleteWorkout>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getWorkoutList,
+    required TResult Function(int id) getWorkoutMainDetail,
+    required TResult Function(int id) getWorkoutDayDetail,
+    required TResult Function(int id) getWorkoutSplitsRoadmap,
+    required TResult Function(int id) getWorkoutQuad,
+    required TResult Function(int id) completeWorkout,
+    required TResult Function(int id, String data) addWeightQuad,
+  }) {
+    return completeWorkout(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? getWorkoutList,
+    TResult Function(int id)? getWorkoutMainDetail,
+    TResult Function(int id)? getWorkoutDayDetail,
+    TResult Function(int id)? getWorkoutSplitsRoadmap,
+    TResult Function(int id)? getWorkoutQuad,
+    TResult Function(int id)? completeWorkout,
+    TResult Function(int id, String data)? addWeightQuad,
+  }) {
+    return completeWorkout?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getWorkoutList,
+    TResult Function(int id)? getWorkoutMainDetail,
+    TResult Function(int id)? getWorkoutDayDetail,
+    TResult Function(int id)? getWorkoutSplitsRoadmap,
+    TResult Function(int id)? getWorkoutQuad,
+    TResult Function(int id)? completeWorkout,
+    TResult Function(int id, String data)? addWeightQuad,
+    required TResult orElse(),
+  }) {
+    if (completeWorkout != null) {
+      return completeWorkout(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetWorkoutList value) getWorkoutList,
+    required TResult Function(_GetWorkoutMainDetail value) getWorkoutMainDetail,
+    required TResult Function(_GetWorkoutDayDetail value) getWorkoutDayDetail,
+    required TResult Function(_GetWorkoutSplitsRoadmap value)
+        getWorkoutSplitsRoadmap,
+    required TResult Function(_GetWorkoutQuad value) getWorkoutQuad,
+    required TResult Function(_CompleteWorkout value) completeWorkout,
+    required TResult Function(_AddWeightQuad value) addWeightQuad,
+  }) {
+    return completeWorkout(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_GetWorkoutList value)? getWorkoutList,
+    TResult Function(_GetWorkoutMainDetail value)? getWorkoutMainDetail,
+    TResult Function(_GetWorkoutDayDetail value)? getWorkoutDayDetail,
+    TResult Function(_GetWorkoutSplitsRoadmap value)? getWorkoutSplitsRoadmap,
+    TResult Function(_GetWorkoutQuad value)? getWorkoutQuad,
+    TResult Function(_CompleteWorkout value)? completeWorkout,
+    TResult Function(_AddWeightQuad value)? addWeightQuad,
+  }) {
+    return completeWorkout?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetWorkoutList value)? getWorkoutList,
+    TResult Function(_GetWorkoutMainDetail value)? getWorkoutMainDetail,
+    TResult Function(_GetWorkoutDayDetail value)? getWorkoutDayDetail,
+    TResult Function(_GetWorkoutSplitsRoadmap value)? getWorkoutSplitsRoadmap,
+    TResult Function(_GetWorkoutQuad value)? getWorkoutQuad,
+    TResult Function(_CompleteWorkout value)? completeWorkout,
+    TResult Function(_AddWeightQuad value)? addWeightQuad,
+    required TResult orElse(),
+  }) {
+    if (completeWorkout != null) {
+      return completeWorkout(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CompleteWorkout extends WorkoutEvent {
+  const factory _CompleteWorkout({required int id}) = _$_CompleteWorkout;
+  const _CompleteWorkout._() : super._();
+
+  int get id;
+  @JsonKey(ignore: true)
+  _$CompleteWorkoutCopyWith<_CompleteWorkout> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$AddWeightQuadCopyWith<$Res> {
+  factory _$AddWeightQuadCopyWith(
+          _AddWeightQuad value, $Res Function(_AddWeightQuad) then) =
+      __$AddWeightQuadCopyWithImpl<$Res>;
+  $Res call({int id, String data});
+}
+
+/// @nodoc
+class __$AddWeightQuadCopyWithImpl<$Res>
+    extends _$WorkoutEventCopyWithImpl<$Res>
+    implements _$AddWeightQuadCopyWith<$Res> {
+  __$AddWeightQuadCopyWithImpl(
+      _AddWeightQuad _value, $Res Function(_AddWeightQuad) _then)
+      : super(_value, (v) => _then(v as _AddWeightQuad));
+
+  @override
+  _AddWeightQuad get _value => super._value as _AddWeightQuad;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? data = freezed,
+  }) {
+    return _then(_AddWeightQuad(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_AddWeightQuad extends _AddWeightQuad with DiagnosticableTreeMixin {
+  const _$_AddWeightQuad({required this.id, required this.data}) : super._();
+
+  @override
+  final int id;
+  @override
+  final String data;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'WorkoutEvent.addWeightQuad(id: $id, data: $data)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'WorkoutEvent.addWeightQuad'))
+      ..add(DiagnosticsProperty('id', id))
+      ..add(DiagnosticsProperty('data', data));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _AddWeightQuad &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(data));
+
+  @JsonKey(ignore: true)
+  @override
+  _$AddWeightQuadCopyWith<_AddWeightQuad> get copyWith =>
+      __$AddWeightQuadCopyWithImpl<_AddWeightQuad>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getWorkoutList,
+    required TResult Function(int id) getWorkoutMainDetail,
+    required TResult Function(int id) getWorkoutDayDetail,
+    required TResult Function(int id) getWorkoutSplitsRoadmap,
+    required TResult Function(int id) getWorkoutQuad,
+    required TResult Function(int id) completeWorkout,
+    required TResult Function(int id, String data) addWeightQuad,
+  }) {
+    return addWeightQuad(id, data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? getWorkoutList,
+    TResult Function(int id)? getWorkoutMainDetail,
+    TResult Function(int id)? getWorkoutDayDetail,
+    TResult Function(int id)? getWorkoutSplitsRoadmap,
+    TResult Function(int id)? getWorkoutQuad,
+    TResult Function(int id)? completeWorkout,
+    TResult Function(int id, String data)? addWeightQuad,
+  }) {
+    return addWeightQuad?.call(id, data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getWorkoutList,
+    TResult Function(int id)? getWorkoutMainDetail,
+    TResult Function(int id)? getWorkoutDayDetail,
+    TResult Function(int id)? getWorkoutSplitsRoadmap,
+    TResult Function(int id)? getWorkoutQuad,
+    TResult Function(int id)? completeWorkout,
+    TResult Function(int id, String data)? addWeightQuad,
+    required TResult orElse(),
+  }) {
+    if (addWeightQuad != null) {
+      return addWeightQuad(id, data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetWorkoutList value) getWorkoutList,
+    required TResult Function(_GetWorkoutMainDetail value) getWorkoutMainDetail,
+    required TResult Function(_GetWorkoutDayDetail value) getWorkoutDayDetail,
+    required TResult Function(_GetWorkoutSplitsRoadmap value)
+        getWorkoutSplitsRoadmap,
+    required TResult Function(_GetWorkoutQuad value) getWorkoutQuad,
+    required TResult Function(_CompleteWorkout value) completeWorkout,
+    required TResult Function(_AddWeightQuad value) addWeightQuad,
+  }) {
+    return addWeightQuad(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_GetWorkoutList value)? getWorkoutList,
+    TResult Function(_GetWorkoutMainDetail value)? getWorkoutMainDetail,
+    TResult Function(_GetWorkoutDayDetail value)? getWorkoutDayDetail,
+    TResult Function(_GetWorkoutSplitsRoadmap value)? getWorkoutSplitsRoadmap,
+    TResult Function(_GetWorkoutQuad value)? getWorkoutQuad,
+    TResult Function(_CompleteWorkout value)? completeWorkout,
+    TResult Function(_AddWeightQuad value)? addWeightQuad,
+  }) {
+    return addWeightQuad?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetWorkoutList value)? getWorkoutList,
+    TResult Function(_GetWorkoutMainDetail value)? getWorkoutMainDetail,
+    TResult Function(_GetWorkoutDayDetail value)? getWorkoutDayDetail,
+    TResult Function(_GetWorkoutSplitsRoadmap value)? getWorkoutSplitsRoadmap,
+    TResult Function(_GetWorkoutQuad value)? getWorkoutQuad,
+    TResult Function(_CompleteWorkout value)? completeWorkout,
+    TResult Function(_AddWeightQuad value)? addWeightQuad,
+    required TResult orElse(),
+  }) {
+    if (addWeightQuad != null) {
+      return addWeightQuad(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AddWeightQuad extends WorkoutEvent {
+  const factory _AddWeightQuad({required int id, required String data}) =
+      _$_AddWeightQuad;
+  const _AddWeightQuad._() : super._();
+
+  int get id;
+  String get data;
+  @JsonKey(ignore: true)
+  _$AddWeightQuadCopyWith<_AddWeightQuad> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$WorkoutStateTearOff {
   const _$WorkoutStateTearOff();
 
@@ -765,9 +1370,12 @@ class _$WorkoutStateTearOff {
       {bool isLoading = true,
       bool hasError = false,
       String error = '',
-      List<WorkoutListModel> workoutMainList = const [],
-      List<WorkoutSplitsModel> workoutSplits = const [],
+      bool isquadaddWeight = false,
+      bool isCompleted = false,
+      List<WorkoutMainListModel> workoutMainList = const [],
+      WorkoutMainDetailModel workoutMainDetail = WorkoutMainDetailModel.init,
       WorkoutDayDetailModel? workoutDayDetailModel = null,
+      WorkoutQuadModel workoutQuadModel = WorkoutQuadModel.init,
       Map<String, List<WorkoutSplitsRoadmapItemModel>>
           workoutSplitsRoadmapModel = const {},
       WorkoutPages currentPage = WorkoutPages.main}) {
@@ -775,9 +1383,12 @@ class _$WorkoutStateTearOff {
       isLoading: isLoading,
       hasError: hasError,
       error: error,
+      isquadaddWeight: isquadaddWeight,
+      isCompleted: isCompleted,
       workoutMainList: workoutMainList,
-      workoutSplits: workoutSplits,
+      workoutMainDetail: workoutMainDetail,
       workoutDayDetailModel: workoutDayDetailModel,
+      workoutQuadModel: workoutQuadModel,
       workoutSplitsRoadmapModel: workoutSplitsRoadmapModel,
       currentPage: currentPage,
     );
@@ -792,12 +1403,15 @@ mixin _$WorkoutState {
   bool get isLoading => throw _privateConstructorUsedError;
   bool get hasError => throw _privateConstructorUsedError;
   String get error => throw _privateConstructorUsedError;
-  List<WorkoutListModel> get workoutMainList =>
+  bool get isquadaddWeight => throw _privateConstructorUsedError;
+  bool get isCompleted => throw _privateConstructorUsedError;
+  List<WorkoutMainListModel> get workoutMainList =>
       throw _privateConstructorUsedError;
-  List<WorkoutSplitsModel> get workoutSplits =>
+  WorkoutMainDetailModel get workoutMainDetail =>
       throw _privateConstructorUsedError;
   WorkoutDayDetailModel? get workoutDayDetailModel =>
       throw _privateConstructorUsedError;
+  WorkoutQuadModel get workoutQuadModel => throw _privateConstructorUsedError;
   Map<String, List<WorkoutSplitsRoadmapItemModel>>
       get workoutSplitsRoadmapModel => throw _privateConstructorUsedError;
   WorkoutPages get currentPage => throw _privateConstructorUsedError;
@@ -816,9 +1430,12 @@ abstract class $WorkoutStateCopyWith<$Res> {
       {bool isLoading,
       bool hasError,
       String error,
-      List<WorkoutListModel> workoutMainList,
-      List<WorkoutSplitsModel> workoutSplits,
+      bool isquadaddWeight,
+      bool isCompleted,
+      List<WorkoutMainListModel> workoutMainList,
+      WorkoutMainDetailModel workoutMainDetail,
       WorkoutDayDetailModel? workoutDayDetailModel,
+      WorkoutQuadModel workoutQuadModel,
       Map<String, List<WorkoutSplitsRoadmapItemModel>>
           workoutSplitsRoadmapModel,
       WorkoutPages currentPage});
@@ -837,9 +1454,12 @@ class _$WorkoutStateCopyWithImpl<$Res> implements $WorkoutStateCopyWith<$Res> {
     Object? isLoading = freezed,
     Object? hasError = freezed,
     Object? error = freezed,
+    Object? isquadaddWeight = freezed,
+    Object? isCompleted = freezed,
     Object? workoutMainList = freezed,
-    Object? workoutSplits = freezed,
+    Object? workoutMainDetail = freezed,
     Object? workoutDayDetailModel = freezed,
+    Object? workoutQuadModel = freezed,
     Object? workoutSplitsRoadmapModel = freezed,
     Object? currentPage = freezed,
   }) {
@@ -856,18 +1476,30 @@ class _$WorkoutStateCopyWithImpl<$Res> implements $WorkoutStateCopyWith<$Res> {
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String,
+      isquadaddWeight: isquadaddWeight == freezed
+          ? _value.isquadaddWeight
+          : isquadaddWeight // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isCompleted: isCompleted == freezed
+          ? _value.isCompleted
+          : isCompleted // ignore: cast_nullable_to_non_nullable
+              as bool,
       workoutMainList: workoutMainList == freezed
           ? _value.workoutMainList
           : workoutMainList // ignore: cast_nullable_to_non_nullable
-              as List<WorkoutListModel>,
-      workoutSplits: workoutSplits == freezed
-          ? _value.workoutSplits
-          : workoutSplits // ignore: cast_nullable_to_non_nullable
-              as List<WorkoutSplitsModel>,
+              as List<WorkoutMainListModel>,
+      workoutMainDetail: workoutMainDetail == freezed
+          ? _value.workoutMainDetail
+          : workoutMainDetail // ignore: cast_nullable_to_non_nullable
+              as WorkoutMainDetailModel,
       workoutDayDetailModel: workoutDayDetailModel == freezed
           ? _value.workoutDayDetailModel
           : workoutDayDetailModel // ignore: cast_nullable_to_non_nullable
               as WorkoutDayDetailModel?,
+      workoutQuadModel: workoutQuadModel == freezed
+          ? _value.workoutQuadModel
+          : workoutQuadModel // ignore: cast_nullable_to_non_nullable
+              as WorkoutQuadModel,
       workoutSplitsRoadmapModel: workoutSplitsRoadmapModel == freezed
           ? _value.workoutSplitsRoadmapModel
           : workoutSplitsRoadmapModel // ignore: cast_nullable_to_non_nullable
@@ -891,9 +1523,12 @@ abstract class _$WorkoutStateCopyWith<$Res>
       {bool isLoading,
       bool hasError,
       String error,
-      List<WorkoutListModel> workoutMainList,
-      List<WorkoutSplitsModel> workoutSplits,
+      bool isquadaddWeight,
+      bool isCompleted,
+      List<WorkoutMainListModel> workoutMainList,
+      WorkoutMainDetailModel workoutMainDetail,
       WorkoutDayDetailModel? workoutDayDetailModel,
+      WorkoutQuadModel workoutQuadModel,
       Map<String, List<WorkoutSplitsRoadmapItemModel>>
           workoutSplitsRoadmapModel,
       WorkoutPages currentPage});
@@ -914,9 +1549,12 @@ class __$WorkoutStateCopyWithImpl<$Res> extends _$WorkoutStateCopyWithImpl<$Res>
     Object? isLoading = freezed,
     Object? hasError = freezed,
     Object? error = freezed,
+    Object? isquadaddWeight = freezed,
+    Object? isCompleted = freezed,
     Object? workoutMainList = freezed,
-    Object? workoutSplits = freezed,
+    Object? workoutMainDetail = freezed,
     Object? workoutDayDetailModel = freezed,
+    Object? workoutQuadModel = freezed,
     Object? workoutSplitsRoadmapModel = freezed,
     Object? currentPage = freezed,
   }) {
@@ -933,18 +1571,30 @@ class __$WorkoutStateCopyWithImpl<$Res> extends _$WorkoutStateCopyWithImpl<$Res>
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String,
+      isquadaddWeight: isquadaddWeight == freezed
+          ? _value.isquadaddWeight
+          : isquadaddWeight // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isCompleted: isCompleted == freezed
+          ? _value.isCompleted
+          : isCompleted // ignore: cast_nullable_to_non_nullable
+              as bool,
       workoutMainList: workoutMainList == freezed
           ? _value.workoutMainList
           : workoutMainList // ignore: cast_nullable_to_non_nullable
-              as List<WorkoutListModel>,
-      workoutSplits: workoutSplits == freezed
-          ? _value.workoutSplits
-          : workoutSplits // ignore: cast_nullable_to_non_nullable
-              as List<WorkoutSplitsModel>,
+              as List<WorkoutMainListModel>,
+      workoutMainDetail: workoutMainDetail == freezed
+          ? _value.workoutMainDetail
+          : workoutMainDetail // ignore: cast_nullable_to_non_nullable
+              as WorkoutMainDetailModel,
       workoutDayDetailModel: workoutDayDetailModel == freezed
           ? _value.workoutDayDetailModel
           : workoutDayDetailModel // ignore: cast_nullable_to_non_nullable
               as WorkoutDayDetailModel?,
+      workoutQuadModel: workoutQuadModel == freezed
+          ? _value.workoutQuadModel
+          : workoutQuadModel // ignore: cast_nullable_to_non_nullable
+              as WorkoutQuadModel,
       workoutSplitsRoadmapModel: workoutSplitsRoadmapModel == freezed
           ? _value.workoutSplitsRoadmapModel
           : workoutSplitsRoadmapModel // ignore: cast_nullable_to_non_nullable
@@ -959,14 +1609,17 @@ class __$WorkoutStateCopyWithImpl<$Res> extends _$WorkoutStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_WorkoutState extends _WorkoutState {
+class _$_WorkoutState extends _WorkoutState with DiagnosticableTreeMixin {
   const _$_WorkoutState(
       {this.isLoading = true,
       this.hasError = false,
       this.error = '',
+      this.isquadaddWeight = false,
+      this.isCompleted = false,
       this.workoutMainList = const [],
-      this.workoutSplits = const [],
+      this.workoutMainDetail = WorkoutMainDetailModel.init,
       this.workoutDayDetailModel = null,
+      this.workoutQuadModel = WorkoutQuadModel.init,
       this.workoutSplitsRoadmapModel = const {},
       this.currentPage = WorkoutPages.main})
       : super._();
@@ -982,13 +1635,22 @@ class _$_WorkoutState extends _WorkoutState {
   final String error;
   @JsonKey()
   @override
-  final List<WorkoutListModel> workoutMainList;
+  final bool isquadaddWeight;
   @JsonKey()
   @override
-  final List<WorkoutSplitsModel> workoutSplits;
+  final bool isCompleted;
+  @JsonKey()
+  @override
+  final List<WorkoutMainListModel> workoutMainList;
+  @JsonKey()
+  @override
+  final WorkoutMainDetailModel workoutMainDetail;
   @JsonKey()
   @override
   final WorkoutDayDetailModel? workoutDayDetailModel;
+  @JsonKey()
+  @override
+  final WorkoutQuadModel workoutQuadModel;
   @JsonKey()
   @override
   final Map<String, List<WorkoutSplitsRoadmapItemModel>>
@@ -998,8 +1660,27 @@ class _$_WorkoutState extends _WorkoutState {
   final WorkoutPages currentPage;
 
   @override
-  String toString() {
-    return 'WorkoutState(isLoading: $isLoading, hasError: $hasError, error: $error, workoutMainList: $workoutMainList, workoutSplits: $workoutSplits, workoutDayDetailModel: $workoutDayDetailModel, workoutSplitsRoadmapModel: $workoutSplitsRoadmapModel, currentPage: $currentPage)';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'WorkoutState(isLoading: $isLoading, hasError: $hasError, error: $error, isquadaddWeight: $isquadaddWeight, isCompleted: $isCompleted, workoutMainList: $workoutMainList, workoutMainDetail: $workoutMainDetail, workoutDayDetailModel: $workoutDayDetailModel, workoutQuadModel: $workoutQuadModel, workoutSplitsRoadmapModel: $workoutSplitsRoadmapModel, currentPage: $currentPage)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'WorkoutState'))
+      ..add(DiagnosticsProperty('isLoading', isLoading))
+      ..add(DiagnosticsProperty('hasError', hasError))
+      ..add(DiagnosticsProperty('error', error))
+      ..add(DiagnosticsProperty('isquadaddWeight', isquadaddWeight))
+      ..add(DiagnosticsProperty('isCompleted', isCompleted))
+      ..add(DiagnosticsProperty('workoutMainList', workoutMainList))
+      ..add(DiagnosticsProperty('workoutMainDetail', workoutMainDetail))
+      ..add(DiagnosticsProperty('workoutDayDetailModel', workoutDayDetailModel))
+      ..add(DiagnosticsProperty('workoutQuadModel', workoutQuadModel))
+      ..add(DiagnosticsProperty(
+          'workoutSplitsRoadmapModel', workoutSplitsRoadmapModel))
+      ..add(DiagnosticsProperty('currentPage', currentPage));
   }
 
   @override
@@ -1011,11 +1692,17 @@ class _$_WorkoutState extends _WorkoutState {
             const DeepCollectionEquality().equals(other.hasError, hasError) &&
             const DeepCollectionEquality().equals(other.error, error) &&
             const DeepCollectionEquality()
+                .equals(other.isquadaddWeight, isquadaddWeight) &&
+            const DeepCollectionEquality()
+                .equals(other.isCompleted, isCompleted) &&
+            const DeepCollectionEquality()
                 .equals(other.workoutMainList, workoutMainList) &&
             const DeepCollectionEquality()
-                .equals(other.workoutSplits, workoutSplits) &&
+                .equals(other.workoutMainDetail, workoutMainDetail) &&
             const DeepCollectionEquality()
                 .equals(other.workoutDayDetailModel, workoutDayDetailModel) &&
+            const DeepCollectionEquality()
+                .equals(other.workoutQuadModel, workoutQuadModel) &&
             const DeepCollectionEquality().equals(
                 other.workoutSplitsRoadmapModel, workoutSplitsRoadmapModel) &&
             const DeepCollectionEquality()
@@ -1028,9 +1715,12 @@ class _$_WorkoutState extends _WorkoutState {
       const DeepCollectionEquality().hash(isLoading),
       const DeepCollectionEquality().hash(hasError),
       const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(isquadaddWeight),
+      const DeepCollectionEquality().hash(isCompleted),
       const DeepCollectionEquality().hash(workoutMainList),
-      const DeepCollectionEquality().hash(workoutSplits),
+      const DeepCollectionEquality().hash(workoutMainDetail),
       const DeepCollectionEquality().hash(workoutDayDetailModel),
+      const DeepCollectionEquality().hash(workoutQuadModel),
       const DeepCollectionEquality().hash(workoutSplitsRoadmapModel),
       const DeepCollectionEquality().hash(currentPage));
 
@@ -1045,9 +1735,12 @@ abstract class _WorkoutState extends WorkoutState {
       {bool isLoading,
       bool hasError,
       String error,
-      List<WorkoutListModel> workoutMainList,
-      List<WorkoutSplitsModel> workoutSplits,
+      bool isquadaddWeight,
+      bool isCompleted,
+      List<WorkoutMainListModel> workoutMainList,
+      WorkoutMainDetailModel workoutMainDetail,
       WorkoutDayDetailModel? workoutDayDetailModel,
+      WorkoutQuadModel workoutQuadModel,
       Map<String, List<WorkoutSplitsRoadmapItemModel>>
           workoutSplitsRoadmapModel,
       WorkoutPages currentPage}) = _$_WorkoutState;
@@ -1060,11 +1753,17 @@ abstract class _WorkoutState extends WorkoutState {
   @override
   String get error;
   @override
-  List<WorkoutListModel> get workoutMainList;
+  bool get isquadaddWeight;
   @override
-  List<WorkoutSplitsModel> get workoutSplits;
+  bool get isCompleted;
+  @override
+  List<WorkoutMainListModel> get workoutMainList;
+  @override
+  WorkoutMainDetailModel get workoutMainDetail;
   @override
   WorkoutDayDetailModel? get workoutDayDetailModel;
+  @override
+  WorkoutQuadModel get workoutQuadModel;
   @override
   Map<String, List<WorkoutSplitsRoadmapItemModel>>
       get workoutSplitsRoadmapModel;

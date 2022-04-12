@@ -6,6 +6,12 @@ class JournalEvent with _$JournalEvent {
 
   const factory JournalEvent.getJournalList() = _GetJournalList;
 
+  const factory JournalEvent.getJournalFromDate({
+    required String date,
+  }) = _GetJournalFromDate;
+
+  const factory JournalEvent.getNextJournalList() = _GetNextJournalList;
+
   const factory JournalEvent.addJorunal({
     ProgressJournalDetailModel? progressJournalDetailModel,
   }) = _AddJorunal;
